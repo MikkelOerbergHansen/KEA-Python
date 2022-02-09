@@ -38,6 +38,10 @@ print()
 
 print(car1.getBrand())
 
+#tomme print kald for at skabe mellemrum
+print()
+print()
+
 # eksempel på at regne med værdierne gemt under variablerne
 car1SalesBonus = (car1.MarketPrice - car1.SellingPrice)*0.20
 car2SalesBonus = (car2.MarketPrice - car2.SellingPrice)*0.20
