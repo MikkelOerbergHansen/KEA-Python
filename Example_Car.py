@@ -18,6 +18,10 @@ class Car:
         self.SellingPrice = SellingPrice
         self.KmPerLitre = KmPerLitre
 
+    def salesBonus(self):
+        print("Salesbonus for salget er " + 
+        str((self.MarketPrice-self.SellingPrice)*0.20) + " Kr")
+
 
 #definer variabler af vores Car class
 car1 = Car("Green", "volkswagen", "Golf", True, 28000, 24000, 18.1)
@@ -30,7 +34,18 @@ print()
 
 # eksempel på at regne med værdierne gemt under variablerne
 car1SalesBonus = (car1.MarketPrice - car1.SellingPrice)*0.20
-car2SalesBonus = car2.MarketPrice - car2.SellingPrice
+car2SalesBonus = (car2.MarketPrice - car2.SellingPrice)*0.20
+
+# eksempel med metoden i klassen
+car1.salesBonus()
+car2.salesBonus()
+car3.salesBonus()
+
+
+#tomme print kald for at skabe mellemrum
+print()
+print()
+
 
 
 #print værdier for valgte attributter på de valgte variable
@@ -65,3 +80,7 @@ print(type(car1.OnSale))
 #tomme print kald for at skabe mellemrum
 print()
 print()
+
+
+
+
