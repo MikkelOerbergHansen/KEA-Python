@@ -31,6 +31,8 @@ print()
 # en udregning
 car1SalesBonus = (car1.MarketPrice - car1.SellingPrice)*0.20
 car2SalesBonus = car2.MarketPrice - car2.SellingPrice
+
+
 #print værdier for valgte attributter på de valgte variable
 print(car1.brand)
 print(car2.brand)
