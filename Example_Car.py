@@ -22,6 +22,10 @@ class Car:
         print("Salesbonus for salget er " + 
         str((self.MarketPrice-self.SellingPrice)*0.20) + " Kr")
 
+    def getBrand(self):
+        return self.brand
+
+
 
 #definer variabler af vores Car class
 car1 = Car("Green", "volkswagen", "Golf", True, 28000, 24000, 18.1)
@@ -31,6 +35,8 @@ car3 = Car("Red", "Ford", "Mustang", False, 44500, 30000, 16.5 )
 #tomme print kald for at skabe mellemrum
 print()
 print()
+
+print(car1.getBrand())
 
 # eksempel på at regne med værdierne gemt under variablerne
 car1SalesBonus = (car1.MarketPrice - car1.SellingPrice)*0.20
