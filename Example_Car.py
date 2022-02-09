@@ -19,7 +19,7 @@ class Car:
         self.KmPerLitre = KmPerLitre
 
 
-#definer en variabel af vores Car class
+#definer variabler af vores Car class
 car1 = Car("Green", "volkswagen", "Golf", True, 28000, 24000, 18.1)
 car2 = Car("Blue", "Toyota", "Prius", True, 50000, 40000,15.8 )
 car3 = Car("Red", "Ford", "Mustang", False, 44500, 30000, 16.5 )
@@ -28,7 +28,7 @@ car3 = Car("Red", "Ford", "Mustang", False, 44500, 30000, 16.5 )
 print()
 print()
 
-# en udregning
+# eksempel på at regne med værdierne gemt under variablerne
 car1SalesBonus = (car1.MarketPrice - car1.SellingPrice)*0.20
 car2SalesBonus = car2.MarketPrice - car2.SellingPrice
 
