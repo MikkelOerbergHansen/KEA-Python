@@ -1,10 +1,17 @@
 from DiceGame import DieGame
-from Die import Die
 
 def main():
-    print("test")
-    Game = DieGame
-    Game.play
+    print("================================")
+    Game=DieGame()
+    DieGame.play(Game)
+    DieGame.PrintResult(Game)
+    print("================================")
+
+    if DieGame.PrintResult.result == 7:
+        print("congratulationS!! You Are A Winner")
+    else:
+        print("Sorry :( You Are A Looser")
+
 
 
 if __name__ == '__main__':
