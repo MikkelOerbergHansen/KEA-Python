@@ -9,7 +9,7 @@ def main():
     print()
 
     if result == 7:
-        print("congratulationS!! You Are A Winner")
+        print("congratulations!! You Are A Winner")
     else:
         print("Sorry :( You Are A Looser")
 

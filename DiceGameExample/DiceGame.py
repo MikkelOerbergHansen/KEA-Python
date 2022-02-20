@@ -15,11 +15,11 @@ class DieGame(object):
     def PrintResult(self):
         fv1 = self.D1.GetFaceValue()
         fv2 = self.D2.GetFaceValue()
-        self.result = fv1 + fv2
+        result = fv1 + fv2
 
         print("trace Die/printResult")
         print("Die 1 = " + str(fv1))
         print("Die 2 = " + str(fv2))
-        print("result is : " + str(self.result))
-        return self.result
+        print("result is : " + str(result))
+        return result
 
