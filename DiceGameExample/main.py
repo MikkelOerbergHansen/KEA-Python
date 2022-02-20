@@ -1,16 +1,19 @@
 from DiceGame import DieGame
 
 def main():
-    print("================================")
+    print("==============================================")
     Game=DieGame()
     DieGame.play(Game)
-    DieGame.PrintResult(Game)
-    print("================================")
+    result = DieGame.PrintResult(Game)
+    
+    print()
 
-    if DieGame.PrintResult.result == 7:
+    if result == 7:
         print("congratulationS!! You Are A Winner")
     else:
         print("Sorry :( You Are A Looser")
+
+    print("==============================================")
 
 
 

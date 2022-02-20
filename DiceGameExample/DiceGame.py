@@ -21,4 +21,5 @@ class DieGame(object):
         print("Die 1 = " + str(fv1))
         print("Die 2 = " + str(fv2))
         print("result is : " + str(self.result))
+        return self.result
 
