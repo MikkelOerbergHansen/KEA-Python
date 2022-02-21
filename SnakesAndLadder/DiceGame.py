@@ -20,8 +20,8 @@ class DiceGame (object):
             try:
                 int(NumPlayers)
                 is_num = True
-                if int(NumPlayers) <= 1:
-                    print("input skal være > 1 !! ")
+                if int(NumPlayers) <= 1 or int(NumPlayers) > 4:
+                    print("input skal være > 1 og < 5 !! ")
                     is_num = False                  
             except ValueError:
                 print("input skal være et tal !! ")
@@ -31,7 +31,7 @@ class DiceGame (object):
         # fyld player list i et loop og spørg efter nødvendige inputs (navn og color)
         # bliv ved med at spørge efter input hvis navn er tomt
         # bliv ved med at spørge efter input hvis color ikke er en godkendt farve
-        Approved_colors = ["red", "blue", "green", "yellow", "pink", "silver", "black", "orange", "purple"]
+        Approved_colors = ["red", "blue", "green", "yellow", "pink", "silver", "black", "orange", "purple", "white"]
 
         for x in range (1, int(NumPlayers)+1):
             empty_string = True
@@ -48,7 +48,7 @@ class DiceGame (object):
                 if pcolor in Approved_colors:
                     approve_col = True
                 else:
-                    print("color must be in this list:")
+                    print("din farve skal være i denne liste:")
                     print(Approved_colors)
 
             PlayerList.append(player(pname, pcolor, 0))
@@ -65,32 +65,54 @@ class DiceGame (object):
                 fv2 = self.D2.GetFaceValue()
                 print()
                 print("==== Det er nu {}'s tur ====".format(Player.getName()))
-                print("first dice:" + str(fv1))
+                print("first dice: " + str(fv1))
                 print("second dice: " + str(fv2))
                 fvSum = fv1 + fv2
-                TempPosition = fvSum + Player.getPosition()
+                NewPosition = fvSum + Player.getPosition()
 
-                if TempPosition == 100:
+                if NewPosition == 100:
                     finish = True
-                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
+                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), NewPosition))
                     print()
                     print("**********Hurra {} win*********".format(Player.getName()))
                     print()
                     break
-                elif TempPosition > 100:
-                    newPosition = TempPosition - 100
-                    TempPosition = 100 - newPosition
-                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
-                    Player.setPosition(int(TempPosition))
+
+
+                elif NewPosition > 100:
+                    tempPosition = NewPosition - 100
+                    NewPosition = 100 - tempPosition
+                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), NewPosition))
+                    Player.setPosition(int(NewPosition))
                     print()
                     print("************next player turn ************")
-                    var = input()
+                    
+                    ## Error handling for inputs
+                    ## input must be empty since it only prompts for next users turn
+                    empty_string = False
+                    while empty_string == False:
+                        var = input()
+                        if var == "":
+                            empty_string = True
+                        else:
+                            empty_string = False
+
+
                 else:
-                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
-                    Player.setPosition(int(TempPosition))
+                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), NewPosition))
+                    Player.setPosition(int(NewPosition))
                     print()
                     print("************next player turn ************")
-                    var = input()
+
+                    ## Error handling for inputs
+                    ## input must be empty since it only prompts for next users turn
+                    empty_string = False
+                    while empty_string == False:
+                        var = input()
+                        if var == "":
+                            empty_string = True
+                        else:
+                            empty_string = False
 
 
             
