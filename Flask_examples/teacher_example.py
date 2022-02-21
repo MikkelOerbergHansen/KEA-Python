@@ -57,6 +57,7 @@ class Car:
 car1 = Car('Volkswagen', 'Golf', 'Grøn', True, 28000, 24000, 18.1, ["skifte gearkassen i 2018", "dækskifte til vintersæson"])
 car2 = Car('Toyota', 'Prius', 'Blå', False, 50000, 40000, 15.8, ["ingen reperationer"])
 car3 = Car('Ford', 'Mustang', 'Rød', False, 44500, 30000, 16.5, ["klargøring til sommersalg"])
+car4 = Car('Tesla', '3', 'silver', True, 90000, 75000, 20.1, ["nyt batteri"] )
 
 # Vi vil gerne lave en liste med alle vores biler
 # variable =[index[0], index[1], index[2]]
@@ -96,7 +97,11 @@ print()
 for car in CarList:
     print(car.getBrand())
 
-
+CarList.append(car4)
+print()
+print()
+for car in CarList:
+    print(car.getBrand())
 
 
 # Decorator for en route så den får adressen http://127.0.0.1:5000/
