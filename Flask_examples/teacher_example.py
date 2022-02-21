@@ -82,8 +82,10 @@ print(Employees)
 Employees.insert(0, "Darth Vader")
 print(Employees)
 
-# Vi vil gerne lave et loop der går igennem listen og viser bilerne
 
+# Vi vil gerne lave et loop der går igennem listen og viser bilerne
+for employee in Employees:
+    print(employee)
 
 
 
