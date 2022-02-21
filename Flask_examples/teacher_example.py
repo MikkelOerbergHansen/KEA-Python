@@ -104,6 +104,13 @@ for car in CarList:
     print(car.getBrand())
 
 
+### BIG STEP! Lav et Loop der går ind og erstatter 'routes' og viser bilernes info på hjemmesiden
+
+
+
+
+
+
 # Decorator for en route så den får adressen http://127.0.0.1:5000/
 @app.route('/')
 # Definerer en funktion for vores route som hedder hello()
