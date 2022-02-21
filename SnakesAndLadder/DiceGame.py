@@ -26,15 +26,17 @@ class DiceGame (object):
             except ValueError:
                 print("input skal være et tal !! ")
 
-
+        # Lav player list som er tom
         PlayerList =[]
-
+        # fyld player list i et loop og spørg efter nødvendige inputs (navn og color)
         for x in range (1, int(NumPlayers)+1):
             pname = input("hvad er dit navn? ")
             pcolor = input("hvilken farve er du? ")
             PlayerList.append(player(pname, pcolor, 0))
 
 
+
+        ## start selve spillets procedure
         finish = False
         while finish == False:
             for Player in PlayerList:
