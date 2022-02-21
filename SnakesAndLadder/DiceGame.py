@@ -12,10 +12,24 @@ class DiceGame (object):
      # class play to roll and display values. 
     def Play(self):
 
-        NumPlayers = int(input("Hvor mange spillere er med? "))
+
+        #loop for input og check at det et korrekt input ellers bliv ved med at prompte for nyt input
+        is_num = False
+        while is_num == False:
+            NumPlayers = input("Hvor mange spillere er med? ")
+            try:
+                int(NumPlayers)
+                is_num = True
+                if int(NumPlayers) <= 1:
+                    print("input skal være > 1 !! ")
+                    is_num = False                  
+            except ValueError:
+                print("input skal være et tal !! ")
+
+
         PlayerList =[]
 
-        for x in range (1, NumPlayers+1):
+        for x in range (1, int(NumPlayers)+1):
             pname = input("hvad er dit navn? ")
             pcolor = input("hvilken farve er du? ")
             PlayerList.append(player(pname, pcolor, 0))
