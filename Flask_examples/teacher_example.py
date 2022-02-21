@@ -82,10 +82,19 @@ print(Employees)
 Employees.insert(0, "Darth Vader")
 print(Employees)
 
+print()
+print()
+
 
 # Vi vil gerne lave et loop der går igennem listen og viser bilerne
 for employee in Employees:
     print(employee)
+
+print()
+print()
+
+for car in CarList:
+    print(car.getBrand())
 
 
 
