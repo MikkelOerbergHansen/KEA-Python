@@ -34,17 +34,28 @@ class DiceGame (object):
                 print("second dice: " + str(fv2))
                 fvSum = fv1 + fv2
                 TempPosition = fvSum + Player.getPosition()
-                print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
-                Player.setPosition(int(TempPosition))
 
-                if TempPosition>=100:
+                if TempPosition == 100:
                     finish = True
+                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
                     print()
                     print("**********Hurra {} win*********".format(Player.getName()))
+                    print()
                     break
-                else:
+                elif TempPosition > 100:
+                    newPosition = TempPosition - 100
+                    TempPosition = 100 - newPosition
+                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
+                    Player.setPosition(int(TempPosition))
                     print()
                     print("************next player turn ************")
+                    var = input()
+                else:
+                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), TempPosition))
+                    Player.setPosition(int(TempPosition))
+                    print()
+                    print("************next player turn ************")
+                    var = input()
 
 
             
