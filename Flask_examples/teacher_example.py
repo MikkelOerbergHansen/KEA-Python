@@ -61,6 +61,7 @@ car3 = Car('Ford', 'Mustang', 'Rød', False, 44500, 30000, 16.5, ["klargøring t
 # Vi vil gerne lave en liste med alle vores biler
 # variable =[index[0], index[1], index[2]]
 
+Employees = ["Mario", "Luigi"]
 CarList = [car1,car2,car3]
 print(CarList)
 print(CarList[0])
@@ -73,6 +74,13 @@ print(CarList[1].getMarketPrice())
 
 print(CarList[0].reperationer)
 print(CarList[0].reperationer[0])
+print(len(CarList))
+
+print(Employees)
+Employees.append("Mikkel")  ### test append funktionen
+print(Employees)
+Employees.insert(0, "Darth Vader")
+print(Employees)
 
 # Vi vil gerne lave et loop der går igennem listen og viser bilerne
 
