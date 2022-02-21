@@ -29,9 +29,28 @@ class DiceGame (object):
         # Lav player list som er tom
         PlayerList =[]
         # fyld player list i et loop og spørg efter nødvendige inputs (navn og color)
+        # bliv ved med at spørge efter input hvis navn er tomt
+        # bliv ved med at spørge efter input hvis color ikke er en godkendt farve
+        Approved_colors = ["red", "blue", "green", "yellow", "pink", "silver", "black", "orange", "purple"]
+
         for x in range (1, int(NumPlayers)+1):
-            pname = input("hvad er dit navn? ")
-            pcolor = input("hvilken farve er du? ")
+            empty_string = True
+            while empty_string == True:
+                pname = input("hvad er dit navn? ")
+                if pname != "":
+                    empty_string = False
+                else:
+                    print("input can not be empty !!")
+
+            approve_col = False
+            while approve_col ==False:
+                pcolor = input("hvilken farve er du? ")
+                if pcolor in Approved_colors:
+                    approve_col = True
+                else:
+                    print("color must be in this list:")
+                    print(Approved_colors)
+
             PlayerList.append(player(pname, pcolor, 0))
 
 
