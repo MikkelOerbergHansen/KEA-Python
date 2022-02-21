@@ -33,6 +33,7 @@ class Car:
         return str(self.marketPrice)
 
     # Definere metode for at udregne salgsbonusen for en bil
+    ## oprindelige salesbonus var hhv. 800, 2000 og 2900 for car1, car2, car3
     def calculateSalesBonus(self):
         salesbonus = int((self.marketPrice - self.sellingPrice)*0.20)
         try:
@@ -49,15 +50,6 @@ class Car:
             return "Noget gik galt"
             
        
-
-
-
-
-
-
-
-
-
 
 
 # Instantiere objekter af vores klasse Car
