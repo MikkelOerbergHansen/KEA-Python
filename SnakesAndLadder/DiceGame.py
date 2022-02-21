@@ -43,6 +43,7 @@ class DiceGame (object):
                     print("**********Hurra {} win*********".format(Player.getName()))
                     break
                 else:
+                    print()
                     print("************next player turn ************")
 
 
