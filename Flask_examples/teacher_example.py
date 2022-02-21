@@ -37,9 +37,9 @@ class Car:
         salesbonus = int((self.marketPrice - self.sellingPrice)*0.20)
         try:
             if salesbonus >= 2000:
-                ExtraBonus = salesbonus + 500
+                ExtraBonus = salesbonus + 500 + "hej"
                 return str(ExtraBonus)
-            elif salesbonus >800 and salesbonus <  2000:
+            elif salesbonus > 800 and salesbonus < 2000:
                 ExtraBonus = salesbonus + 1000
                 return str(ExtraBonus)
             else:
