@@ -35,11 +35,20 @@ class Car:
     # Definere metode for at udregne salgsbonusen for en bil
     def calculateSalesBonus(self):
         salesbonus = int((self.marketPrice - self.sellingPrice)*0.20)
-        if salesbonus >= 2000:
-            ExtraBonus = salesbonus + 500
-            return str(ExtraBonus)
-        else: 
-            return str(salesbonus) 
+        try:
+            if salesbonus >= 2000:
+                ExtraBonus = salesbonus + 500
+                return str(ExtraBonus)
+            elif salesbonus >800 and salesbonus <  2000:
+                ExtraBonus = salesbonus + 1000
+                return str(ExtraBonus)
+            else:
+                salesbonus = 0
+                return str(salesbonus)
+        except:
+            return "Noget gik galt"
+            
+       
 
 
 
