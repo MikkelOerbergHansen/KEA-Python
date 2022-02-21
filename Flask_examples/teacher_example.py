@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Definere class
 class Car:
     # Definere attributer for en bil i min bilhandler
-    def __init__(self, brand, model, color, onSale, marketPrice, sellingPrice, kmPerLiter):
+    def __init__(self, brand, model, color, onSale, marketPrice, sellingPrice, kmPerLiter, reperationer):
         self.brand = brand
         self.model = model
         self.color = color
@@ -15,6 +15,7 @@ class Car:
         self.marketPrice = marketPrice
         self.sellingPrice = sellingPrice
         self.kmPerLiter = kmPerLiter
+        self.reperationer = reperationer
 
     # Getter metode for at få bilens brand
     def getBrand(self):
@@ -53,9 +54,31 @@ class Car:
 
 
 # Instantiere objekter af vores klasse Car
-car1 = Car('Volkswagen', 'Golf', 'Grøn', True, 28000, 24000, 18.1)
-car2 = Car('Toyota', 'Prius', 'Blå', False, 50000, 40000, 15.8)
-car3 = Car('Ford', 'Mustang', 'Rød', False, 44500, 30000, 16.5)
+car1 = Car('Volkswagen', 'Golf', 'Grøn', True, 28000, 24000, 18.1, ["skifte gearkassen i 2018", "dækskifte til vintersæson"])
+car2 = Car('Toyota', 'Prius', 'Blå', False, 50000, 40000, 15.8, ["ingen reperationer"])
+car3 = Car('Ford', 'Mustang', 'Rød', False, 44500, 30000, 16.5, ["klargøring til sommersalg"])
+
+# Vi vil gerne lave en liste med alle vores biler
+# variable =[index[0], index[1], index[2]]
+
+CarList = [car1,car2,car3]
+print(CarList)
+print(CarList[0])
+print(CarList[1])
+print(CarList[2])
+print(CarList[-1]) #listen tages bagrfra
+
+print(CarList[0].getBrand())
+print(CarList[1].getMarketPrice())
+
+print(CarList[0].reperationer)
+print(CarList[0].reperationer[0])
+
+# Vi vil gerne lave et loop der går igennem listen og viser bilerne
+
+
+
+
 
 # Decorator for en route så den får adressen http://127.0.0.1:5000/
 @app.route('/')
