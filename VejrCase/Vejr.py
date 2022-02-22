@@ -11,38 +11,48 @@ class vejr(object):
     def run(self):
 
         ExcelFilData = ExcelReader()
-
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
-
-        header = ["Dato/Tidspunkt", "GlobalStråling", "Relativ Fugtighed", "Temperatur", "Vindretning", "VindHastighed"]
-        print(header)
-        for i in range(1,5):
-            print(dataframe[i])
-
         ###
         ### datasættet skal konverteres til en liste af målinger
         ### som kan bruges ved oprettelse af vejrstationer
         ### 
 
+        MålingerKBH =[]
+        for i in range(1, len(dataframe)):
+            MålingerKBH.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
+
+        # Vi gentager for datasættet for hhv. Aalborg og odense
+        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataAalborg.csv")
+
+        MålingerAA =[]
+        for i in range(1, len(dataframe)):
+            MålingerAA.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
+
+        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataOdense.csv")
+
+        MålingerOD = []
+        for i in range(1, len(dataframe)):
+            MålingerOD.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
+
+        ### vi kan nu oprette tre vejrstations objekter
+
+        vejrStation1 = VejrStation("København", "København C", "DK", MålingerKBH)
+        vejrStation2 = VejrStation("Odense", "Odense C", "DK", MålingerOD)
+        vejrStation3 = VejrStation("Aalborg", "Aalborg C", "DK", MålingerAA)
+
+        print("test")
 
 
+        print(vejrStation1.getBy())
+        print(vejrStation1.getMåling()[0].getTidspunkt())
+        print(vejrStation1.getMåling()[0].getAllMåling()[0])
 
-        
-        Måling1 = Måling(28, 78, 2.5, 285, 1.6, 10.30)
-        Måling2 = Måling(138, 64, 2.7, 138, 2.1, 10.30)
-        Måling3 = Måling(100, 75, 2.8, 152, 1.5, 10.30)
-
-
-        vejrStation1 = VejrStation("København", "København C", "DK", ["Globalstråling", "RelativFugtighed", "Temperatur", "Vindretning", "Vindhastighed"], Måling1)
-        vejrStation2 = VejrStation("Odense", "Odense C", "DK", ["Globalstråling", "RelativFugtighed", "Temperatur", "Vindretning", "Vindhastighed"], Måling2)
-        vejrStation3 = VejrStation("Aalborg", "Aalborg C", "DK", ["Globalstråling", "RelativFugtighed", "Temperatur", "Vindretning", "Vindhastighed"], Måling3)
-
-        print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation1.getBy(), vejrStation1.getMåling().getTidspunkt()))
-        print(vejrStation1.getMåling().getAllMåling())
-        print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation2.getBy(), vejrStation2.getMåling().getTidspunkt()))
-        print(vejrStation2.getMåling().getAllMåling())
-        print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation3.getBy(), vejrStation3.getMåling().getTidspunkt()))
-        print(vejrStation3.getMåling().getAllMåling())
+        #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation1.getBy(), vejrStation1.getMåling().getTidspunkt()))
+        #print(vejrStation1.getMåling().getAllMåling())
+        #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation2.getBy(), vejrStation2.getMåling().getTidspunkt()))
+        #print(vejrStation2.getMåling().getAllMåling())
+        #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation3.getBy(), vejrStation3.getMåling().getTidspunkt()))
+        #print(vejrStation3.getMåling().getAllMåling())
         
 
 
