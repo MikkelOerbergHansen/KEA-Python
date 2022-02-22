@@ -14,7 +14,10 @@ class vejr(object):
 
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
 
-        print(dataframe[1])
+        header = ["Dato/Tidspunkt", "GlobalStråling", "Relativ Fugtighed", "Temperatur", "Vindretning", "VindHastighed"]
+        print(header)
+        for i in range(1,5):
+            print(dataframe[i])
 
 
         
