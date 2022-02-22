@@ -1,20 +1,17 @@
 
-class Measurements(object):
-    def __init__(self, Globalstråling, relativFugtighed, Temperatur, Vindretning, Vindhastighed):
+class Målinger(object):
+    def __init__(self, Globalstråling, relativFugtighed, Temperatur, Vindretning, Vindhastighed, Tidspunkt):
         self.Globalstråling = Globalstråling
         self.relativFugtighed = relativFugtighed
         self.Temperatur = Temperatur
         self.Vindretning = Vindretning
         self.Vindhastighed = Vindhastighed
-        self.AllMeasures = []
+        self.Tidspunkt = Tidspunkt
+        self.AllMåling = [Globalstråling, relativFugtighed,Temperatur, Vindretning, Vindhastighed]
 
-    def getALLMeasures(self):
-        self.AllMeasures.append(self.Globalstråling)
-        self.AllMeasures.append(self.relativFugtighed)
-        self.AllMeasures.append(self.Temperatur)
-        self.AllMeasures.append(self.Vindretning)
-        self.AllMeasures.append(self.Vindhastighed)
-        return self.AllMeasures
+    def getAllMåling(self):
+        return self.AllMåling
+
 
     def setGlobalStråling(self, opdaterMåling):
         self.Globalstråling = opdaterMåling
@@ -52,5 +49,12 @@ class Measurements(object):
 
     def getVindhastighed(self):
         return self.Vindhastighed
+
+    
+    def getTidspunkt(self):
+        return self.Tidspunkt
+
+
+
 
 
