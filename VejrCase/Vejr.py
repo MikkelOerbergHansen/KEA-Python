@@ -35,6 +35,11 @@ class vejr(object):
         print(vejrStation3.getMåling().getAllMåling())
         
 
+
+
+dg = vejr()
+dg.run()
+
         
 
         
