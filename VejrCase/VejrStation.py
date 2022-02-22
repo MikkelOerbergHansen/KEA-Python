@@ -16,4 +16,7 @@ class VejrStation(object):
     def getMålinger(self):
         return self.målinger
 
+    def PrintData(self,indexstart, indexslut):
+        print("test")
+
 
