@@ -40,8 +40,13 @@ class vejr(object):
         vejrStation2 = VejrStation("Odense", "Odense C", "DK", MålingerOD)
         vejrStation3 = VejrStation("Aalborg", "Aalborg C", "DK", MålingerAA)
 
-        print("test")
 
+
+        ### Vi byder nu vores bruger velkommen til dettee fantastiske vejr målings informations program
+        print()
+        print()
+        print("Velkommen Til")
+        Byvalg = input("Fra Hvilken By ønsker du at se vejr data?: ")
 
         print(vejrStation1.getBy())
         print(vejrStation1.getMåling()[0].getTidspunkt())
