@@ -96,21 +96,24 @@ class vejr(object):
 
             
             elif Byvalg == "Aalborg":
-                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
                 tempVar = True
+                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
+                indexStart = 0
+                indexSlut = 0
 
                 for i in range(0,len(vejrStation3.getMålinger())):
                     if tidsIntervalslut == vejrStation3.getMålinger()[i].getTidspunkt():
                         indexSlut = i
                         print(indexSlut)
 
-                    elif tidsIntervalstart == vejrStation3.getMålinger()[i].getTidspunkt():
-                        indexStart = i
-                        print(indexStart)
+                        for j in range(0,len(vejrStation3.getMålinger())):
 
-                    else:
-                        indexStart = 0
-                        indexSlut = 0
+                            if tidsIntervalstart == vejrStation3.getMålinger()[j].getTidspunkt():
+                                indexStart = j
+                                print(indexStart)
+                                break 
+
+                        break
 
                 if indexStart == 0 or indexSlut == 0:
                     print("Det var ikke et gyldigt tidsinterval -- beklager!!")
@@ -118,26 +121,31 @@ class vejr(object):
                     print("For Aalborg er det tidligst: {} og senest: {}".format(vejrStation3.getMålinger()[len(vejrStation3.getMålinger())-1].getTidspunkt(),vejrStation3.getMålinger()[0].getTidspunkt()))
                     tempVar = False
                     print()
-                    return
+
+                else:
+                    vejrStation3.PrintData(2,4)
 
 
 
             elif Byvalg == "Odense":
-                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
                 tempVar = True
+                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
+                indexStart = 0
+                indexSlut = 0
 
                 for i in range(0,len(vejrStation2.getMålinger())):
                     if tidsIntervalslut == vejrStation2.getMålinger()[i].getTidspunkt():
                         indexSlut = i
                         print(indexSlut)
 
-                    elif tidsIntervalstart == vejrStation2.getMålinger()[i].getTidspunkt():
-                        indexStart = i
-                        print(indexStart)
+                        for j in range(0,len(vejrStation2.getMålinger())):
 
-                    else:
-                        indexStart = 0
-                        indexSlut = 0
+                            if tidsIntervalstart == vejrStation2.getMålinger()[j].getTidspunkt():
+                                indexStart = j
+                                print(indexStart)
+                                break 
+
+                        break
 
                 if indexStart == 0 or indexSlut == 0:
                     print("Det var ikke et gyldigt tidsinterval -- beklager!!")
@@ -145,7 +153,9 @@ class vejr(object):
                     print("For Odense er det tidligst: {} og senest: {}".format(vejrStation2.getMålinger()[len(vejrStation2.getMålinger())-1].getTidspunkt(),vejrStation2.getMålinger()[0].getTidspunkt()))
                     tempVar = False
                     print()
-                    return
+
+                else:
+                    vejrStation2.PrintData(2,4)
 
 
 
