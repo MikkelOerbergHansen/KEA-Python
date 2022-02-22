@@ -44,13 +44,35 @@ class vejr(object):
         ### Vi byder nu vores bruger velkommen til dettee fantastiske vejr målings informations program
         print()
         print()
-        print("Velkommen Til")
-        Byvalg = input("Fra hvilken by ønsker du at se vejr data?: ")
-        print("fra hvilket tidspunkt ønsker du at se data?: ")
-        tidsIntervalstart = input("start: ")
-        tidsIntervalslut = input("slut: ")
+
+        tempVar = False
+        while tempVar == False:
+
+            print("Velkommen Til")
+            Byvalg = input("Fra hvilken by ønsker du at se vejr data?: ")
+            print("fra hvilket tidspunkt ønsker du at se data?: ")
+            tidsIntervalstart = input("start: ")
+            tidsIntervalslut = input("slut: ")
+
+            print()
+            print()
+
+            if Byvalg == "København":
+                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
+                tempVar = True
+            elif Byvalg == "Aalborg":
+                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
+                tempVar = True
+            elif Byvalg == "Odense":
+                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
+                tempVar = True
+            else:
+                print("Vi har intet vejr data for den valgte by - beklager!!")
+                print("Prøv evt. at skrive København, Aalborg eller Odense")
 
 
+        print()
+        print()
 
         print(vejrStation1.getBy())
         print(vejrStation1.getMåling()[0].getTidspunkt())
