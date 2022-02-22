@@ -5,7 +5,7 @@ class VejrStation(object):
         self.adresse = adresse
         self.land = land
         self.måletyper = måletyper
-        self.målinger = målinger
+        self.målinger = målinger  #[] liste af målings objekter
 
     def getBy(self):
         return self.by

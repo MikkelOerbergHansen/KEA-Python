@@ -1,5 +1,5 @@
 from VejrStation import VejrStation
-from Målinger import Målinger
+from Målinger import Måling
 from ExcelReader import ExcelReader
 
 class vejr(object):
@@ -19,11 +19,18 @@ class vejr(object):
         for i in range(1,5):
             print(dataframe[i])
 
+        ###
+        ### datasættet skal konverteres til en liste af målinger
+        ### som kan bruges ved oprettelse af vejrstationer
+        ### 
+
+
+
 
         
-        Måling1 = Målinger(28, 78, 2.5, 285, 1.6, 10.30)
-        Måling2 = Målinger(138, 64, 2.7, 138, 2.1, 10.30)
-        Måling3 = Målinger(100, 75, 2.8, 152, 1.5, 10.30)
+        Måling1 = Måling(28, 78, 2.5, 285, 1.6, 10.30)
+        Måling2 = Måling(138, 64, 2.7, 138, 2.1, 10.30)
+        Måling3 = Måling(100, 75, 2.8, 152, 1.5, 10.30)
 
 
         vejrStation1 = VejrStation("København", "København C", "DK", ["Globalstråling", "RelativFugtighed", "Temperatur", "Vindretning", "Vindhastighed"], Måling1)

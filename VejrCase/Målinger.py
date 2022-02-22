@@ -1,5 +1,5 @@
 
-class Målinger(object):
+class Måling(object):
     def __init__(self, Globalstråling, relativFugtighed, Temperatur, Vindretning, Vindhastighed, Tidspunkt):
         self.Globalstråling = Globalstråling
         self.relativFugtighed = relativFugtighed
