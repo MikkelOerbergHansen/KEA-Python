@@ -1,6 +1,6 @@
 
 
-class snakes():
+class snakes(object):
     def __init__(self):
         self.snakeIN = [30, 56, 88]
         self.snakeOUT = [23, 38, 10]

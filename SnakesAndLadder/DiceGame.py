@@ -9,6 +9,8 @@ class DiceGame (object):
     def __init__(self):
         self.D1= Die()
         self.D2 = Die()
+        self.Snakes = snakes()
+        self.Ladders = ladders()
     
         
      # class play to roll and display values. 
@@ -101,15 +103,17 @@ class DiceGame (object):
 
 
                 else:
-                    if NewPosition in snakes.getSnakeIN():
-                        tempIndex = snakes.getSnakeIN().index(NewPosition)
-                        print("Du Ramte en slange på position {} og mår rykke til position {} -- :( ".format(NewPosition, snakes.getSnakeOUT(tempIndex)))
-                        NewPosition = snakes.getSnakeOUT(tempIndex)
+                    if NewPosition in self.Snakes.getSnakeIN():
+                        tempIndex = self.Snakes.getSnakeIN().index(NewPosition)
+                        print("Du flyttede fra position {} og Ramte en slange på position {} og mår rykke til position {} -- :( ".format(Player.getPosition(), NewPosition, self.Snakes.getSnakeOUT(tempIndex)))
+                        NewPosition = self.Snakes.getSnakeOUT(tempIndex)
+                        Player.setPosition(int(NewPosition))
 
-                    elif NewPosition in ladders.getLadderIN():
-                        tempIndex = ladders.getLadderIN().index(NewPosition)
-                        print("Du ramte en stige på position {} og må rykke ti position {} -- :) ".format(NewPosition, ladders.getLadderOUT(tempIndex)))
-                        NewPosition = ladders.getLadderOUT(tempIndex)
+                    elif NewPosition in self.Ladders.getLadderIN():
+                        tempIndex = self.Ladders.getLadderIN().index(NewPosition)
+                        print("Du flyttede fra position {} og ramte en stige på position {} og må rykke til position {} -- :) ".format(Player.getPosition(), NewPosition, self.Ladders.getLadderOUT(tempIndex)))
+                        NewPosition = self.Ladders.getLadderOUT(tempIndex)
+                        Player.setPosition(int(NewPosition))
 
                     else:
                         print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), NewPosition))
