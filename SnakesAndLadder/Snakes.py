@@ -2,8 +2,8 @@
 
 class snakes():
     def __init__(self):
-        self.snakeIN = []
-        self.snakeOUT = []
+        self.snakeIN = [30, 56, 88]
+        self.snakeOUT = [23, 38, 10]
 
     def getSnakeIN(self):
         return self.snakeIN

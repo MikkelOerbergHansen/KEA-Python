@@ -1,5 +1,7 @@
 from Die import Die
 from player import player
+from Snakes import snakes
+from Ladders import ladders
 
 # DiceGame Class
 class DiceGame (object):
@@ -99,10 +101,21 @@ class DiceGame (object):
 
 
                 else:
-                    print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), NewPosition))
-                    Player.setPosition(int(NewPosition))
-                    print()
-                    print("************next player turn ************")
+                    if NewPosition in snakes.getSnakeIN():
+                        tempIndex = snakes.getSnakeIN().index(NewPosition)
+                        print("Du Ramte en slange på position {} og mår rykke til position {} -- :( ".format(NewPosition, snakes.getSnakeOUT(tempIndex)))
+                        NewPosition = snakes.getSnakeOUT(tempIndex)
+
+                    elif NewPosition in ladders.getLadderIN():
+                        tempIndex = ladders.getLadderIN().index(NewPosition)
+                        print("Du ramte en stige på position {} og må rykke ti position {} -- :) ".format(NewPosition, ladders.getLadderOUT(tempIndex)))
+                        NewPosition = ladders.getLadderOUT(tempIndex)
+
+                    else:
+                        print("{} stod i position: {} og flytter nu til position: {}".format(Player.getName(), Player.getPosition(), NewPosition))
+                        Player.setPosition(int(NewPosition))
+                        print()
+                        print("************next player turn ************")
 
                     ## Error handling for inputs
                     ## input must be empty since it only prompts for next users turn
