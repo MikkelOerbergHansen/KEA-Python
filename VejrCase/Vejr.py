@@ -41,12 +41,16 @@ class vejr(object):
         vejrStation3 = VejrStation("Aalborg", "Aalborg C", "DK", MålingerAA)
 
 
-
         ### Vi byder nu vores bruger velkommen til dettee fantastiske vejr målings informations program
         print()
         print()
         print("Velkommen Til")
-        Byvalg = input("Fra Hvilken By ønsker du at se vejr data?: ")
+        Byvalg = input("Fra hvilken by ønsker du at se vejr data?: ")
+        print("fra hvilket tidspunkt ønsker du at se data?: ")
+        tidsIntervalstart = input("start: ")
+        tidsIntervalslut = input("slut: ")
+
+
 
         print(vejrStation1.getBy())
         print(vejrStation1.getMåling()[0].getTidspunkt())
