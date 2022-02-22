@@ -9,11 +9,11 @@ class ExcelReader(object):
         file = open(Filnavn)
         csvreader = csv.reader(file, delimiter=";")
         header = next(csvreader)
+        header = ["Dato/Tidspunkt", "GlobalStråling", "Relativ Fugtighed", "Temperatur", "Vindretning", "VindHastighed"]
         print(header)
         rows = []
         for row in csvreader:
             rows.append(row)
-        #print(rows)
         file.close()
 
         return rows

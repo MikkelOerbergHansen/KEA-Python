@@ -12,7 +12,7 @@ class vejr(object):
 
         ExcelFilData = ExcelReader()
 
-        dataframe = ExcelFilData.prepareData("VejrDataKøbenhavn.csv")
+        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
 
         print(dataframe[1])
 
