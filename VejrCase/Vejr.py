@@ -12,6 +12,7 @@ class vejr(object):
 
         ExcelFilData = ExcelReader()
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
+
         ###
         ### datasættet skal konverteres til en liste af målinger
         ### som kan bruges ved oprettelse af vejrstationer
@@ -44,11 +45,13 @@ class vejr(object):
         ### Vi byder nu vores bruger velkommen til dettee fantastiske vejr målings informations program
         print()
         print()
+        print("Velkommen Til")
+        print("=============")
+        print()
 
         tempVar = False
         while tempVar == False:
 
-            print("Velkommen Til")
             Byvalg = input("Fra hvilken by ønsker du at se vejr data?: ")
             print("fra hvilket tidspunkt ønsker du at se data?: ")
             tidsIntervalstart = input("start: ")
@@ -58,14 +61,82 @@ class vejr(object):
             print()
 
             if Byvalg == "København":
-                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
                 tempVar = True
+                print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
+
+                for i in range(0,len(vejrStation1.getMålinger())):
+                    if tidsIntervalslut == vejrStation1.getMålinger()[i].getTidspunkt():
+                        indexSlut = i
+                        print(indexSlut)
+
+                    elif tidsIntervalstart == vejrStation1.getMålinger()[i].getTidspunkt():
+                        indexStart = i
+                        print(indexStart)
+
+                    else:
+                        indexStart = 0
+                        indexSlut = 0
+
+                if indexStart == 0 or indexSlut == 0:
+                    print("Det var ikke et gyldigt tidsinterval -- beklager!!")
+                    tempVar = False
+                    print()
+                    
+
+            
             elif Byvalg == "Aalborg":
                 print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
                 tempVar = True
+
+                for i in range(0,len(vejrStation3.getMålinger())):
+                    if tidsIntervalslut == vejrStation3.getMålinger()[i].getTidspunkt():
+                        indexSlut = i
+                        print(indexSlut)
+
+                    elif tidsIntervalstart == vejrStation3.getMålinger()[i].getTidspunkt():
+                        indexStart = i
+                        print(indexStart)
+
+                    else:
+                        indexStart = 0
+                        indexSlut = 0
+
+                if indexStart == 0 or indexSlut == 0:
+                    print("Det var ikke et gyldigt tidsinterval -- beklager!!")
+                    tempVar = False
+                    print()
+
+
+
+
             elif Byvalg == "Odense":
                 print("Du har valgt at se vejr data fra {} i perioden {} - {} ".format(Byvalg, tidsIntervalstart, tidsIntervalslut))
                 tempVar = True
+
+                for i in range(0,len(vejrStation2.getMålinger())):
+                    if tidsIntervalslut == vejrStation2.getMålinger()[i].getTidspunkt():
+                        indexSlut = i
+                        print(indexSlut)
+
+                    elif tidsIntervalstart == vejrStation2.getMålinger()[i].getTidspunkt():
+                        indexStart = i
+                        print(indexStart)
+
+                    else:
+                        indexStart = 0
+                        indexSlut = 0
+
+                if indexStart == 0 or indexSlut == 0:
+                    print("Det var ikke et gyldigt tidsinterval -- beklager!!")
+                    tempVar = False
+                    print()
+
+
+
+
+
+
+
             else:
                 print("Vi har intet vejr data for den valgte by - beklager!!")
                 print("Prøv evt. at skrive København, Aalborg eller Odense")
@@ -75,8 +146,8 @@ class vejr(object):
         print()
 
         print(vejrStation1.getBy())
-        print(vejrStation1.getMåling()[0].getTidspunkt())
-        print(vejrStation1.getMåling()[0].getAllMåling()[0])
+        print(vejrStation1.getMålinger()[0].getTidspunkt())
+        print(vejrStation1.getMålinger()[0].getAllMåling()[0])
 
         #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation1.getBy(), vejrStation1.getMåling().getTidspunkt()))
         #print(vejrStation1.getMåling().getAllMåling())

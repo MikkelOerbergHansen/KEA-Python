@@ -13,7 +13,7 @@ class VejrStation(object):
     def setMåling(self, målingsListe):
         self.målinger = målingsListe
 
-    def getMåling(self):
+    def getMålinger(self):
         return self.målinger
 
 
