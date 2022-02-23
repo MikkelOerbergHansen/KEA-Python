@@ -12,9 +12,6 @@ class VejrStation(object):
     def getBy(self):
         return self.by
 
-    def setMåling(self, målingsListe):
-        self.målinger = målingsListe
-
     def getMålinger(self):
         return self.målinger
 
