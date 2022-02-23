@@ -27,7 +27,7 @@ class VejrStation(object):
         spacing1 = "<br /><br />"
         header2 = "| {0:20} | {1:15} | {2:20} | {3:12} | {4:13} | {5:15} | ".format(self.måletyper[0],self.måletyper[1], self.måletyper[2], self.måletyper[3], self.måletyper[4], self.måletyper[5])
         textblock = header1+spacing1+header2
-        for i in range(1,10):
+        for i in range(0,1409):
             textblock = textblock + spacing1
             tempstring = "| {0:20} | {1:15} | {2:20} | {3:12} | {4:13} | {5:15} | ".format(self.målinger[i].getAllMåling()[0], self.målinger[i].getAllMåling()[1], self.målinger[i].getAllMåling()[2], self.målinger[i].getAllMåling()[3], self.målinger[i].getAllMåling()[4], self.målinger[i].getAllMåling()[5])
             textblock = textblock + tempstring
