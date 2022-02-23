@@ -44,7 +44,7 @@ def København():
                 '<br /><br /><a href="/Aalborg"><button>Se Aalborg</button></a>'
                 ' <a href="/Odense"><button>Se Odense</button></a>'
              '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
-             '<br /><br />' + print("test") )
+             '<br /><br />' + vejrStation1.PrintData2() )
        
 @app.route('/KøbenhavnSenesteDøgn')
 def KøbenhavnSenesteDøgn():
