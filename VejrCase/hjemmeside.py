@@ -28,6 +28,7 @@ def index():
 
 # Decorator for en route så den får adressen http://127.0.0.1:5000/København
 @app.route('/København')
+
 def København():
         ExcelFilData = ExcelReader()
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
@@ -44,7 +45,8 @@ def København():
                 '<br /><br /><a href="/Aalborg"><button>Se Aalborg</button></a>'
                 ' <a href="/Odense"><button>Se Odense</button></a>'
              '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
-             '<br /><br />' + vejrStation1.PrintData2() )
+             '<br /><br />' + vejrStation1.PrintTable())
+             
        
 @app.route('/KøbenhavnSenesteDøgn')
 def KøbenhavnSenesteDøgn():
