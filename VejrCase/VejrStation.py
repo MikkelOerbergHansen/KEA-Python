@@ -36,3 +36,4 @@ class VejrStation(object):
 
 
 
+
