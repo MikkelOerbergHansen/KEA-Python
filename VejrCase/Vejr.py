@@ -82,7 +82,7 @@ class vejr(object):
 
                 if indexStart == 0 or indexSlut == 0:
                     print("Det var ikke et gyldigt tidsinterval -- beklager!!")
-                    print("Tidsintervaller er på formen: 22-02-2022 04:30:00")
+                    print("Tidsintervaller for denne by er på formen: 22-02-2022 04:30:00")
                     print("For København er det tidligst: {} og senest: {}".format(vejrStation1.getMålinger()[len(vejrStation1.getMålinger())-1].getTidspunkt(),vejrStation1.getMålinger()[0].getTidspunkt()))
                     tempVar = False
                     print()
@@ -117,7 +117,7 @@ class vejr(object):
 
                 if indexStart == 0 or indexSlut == 0:
                     print("Det var ikke et gyldigt tidsinterval -- beklager!!")
-                    print("Tidsintervaller er på formen: 22-02-2022 04:30:00")
+                    print("Tidsintervaller for denne by er på formen: 22-02-2022 04:30:00")
                     print("For Aalborg er det tidligst: {} og senest: {}".format(vejrStation3.getMålinger()[len(vejrStation3.getMålinger())-1].getTidspunkt(),vejrStation3.getMålinger()[0].getTidspunkt()))
                     tempVar = False
                     print()
@@ -149,7 +149,7 @@ class vejr(object):
 
                 if indexStart == 0 or indexSlut == 0:
                     print("Det var ikke et gyldigt tidsinterval -- beklager!!")
-                    print("Tidsintervaller er på formen: 22-02-2022 04:30:00")
+                    print("Tidsintervaller for denne by er på formen: 22-02-2022 04:30")
                     print("For Odense er det tidligst: {} og senest: {}".format(vejrStation2.getMålinger()[len(vejrStation2.getMålinger())-1].getTidspunkt(),vejrStation2.getMålinger()[0].getTidspunkt()))
                     tempVar = False
                     print()
