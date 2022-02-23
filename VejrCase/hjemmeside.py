@@ -1,5 +1,5 @@
 # Vi importerer modulet Flask ind i vores Python fil
-from flask import Flask
+from flask import Flask, render_template
 import csv
 from ExcelReader import ExcelReader
 from VejrStation import VejrStation
@@ -38,14 +38,14 @@ def København():
             MålingerKBH.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
         
         vejrStation1 = VejrStation("København", "København C", "DK", MålingerKBH)
-
-
+        
         return( 'Vejret i København er '
                 '<br /><br /><a href="/KøbenhavnSenesteDøgn"><button>Se København Seneste Døgn</button></a>'
                 '<br /><br /><a href="/Aalborg"><button>Se Aalborg</button></a>'
                 ' <a href="/Odense"><button>Se Odense</button></a>'
              '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
-             '<br /><br />')
+             '<br /><br />' + render_template('htmlTable.html'))
+        
              
        
 @app.route('/KøbenhavnSenesteDøgn')

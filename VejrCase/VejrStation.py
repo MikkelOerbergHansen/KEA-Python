@@ -35,15 +35,6 @@ class VejrStation(object):
         
         return textblock
 
-    def readTXT(self):
-        file = open("VejrCase/htmlTable.txt", "r")
-        text  = file.readlines()
-        file.close()
-        return text
-
-    def PrintData3(self, TextListe):
-        Textblock = "sdf"
-
 
 
 
