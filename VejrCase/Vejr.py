@@ -8,7 +8,7 @@ class vejr(object):
         #self.vejrstation = "tom"
         #self.Målinger = "tom"
 
-    def run(self):
+    def runvejr(self):
 
         ExcelFilData = ExcelReader()
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
@@ -163,7 +163,7 @@ class vejr(object):
 
 
 dg = vejr()
-dg.run()
+dg.runvejr()
 
         
 
