@@ -69,13 +69,11 @@ class vejr(object):
                 for i in range(0,len(vejrStation1.getMålinger())):
                     if tidsIntervalslut == vejrStation1.getMålinger()[i].getTidspunkt():
                         indexSlut = i
-                        print(indexSlut)
 
                         for j in range(0,len(vejrStation1.getMålinger())):
 
                             if tidsIntervalstart == vejrStation1.getMålinger()[j].getTidspunkt():
                                 indexStart = j
-                                print(indexStart)
                                 break 
 
                         break
@@ -88,11 +86,8 @@ class vejr(object):
                     print()
 
                 else:
-                    vejrStation1.PrintData(2,4)
-
-                
-                #### Nu skal vi til at printe noget data i det angivne tidinterval 
-                    
+                    vejrStation1.PrintData(indexStart,indexSlut)
+                   
 
             
             elif Byvalg == "Aalborg":
@@ -104,13 +99,12 @@ class vejr(object):
                 for i in range(0,len(vejrStation3.getMålinger())):
                     if tidsIntervalslut == vejrStation3.getMålinger()[i].getTidspunkt():
                         indexSlut = i
-                        print(indexSlut)
+                        
 
                         for j in range(0,len(vejrStation3.getMålinger())):
 
                             if tidsIntervalstart == vejrStation3.getMålinger()[j].getTidspunkt():
                                 indexStart = j
-                                print(indexStart)
                                 break 
 
                         break
@@ -123,7 +117,7 @@ class vejr(object):
                     print()
 
                 else:
-                    vejrStation3.PrintData(2,4)
+                    vejrStation3.PrintData(indexStart,indexSlut)
 
 
 
@@ -136,13 +130,11 @@ class vejr(object):
                 for i in range(0,len(vejrStation2.getMålinger())):
                     if tidsIntervalslut == vejrStation2.getMålinger()[i].getTidspunkt():
                         indexSlut = i
-                        print(indexSlut)
 
                         for j in range(0,len(vejrStation2.getMålinger())):
 
                             if tidsIntervalstart == vejrStation2.getMålinger()[j].getTidspunkt():
                                 indexStart = j
-                                print(indexStart)
                                 break 
 
                         break
@@ -155,7 +147,7 @@ class vejr(object):
                     print()
 
                 else:
-                    vejrStation2.PrintData(2,4)
+                    vejrStation2.PrintData(indexStart,indexSlut)
 
 
 
@@ -167,18 +159,7 @@ class vejr(object):
         print()
         print()
 
-        print(vejrStation1.getBy())
-        print(vejrStation1.getMålinger()[0].getTidspunkt())
-        print(vejrStation1.getMålinger()[0].getAllMåling()[0])
-
-        #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation1.getBy(), vejrStation1.getMåling().getTidspunkt()))
-        #print(vejrStation1.getMåling().getAllMåling())
-        #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation2.getBy(), vejrStation2.getMåling().getTidspunkt()))
-        #print(vejrStation2.getMåling().getAllMåling())
-        #print("Vejr Stationen i {} har klokken {:.2f} målt følgende data: ".format(vejrStation3.getBy(), vejrStation3.getMåling().getTidspunkt()))
-        #print(vejrStation3.getMåling().getAllMåling())
         
-
 
 
 dg = vejr()
