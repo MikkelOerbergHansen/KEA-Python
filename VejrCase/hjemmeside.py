@@ -1,9 +1,5 @@
 # Vi importerer modulet Flask ind i vores Python fil
 from flask import Flask
-from VejrStation import VejrStation
-from Målinger import Måling
-from ExcelReader import ExcelReader
-from Vejr import vejr
 
 # Vi laver en variabel "app" som er en instantiering af klassen Flask
 app = Flask(__name__)

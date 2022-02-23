@@ -159,9 +159,6 @@ class vejr(object):
         print()
         print()
 
-        
-
-
 dg = vejr()
 dg.runvejr()
 
