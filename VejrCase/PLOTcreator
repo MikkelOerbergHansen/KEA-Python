@@ -1,0 +1,83 @@
+from matplotlib.axes import Axes
+from ExcelReader import ExcelReader
+from matplotlib import pyplot as plt
+from Målinger import Måling
+from VejrStation import VejrStation
+
+
+
+ExcelFilData = ExcelReader()
+dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
+del dataframe[0]
+
+MålingerKBH =[]
+for i in range(1, len(dataframe)):
+        MålingerKBH.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
+
+vejrStation1 = VejrStation("København", "København C", "DK", MålingerKBH)
+
+Tidspunkt = []
+GlobalStråling = []
+Rel_Fugtighed = []
+Temperatur = []
+Vindretning = []
+Vindhastighed = []
+
+# for loop for at fylde tomme lister op med data
+for måling in MålingerKBH:
+    Tidspunkt.append(måling.getAllMåling()[0])
+    GlobalStråling.append(måling.getAllMåling()[1])
+    Rel_Fugtighed.append(måling.getAllMåling()[2])
+    Temperatur.append(måling.getAllMåling()[3])
+    Vindretning.append(måling.getAllMåling()[4])
+    Vindhastighed.append(måling.getAllMåling()[5])
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, GlobalStråling)
+ax.set_ylabel('GlobalStråling')
+ax.set_xlabel('Tid')
+# Turn off tick labels
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(GlobalStråling), str(200) ,max(GlobalStråling)]) 
+ax.set_yticklabels([min(GlobalStråling), str(200) ,max(GlobalStråling)]) 
+ax.set_xticks(["21-02-2022 08:00:00", "24-01-2022 00:00:00"]) 
+ax.set_xticklabels(["21-02-2022 08:00:00", "24-01-2022 00:00:00"])                                   
+plt.title("KBH Globalstråling")
+plt.savefig('VejrCase/static/KBH_Globalstråling')
+plt.close()
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Rel_Fugtighed)
+ax.set_ylim(ymin=0, ymax=str(max(Rel_Fugtighed)+100))
+plt.title("KBH Rel_Fugtighed")
+plt.savefig('VejrCase/static/KBH_Rel_Fugtighed')
+plt.close()
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Temperatur)
+ax.set_ylim(ymin=0, ymax=str(max(Temperatur)+100))
+plt.title("KBH Temperatur")
+plt.savefig('VejrCase/static/KBH_Temperatur')
+plt.close()
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Vindretning)
+ax.set_ylim(ymin=0, ymax=str(max(Vindretning)+100))
+plt.title("KBH Vindretning")
+plt.savefig('VejrCase/static/KBH_Vindretning')
+plt.close()
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Vindhastighed)
+ax.set_ylim(ymin=0, ymax=str(max(Vindhastighed)+100))
+plt.title("KBH Vindhastighed")
+plt.savefig('VejrCase/static/KBH_Vindhastighed')
+plt.close()
+
+
+
+
