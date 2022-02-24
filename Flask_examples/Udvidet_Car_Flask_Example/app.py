@@ -50,7 +50,7 @@ car4 = Car('Tesla', '3', 'Rød', True, 70000, 40000, 16.5, ['Nyt batteri'])
 cars = [car1, car2, car3, car4]
 
 # Åbner en csv fil med fil mode "w" så vi kan skrive til filen
-with open('static/cars.csv', mode="w", newline="") as f:
+with open('Flask_examples/Udvidet_Car_Flask_Example/static/cars.csv', mode="w", newline="") as f:
     writer = csv.writer(f, delimiter=",")
     # laver et for loop og skriver vores objekter i listen cars til filen
     for i in cars:
@@ -71,14 +71,14 @@ for car in cars:
 # Matplotlib bar og plot diagram
 plt.bar(car_category, car_price)
 plt.title("Pris på biler")
-plt.savefig('static/cars_price')
+plt.savefig('Flask_examples/Udvidet_Car_Flask_Example/static/cars_price')
 plt.close()
 
 f, ax = plt.subplots(1)
 ax.plot(car_category, car_bonus)
 ax.set_ylim(ymin=0, ymax=5500)
 plt.title("Bonus på biler")
-plt.savefig('static/cars_bonus')
+plt.savefig('Flask_examples/Udvidet_Car_Flask_Example/static/cars_bonus')
 plt.close()
 
 # laver en tom liste som jeg kan putte min Dictionaries ind i
@@ -127,13 +127,13 @@ for x in range(1000):
 
 
 
-    with open('static/carsDict.csv', mode="w", newline="") as f:
+    with open('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv', mode="w", newline="") as f:
         writer = csv.writer(f, delimiter=",")
         for i in carsListDict:
             writer.writerow([i['brand'], i['model'], i['color'], i['onSale'], i['marketPrice'], i['sellingPrice'], i['kmPerLiter'], i['reperationer']])
 
 # Laver en DataFrame med pandas som læser min csv fil
-df = pd.read_csv('static/carsDict.csv')
+df = pd.read_csv('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv')
 
 print(df)
 

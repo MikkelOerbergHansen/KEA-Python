@@ -1,4 +1,4 @@
-Volkswagen,Golf,GrÃ¸n,True,28000,24000,18.1,"['Skifte gearkassen i 2018', 'DÃ¦kskifte til vintersÃ¦son']"
-Toyota,Prius,BlÃ¥,False,50000,40000,15.8,[]
-Ford,Mustang,RÃ¸d,False,44500,30000,16.5,['KlargÃ¸ring til sommersalg']
-Tesla,3,RÃ¸d,True,70000,40000,16.5,['Nyt batteri']
+Volkswagen,Golf,Grøn,True,28000,24000,18.1,"['Skifte gearkassen i 2018', 'Dækskifte til vintersæson']"
+Toyota,Prius,Blå,False,50000,40000,15.8,[]
+Ford,Mustang,Rød,False,44500,30000,16.5,['Klargøring til sommersalg']
+Tesla,3,Rød,True,70000,40000,16.5,['Nyt batteri']
