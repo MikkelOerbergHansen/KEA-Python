@@ -33,7 +33,7 @@ def København():
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
         del dataframe[0]
       
-        return( '<center><h2>København</h2></center> '
+        return( '<center><h1>København</h1></center> '
                 '<br /><br /><a href="/Aalborg"><button>Se Aalborg</button></a>'
                 ' <a href="/Odense"><button>Se Odense</button></a>'
              '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
@@ -49,7 +49,7 @@ def Odense():
         del dataframe[0]
 
       
-        return( '<center><h2>Odense</h2></center> '
+        return( '<center><h1>Odense</h1></center> '
                 '<br /><br /><a href="/Aalborg"><button>Se Aalborg</button></a>'
                 ' <a href="/København"><button>Se København</button></a>'
              '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
@@ -64,7 +64,7 @@ def Aalborg():
         dataframe = ExcelFilData.prepareData("VejrCase/VejrDataAalborg.csv")
         del dataframe[0]
 
-        return( '<center><h2>Aalborg</h2></center> '
+        return( '<center><h1>Aalborg</h1></center> '
                 '<br /><br /><a href="/Odense"><button>Se Odense</button></a>'
                 ' <a href="/København"><button>Se København</button></a>'
              '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
