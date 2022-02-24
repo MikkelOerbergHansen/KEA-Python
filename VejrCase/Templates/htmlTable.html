@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
 <style>
-table, th, td {
+table, th, tr, td {
   border:1px solid black;
 }
 </style>
 <body>
 
-<h2>TR elements define table rows</h2>
+<h2>Vejr Data</h2>
 
 <table style="width:100%">
   <tr>
-    <td>Emil</td>
-    <td>Tobias</td>
-    <td>Linus</td>
+    <td><strong>Tidspunkt</strong></td>
+    <td><strong>GlobalStråling</strong></td>
+    <td><strong>Relativ Fugtighed</strong></td>
+    <td><strong>Temperatur</strong></td>
+    <td><strong>Vindretning</strong></td>
+    <td><strong>Vindhastighed</strong></td>
   </tr>
+  <!-- For loop logic of jinja template -->
+  
+  {%for x in data%}
   <tr>
-    <td>16</td>
-    <td>14</td>
-    <td>10</td>
+  <td>{{x[0]}}</td>
+  <td>{{x[1]}}</td>
+  <td>{{x[2]}}</td>
+  <td>{{x[3]}}</td>
+  <td>{{x[4]}}</td>
+  <td>{{x[5]}}</td>
   </tr>
-</table>
 
-<p>To undestand the example better, we have added borders to the table.</p>
+  {%endfor%}
+
+
+</table>
 
 </body>
 </html>
