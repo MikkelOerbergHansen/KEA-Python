@@ -133,7 +133,8 @@ for x in range(1000):
             writer.writerow([i['brand'], i['model'], i['color'], i['onSale'], i['marketPrice'], i['sellingPrice'], i['kmPerLiter'], i['reperationer']])
 
 # Laver en DataFrame med pandas som læser min csv fil
-df = pd.read_csv('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv')
+df = csv.reader('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv', delimiter=";")
+#df = pd.read_csv('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv')csv.reader(file, delimiter=";")
 
 print(df)
 
@@ -144,5 +145,7 @@ def index():
 # creating a bar plot using x and y coords
        return render_template("index.html", cars=cars)
 
+#host='0.0.0.0', port=9000
+
 if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=9000)
+      app.run()
