@@ -32,18 +32,24 @@ for måling in MålingerKBH:
     Vindretning.append(måling.getAllMåling()[4])
     Vindhastighed.append(måling.getAllMåling()[5])
 
+for i in range(0, len(GlobalStråling)):
+    GlobalStråling[i] = int(GlobalStråling[i])
+
+print(max(GlobalStråling))
+
 
 f, ax = plt.subplots(1)
 ax.plot(Tidspunkt, GlobalStråling)
+ax.set_ylim(ymin=0, ymax=max(GlobalStråling)+10)
 ax.set_ylabel('GlobalStråling')
 ax.set_xlabel('Tid')
 # Turn off tick labels
 ax.set_yticklabels([])
 ax.set_xticklabels([]) 
-ax.set_yticks([min(GlobalStråling), str(200) ,max(GlobalStråling)]) 
-ax.set_yticklabels([min(GlobalStråling), str(200) ,max(GlobalStråling)]) 
-ax.set_xticks(["21-02-2022 08:00:00", "24-01-2022 00:00:00"]) 
-ax.set_xticklabels(["21-02-2022 08:00:00", "24-01-2022 00:00:00"])                                   
+ax.set_yticks([min(GlobalStråling), 200 ,max(GlobalStråling)]) 
+ax.set_yticklabels([min(GlobalStråling), 200 ,max(GlobalStråling)]) 
+ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
+ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])                                   
 plt.title("KBH Globalstråling")
 plt.savefig('VejrCase/static/KBH_Globalstråling')
 plt.close()
