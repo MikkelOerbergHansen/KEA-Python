@@ -1,11 +1,19 @@
-from matplotlib.axes import Axes
+
 from ExcelReader import ExcelReader
 from matplotlib import pyplot as plt
 from Målinger import Måling
 from VejrStation import VejrStation
 
 
-
+################################################################################################################
+################################################################################################################
+##########
+##########
+##########                               PLots For KØBENHAVN
+##########
+##########
+################################################################################################################
+################################################################################################################
 ExcelFilData = ExcelReader()
 dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
 del dataframe[0]
@@ -38,6 +46,15 @@ for i in range(0, len(GlobalStråling)):
 for i in range(0, len(Rel_Fugtighed)):
     Rel_Fugtighed[i] = int(Rel_Fugtighed[i])
 
+
+
+for i in range(0, len(Temperatur)):
+    Temperatur[i] = Temperatur[i].replace(',', '.')
+    Temperatur[i] = float(Temperatur[i])
+
+print(min(Temperatur))
+print(max(Temperatur))
+print(Temperatur)
 
 
 f, ax = plt.subplots(1)
@@ -78,14 +95,17 @@ plt.close()
 
 
 
-
-
 f, ax = plt.subplots(1)
 ax.plot(Tidspunkt, Temperatur)
 ax.set_ylim(ymin=0, ymax=str(max(Temperatur)+100))
 plt.title("KBH Temperatur")
 plt.savefig('VejrCase/static/KBH_Temperatur')
 plt.close()
+
+
+
+
+
 
 f, ax = plt.subplots(1)
 ax.plot(Tidspunkt, Vindretning)
