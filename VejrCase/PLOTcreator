@@ -35,7 +35,9 @@ for måling in MålingerKBH:
 for i in range(0, len(GlobalStråling)):
     GlobalStråling[i] = int(GlobalStråling[i])
 
-print(max(GlobalStråling))
+for i in range(0, len(Rel_Fugtighed)):
+    Rel_Fugtighed[i] = int(Rel_Fugtighed[i])
+
 
 
 f, ax = plt.subplots(1)
@@ -57,10 +59,25 @@ plt.close()
 
 f, ax = plt.subplots(1)
 ax.plot(Tidspunkt, Rel_Fugtighed)
-ax.set_ylim(ymin=0, ymax=str(max(Rel_Fugtighed)+100))
+ax.set_ylim(ymin=0, ymax=max(Rel_Fugtighed)+10)
+ax.set_ylabel('Relativ Fugtighed')
+ax.set_xlabel('Tid')
+# Turn off tick labels
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(Rel_Fugtighed) ,max(Rel_Fugtighed)]) 
+ax.set_yticklabels([min(Rel_Fugtighed) ,max(Rel_Fugtighed)]) 
+ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
+ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])   
 plt.title("KBH Rel_Fugtighed")
 plt.savefig('VejrCase/static/KBH_Rel_Fugtighed')
 plt.close()
+
+
+
+
+
+
 
 
 f, ax = plt.subplots(1)
