@@ -18,7 +18,7 @@ def index():
     # <a href="">    </a> er et link
     # <button>    </button> er en knap
         return(
-            'Velkommen til vejrdata.<br /><br />'
+            '<h2>Velkommen til vejrdata</h2><br /><br />'
             'Tryk på en af byerne for at se vejret i byen.<br /><br />'
             '<a href="/København"><button>København</button></a>' +
             ' <a href="/Odense"><button>Odense</button></a>' +
