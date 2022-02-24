@@ -145,7 +145,7 @@ def index():
 # creating a bar plot using x and y coords
        return render_template("index.html", cars=cars)
 
-#host='0.0.0.0', port=9000
+#host='0.0.0.0', port=9000 Remode from run() function
 
 if __name__ == '__main__':
       app.run()

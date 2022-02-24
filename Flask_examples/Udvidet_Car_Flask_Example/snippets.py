@@ -34,23 +34,23 @@ for uv2 in data.values():
     print(uv2)
 
 # Tekstfiler
-f = open('fil.txt', 'w+')
+f = open('Flask_examples/Udvidet_Car_Flask_Example/static/fil.txt', 'w+')
 f.write('Indhold i filen')
 f.close()
 
-f = open('fil.txt', 'r')
+f = open('Flask_examples/Udvidet_Car_Flask_Example/static/fil.txt', 'r')
 indhold = f.read()
 print(indhold)
 
 # CSV filer
 # importer modulet csv
 import csv
-with open('static/test.csv', mode="w", newline="") as f:
+with open('Flask_examples/Udvidet_Car_Flask_Example/static/test.csv', mode="w", newline="") as f:
     writer = csv.writer(f, delimiter=",")
     writer.writerow( ["Name", "City"])
     writer.writerow( ["Mikkel", "Nørrebro"])
 
-with open("static/test.csv", mode="r") as f:
+with open("Flask_examples/Udvidet_Car_Flask_Example/static/test.csv", mode="r") as f:
     reader = csv.reader(f, delimiter=",")
     for row in reader:
         print(row)
@@ -77,7 +77,7 @@ print(df)
 from matplotlib import pyplot as plt
 plt.plot([1,2,3])
 # brug savefig() til at gemme som png
-plt.savefig('static/myfig')
+plt.savefig('Flask_examples/Udvidet_Car_Flask_Example/static/myfig')
 plt.close()
 
 # En anden model
@@ -87,5 +87,5 @@ plt.plot(x, y, "bo-")       # creates a blue solid line with circle
 plt.title("World Population Over Time")
 plt.xlabel("Year")
 plt.ylabel("Population (billions)")
-plt.savefig('static/population')
+plt.savefig('Flask_examples/Udvidet_Car_Flask_Example/static/population')
 plt.close()
