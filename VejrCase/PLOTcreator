@@ -2,7 +2,7 @@
 from ExcelReader import ExcelReader
 from matplotlib import pyplot as plt
 from Målinger import Måling
-from VejrStation import VejrStation
+
 
 
 ################################################################################################################
@@ -21,8 +21,6 @@ del dataframe[0]
 MålingerKBH =[]
 for i in range(1, len(dataframe)):
         MålingerKBH.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
-
-vejrStation1 = VejrStation("København", "København C", "DK", MålingerKBH)
 
 Tidspunkt = []
 GlobalStråling = []
@@ -61,7 +59,7 @@ for i in range(0, len(Vindhastighed)):
 
 f, ax = plt.subplots(1)
 ax.plot(Tidspunkt, GlobalStråling)
-ax.set_ylim(ymin=0, ymax=max(GlobalStråling)+10)
+ax.set_ylim(ymin=0-5, ymax=max(GlobalStråling)+10)
 ax.set_ylabel('GlobalStråling')
 ax.set_xlabel('Tid')
 # Turn off tick labels
@@ -142,6 +140,84 @@ ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])
 plt.title("KBH Vindhastighed")
 plt.savefig('VejrCase/static/KBH_Vindhastighed')
 plt.close()
+
+
+
+
+
+
+##########################################################################################################################
+##########################################################################################################################
+##
+##
+##                                               PLot for Odense
+##
+##
+##########################################################################################################################
+##########################################################################################################################
+
+
+ExcelFilData = ExcelReader()
+dataframe = ExcelFilData.prepareData("VejrCase/VejrDataOdense.csv")
+del dataframe[0]
+
+
+
+MålingerOD =[]
+for i in range(1, len(dataframe)):
+        MålingerOD.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
+
+Tidspunkt = []
+GlobalStråling = []
+Rel_Fugtighed = []
+Temperatur = []
+Vindretning = []
+Vindhastighed = []
+
+# for loop for at fylde tomme lister op med data
+for måling in MålingerOD:
+    Tidspunkt.append(måling.getAllMåling()[0])
+    GlobalStråling.append(måling.getAllMåling()[1])
+    Rel_Fugtighed.append(måling.getAllMåling()[2])
+    Temperatur.append(måling.getAllMåling()[3])
+    Vindretning.append(måling.getAllMåling()[4])
+    Vindhastighed.append(måling.getAllMåling()[5])
+
+
+for i in range(0, len(GlobalStråling)):
+    GlobalStråling[i] = int(GlobalStråling[i])
+
+for i in range(0, len(Rel_Fugtighed)):
+    Rel_Fugtighed[i] = int(Rel_Fugtighed[i])
+
+for i in range(0, len(Temperatur)):
+    Temperatur[i] = Temperatur[i].replace(',', '.')
+    Temperatur[i] = float(Temperatur[i])
+
+for i in range(0, len(Vindretning)):
+    Vindretning[i] = int(Vindretning[i])
+
+for i in range(0, len(Vindhastighed)):
+    Vindhastighed[i] = Vindhastighed[i].replace(',', '.')
+    Vindhastighed[i] = float(Vindhastighed[i])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
