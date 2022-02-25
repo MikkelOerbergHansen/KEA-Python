@@ -90,10 +90,11 @@ def Grafer():
                 '<br /><br /><a href="/Odense"><button>Se Odense</button></a>'
                 ' <a href="/København"><button>Se København</button></a>'
                 ' <a href="/Aalborg"><button>Aalborg</button></a>'
-             '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
-             '<br /><br /><h2>Grafer for København</h2>'
-             '<br /><br /><h2>Grafer for Odense</h2>'
-             '<br /><br /><h2>Grafer for Aalborg</h2>') 
+                '<br /><br /><a href="/"><button>Tilbage til forsiden</button></a>'
+                '<br /><br /><h2>Grafer for København</h2>'
+                '<br /><br />' + render_template('plotKBH.html') +
+                '<br /><br /><h2>Grafer for Odense</h2>'
+                '<br /><br /><h2>Grafer for Aalborg</h2>') 
 
 
 
