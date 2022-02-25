@@ -94,7 +94,9 @@ def Grafer():
                 '<br /><br /><h2>Grafer for København</h2>'
                 '<br /><br />' + render_template('plotKBH.html') +
                 '<br /><br /><h2>Grafer for Odense</h2>'
-                '<br /><br /><h2>Grafer for Aalborg</h2>') 
+                '<br /><br />' + render_template('plotOD.html') +
+                '<br /><br /><h2>Grafer for Aalborg</h2>'
+                '<br /><br />' + render_template('plotAA.html')) 
 
 
 
