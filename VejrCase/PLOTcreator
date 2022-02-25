@@ -205,6 +205,88 @@ for i in range(0, len(Vindhastighed)):
 
 
 
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, GlobalStråling)
+ax.set_ylim(ymin=0-5, ymax=max(GlobalStråling)+10)
+ax.set_ylabel('GlobalStråling')
+ax.set_xlabel('Tid')
+# Turn off tick labels
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(GlobalStråling), 200 ,max(GlobalStråling)]) 
+ax.set_yticklabels([min(GlobalStråling), 200 ,max(GlobalStråling)]) 
+ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
+ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])                                   
+plt.title("Odense Globalstråling")
+plt.savefig('VejrCase/static/OD_Globalstråling')
+plt.close()
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Rel_Fugtighed)
+ax.set_ylim(ymin=0, ymax=max(Rel_Fugtighed)+10)
+ax.set_ylabel('Relativ Fugtighed')
+ax.set_xlabel('Tid')
+# Turn off tick labels
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(Rel_Fugtighed) ,max(Rel_Fugtighed)]) 
+ax.set_yticklabels([min(Rel_Fugtighed) ,max(Rel_Fugtighed)]) 
+ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
+ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])   
+plt.title("Odense Rel_Fugtighed")
+plt.savefig('VejrCase/static/OD_Rel_Fugtighed')
+plt.close()
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Temperatur)
+ax.set_ylim(ymin=min(Temperatur)-5, ymax=max(Temperatur)+10)
+ax.set_ylabel('Temperatur')
+ax.set_xlabel('Tid')
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(Temperatur) ,max(Temperatur)]) 
+ax.set_yticklabels([min(Temperatur) ,max(Temperatur)]) 
+ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
+ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])  
+plt.title("Odense Temperatur")
+plt.savefig('VejrCase/static/OD_Temperatur')
+plt.close()
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Vindretning)
+ax.set_ylim(ymin=min(Vindretning)-10, ymax=max(Vindretning)+10)
+ax.set_ylabel('Vindretning')
+ax.set_xlabel('Tid')
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(Vindretning) ,max(Vindretning)]) 
+ax.set_yticklabels([min(Vindretning) ,max(Vindretning)]) 
+ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
+ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])  
+plt.title("Odense Vindretning")
+plt.savefig('VejrCase/static/OD_Vindretning')
+plt.close()
+
+
+f, ax = plt.subplots(1)
+ax.plot(Tidspunkt, Vindhastighed)
+ax.set_ylim(ymin=min(Vindhastighed)-5, ymax=max(Vindhastighed)+10)
+ax.set_ylabel('Vindhastighed')
+ax.set_xlabel('Tid')
+ax.set_yticklabels([])
+ax.set_xticklabels([]) 
+ax.set_yticks([min(Vindhastighed) ,max(Vindhastighed)]) 
+ax.set_yticklabels([min(Vindhastighed) ,max(Vindhastighed)]) 
+ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
+ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"]) 
+plt.title("Odense Vindhastighed")
+plt.savefig('VejrCase/static/OD_Vindhastighed')
+plt.close()
+
+
 
 
 
