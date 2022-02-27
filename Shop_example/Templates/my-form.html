@@ -5,20 +5,50 @@ h1{
   border-width: 7px;
   border-color: coral;
 }
+form{
+  width: 50%;
+}
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 25%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
 </style>
 <body>
 
+
 <h1 style="text-align: center;">Velkommen til fp-shop</h1>
 <br /><br />
-<form method="POST" style="text-align: center; border: solid;">
+<form method="POST" style="text-align: center; border: inset coral;">
     
     <strong>Brugernavn: </strong>
     <br /><br />
-    <input name="text">
+    <input type = "text" name="text" placeholder="Your name..">
     <br /><br />
     <strong>Password:   </strong>
     <br /><br />
-    <input name="text2">
+    <input type = "text" name="text2" placeholder="Your password..">
     <br /><br />
     <input type="submit" name="log_in" value="login" />
     
@@ -27,3 +57,9 @@ h1{
 
 </body>
 </html>
+
+
+
+
+
+
