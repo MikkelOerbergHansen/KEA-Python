@@ -18,6 +18,19 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
+input[type=password], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+
 input[type=submit] {
   width: 25%;
   background-color: #4CAF50;
@@ -40,6 +53,7 @@ input[type=submit]:hover {
 
 <h1 style="text-align: center;">Velkommen til fp-shop</h1>
 <br /><br />
+<div align = "center">
 <form method="POST" style="text-align: center; border: inset coral;">
     
     <strong>Brugernavn: </strong>
@@ -48,12 +62,12 @@ input[type=submit]:hover {
     <br /><br />
     <strong>Password:   </strong>
     <br /><br />
-    <input type = "text" name="text2" placeholder="Your password..">
+    <input type = "password" name="text2" placeholder="Your password..">
     <br /><br />
     <input type="submit" name="log_in" value="login" />
     
 </form>
-
+</div>
 
 </body>
 </html>
