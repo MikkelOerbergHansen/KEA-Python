@@ -1,24 +1,33 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/')
-def my_form():
-    return render_template('my-form.html')
+@app.route('/', methods=['GET', 'POST'])
+def login():
+        error = None
+        if request.method == 'POST':
+            if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+                error = 'Invalid Credentials. Please try again.'
+            else:
+                return redirect('/startside')
+        return render_template('my-form.html', error=error)
 
-@app.route('/', methods=['POST'])
-def my_form_post():
-    text = request.form['text']
-    processed_text = text.upper()
-    text2 = request.form['text2']
-    return ('welcome ' + processed_text + '<br /><br />' +
-            'your password is ' + text2 + '<br /><br />' + 
-            '<a href="/salesPage"><button>start shopping</button></a>')
+
+
+
+@app.route('/startside')
+def Profile():
+    return ('dette er en startside efter succesfuldt log in')
+
+@app.route('/NyBruger')
+def NyBruger():
+    return ('Ny Bruger')
+
 
 
 @app.route('/salesPage')
 def salesPage():
-    return ('welcome to the shooping page')
+    return ('welcome to the shopping page')
 
 
 
