@@ -25,9 +25,9 @@ def NyBruger():
 
 
 
-@app.route('/salesPage')
+@app.route('/ekstraSide')
 def salesPage():
-    return ('welcome to the shopping page')
+    return ('Dette er en ekstra side der ikke er i brug nu')
 
 
 
