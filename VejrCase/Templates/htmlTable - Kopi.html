@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, tr, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Vejr Data</h2>
+
+<table style="width:100%">
+  <tr>
+    <td><strong>Tidspunkt</strong></td>
+    <td><strong>GlobalStråling: W/m2</strong></td>
+    <td><strong>Relativ Fugtighed: %</strong></td>
+    <td><strong>Temperatur: Celcius</strong></td>
+    <td><strong>Vindretning: Grader - hvor 0 er stik nord</strong></td>
+    <td><strong>Vindhastighed: m/s</strong></td>
+  </tr>
+  <!-- For loop logic of jinja template -->
+  
+  {%for x in data%}
+  <tr>
+  <td>{{x[0]}}</td>
+  <td>{{x[1]}}</td>
+  <td>{{x[2]}}</td>
+  <td>{{x[3]}}</td>
+  <td>{{x[4]}}</td>
+  <td>{{x[5]}}</td>
+  </tr>
+
+  {%endfor%}
+
+
+</table>
+
+</body>
+</html>
