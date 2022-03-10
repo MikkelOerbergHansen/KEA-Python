@@ -16,3 +16,9 @@ class Pizza(object):
 
     def getName(self):
         return self.Name
+
+    def __str__(self):
+        PizzaString = self.Id + "\n" + self.Name + "\n" + "tomat, ost"
+        for topping in self.toppings:
+            PizzaString = PizzaString + ", " + topping
+        return PizzaString
