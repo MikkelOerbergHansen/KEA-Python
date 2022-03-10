@@ -24,7 +24,7 @@ class MenuKort(object):
             randInt = random.randint(0, len(ExtraToppings)-1)
             ToppingList.append(ExtraToppings[randInt])
             del ExtraToppings[randInt]
-            NewPizza = MYpizza(i, "NewPizza" + str(i), ToppingList, 50)
+            NewPizza = MYpizza(i, "Pizza" + str(i), ToppingList, 50)
             PizzaList.append(NewPizza)
             ToppingList = ["Tomat", "Ost"]
         return PizzaList
