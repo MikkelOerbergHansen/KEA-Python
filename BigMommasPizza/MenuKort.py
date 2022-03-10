@@ -1,5 +1,6 @@
-from Pizza import *
+from Pizza import MYpizza
 from TakeOrder import *
+import random
 
 
 
@@ -10,23 +11,34 @@ class MenuKort(object):
         self.PizzaCatalog = []
         self.TakeOrderCatalog=[]
 
+
+
+
+
+    def MakeRandomPizzas(self):
+        PizzaList = []
+        StaticToppings = ["Tomat", "Ost"]
+        ExtraToppings = ["Annanas", "Skinke", "Pepperoni", "Champignon", "Løg", "Dressing", "Salat", "Bacon"]
+        ToppingList = StaticToppings
+        for i in range(1,10):
+            randInt = random.randint(0, len(ExtraToppings)-1)
+            ToppingList.append(ExtraToppings[randInt])
+            NewPizza = MYpizza(i, "NewPizza" + i, ToppingList, 50)
+            PizzaList.append(NewPizza)
+        return PizzaList
+
+
+
+
     def MakeMenuKort(self):
-        self.PizzaCatalog = MakeRandomPizzas()
+        self.PizzaCatalog = self.MakeRandomPizzas()
 
-        print()
-
-
-    
 
     def ShowMenuKort(self):
         for pizza in self.PizzaCatalog:
             print(pizza)
 
-    def MakeRandomPizzas(self):
-        StaticToppings = ["Tomat", "Ost"]
-        ExtraToppings = ["Annanas", "Skinke", "Pepperoni", "Champignon", "Løg", "Dressing", "Salat", "Bacon"]
-        PizzaList = []
-        return PizzaList
+    
 
 
 

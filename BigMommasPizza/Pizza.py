@@ -1,10 +1,8 @@
 from TakeOrder import *
-from MenuKort import *
 
 
 
-
-class Pizza(object):
+class MYpizza(object):
     def __init__(self,id,name,toppings,price):
         self.Id = id
         self.Name = name

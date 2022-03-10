@@ -1,4 +1,4 @@
-from Pizza import *
+from Pizza import MYpizza
 from TakeOrder import *
 from MenuKort import *
 
