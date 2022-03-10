@@ -19,7 +19,6 @@ def testrun():
 
 
 def run():
-    print( "\nVelkommen Til Big Mommas Pizza !!! \n")
     Menu = MenuKort()
     Menu.AddPizza("Margherita",["Tomat", "Ost"], 69)
     Menu.AddPizza("Vesuvio",["Tomat", "Ost","skinke"], 75)
@@ -61,38 +60,61 @@ def run():
                 NyOrdre = ""
             elif NyOrdre == "F":
                 break
-
-        ### instantier ordrene som objekter baseret på de gemte input OrderList
-            
+        
 
 
-    print("Q = Quit")
-    print("Vil du se MenuKortet ? \n")
-    BrugerSvar = input("y = yes eller n = no\n>>>> " )
-    tempSvar = False
-    while tempSvar == False:
-        if BrugerSvar == "y":
-            Menu.ShowMenuKort()
-            tempSvar = True
-            print("\nVi er Klar til at tage din ordre")
-            tagOrdre()
-        elif BrugerSvar == "n":
-            print("\nVi er Klar til at tage din ordre")
-            tempSvar = True
-            tagOrdre()
-        elif BrugerSvar == "Q":
-            print("Tak For Besøget")
-            tempSvar = True
-            exit
-        else:
-            print("\nDet Forstår vi ikke")
-            BrugerSvar = input("y = yes eller n = no\n>>>> ")
-            tempSvar = False
+        print("- indtast venligst dit navn:")
+        navn = input(">>>> ")
+        print("- Ønsker du takeaway? \n tast y = yes eller n = no ")
+        inputGood= False
+        while inputGood == False:
+            takeaway = input(">>>> ")
+            if takeaway == "y":
+                takeaway = True
+                inputGood= True
+            elif takeaway == "n":
+                takeaway = False
+                inputGood= True
+            else:
+                inputGood= False
 
-    ##### tag imod ordre
-    #NyOrdre = input(">>>> ")
+        
+        Menu.AddOrder(OrderList, navn, takeaway)
+        ordreID = len(Menu.TakeOrderCatalog)
+        print(ordreID)
+        print(Menu.TakeOrderCatalog[ordreID-1])
+
+        return True
 
 
+
+    tempVar = False
+    while tempVar == False:
+
+        print( "\nVelkommen Til Big Mommas Pizza !!! \n")
+        print("Q = Quit")
+        print("Vil du se MenuKortet ? \n")
+        BrugerSvar = input("y = yes eller n = no\n>>>> " )
+        
+        tempSvar = False
+        while tempSvar == False:
+            if BrugerSvar == "y":
+                Menu.ShowMenuKort()
+                print("\nVi er Klar til at tage din ordre")
+                tempSvar = tagOrdre()
+            elif BrugerSvar == "n":
+                print("\nVi er Klar til at tage din ordre")
+                tempSvar = tagOrdre()
+            elif BrugerSvar == "Q":
+                print("Tak For Besøget")
+                tempSvar = True
+                for order in Menu.TakeOrderCatalog:
+                    print(order)
+                exit
+            else:
+                print("\nDet Forstår vi ikke")
+                BrugerSvar = input("y = yes eller n = no\n>>>> ")
+                tempSvar = False
 
 
 
