@@ -33,8 +33,6 @@ class MenuKort(object):
 
     def AddPizza(self, name, topping, pris):
         ToppingList = topping
-        ToppingList.insert(0, "tomat")
-        ToppingList.insert(1, "ost")
         newPizza = MYpizza(len(self.PizzaCatalog)+1, name, ToppingList ,pris )
         self.PizzaCatalog.append(newPizza)
 
@@ -47,10 +45,10 @@ class MenuKort(object):
 
 
     def ShowMenuKort(self):
-        print("\n========================================================\n")
+        print("\n===================================================================================================\n")
         for pizza in self.PizzaCatalog:
             print(pizza)
-        print("\n========================================================\n")
+        print("\n===================================================================================================\n")
 
     
 
