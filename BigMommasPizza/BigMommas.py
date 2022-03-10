@@ -9,10 +9,10 @@ def testrun():
     Menu.ShowMenuKort()
 
 
-    Menu.AddOrder([6], "mikkel", True)
+    Menu.AddOrder([6], "Hans Olo", True)
     print(Menu.TakeOrderCatalog[0])
 
-    Menu.AddOrder([3,6], "mikkel", True)
+    Menu.AddOrder([3,6], "Flot fyr", True)
 
     for order in Menu.TakeOrderCatalog:
         print(order)
