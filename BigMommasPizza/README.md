@@ -48,7 +48,7 @@ Når systemet kører er "flowet" således:
 - Ved afslutning af systemet printes det fulde ordre katalog og systemet er derefter klar til en ny dag. 
 
 
-## To-DO
+## TO-DO
 ---------
 Da systemet er en prototype kan der i den grad stadig tilføres megen funktionalitet.
 - hjemmeside: så kunder selv kan benytte systemet ellers skulle de benytte en in-shop maskine til at foretage bestillingen
