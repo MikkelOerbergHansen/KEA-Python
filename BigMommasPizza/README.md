@@ -21,6 +21,7 @@ Systemet er baseret på object orienteret programmering, og indeholder 3 filer m
     - Klassen har en metode til at udregne ordrens fulde pris, og en metode til at printe en kvittering for ordren
     - et objekt af denne type oprettes via MenuKortets tilføj ordre metode og samtlige ordrer der er indgivet i systemet er gemt i MenuKortets ordre-katalog. 
     - Funktionaliteten for denne klasse er derfor primært at holde styr på relevant info for hver ordre og at udskrive kvittering 
+    - ved print af kvittering benyttes modulet datetime til at få dags dato. 
 
 - Pizza
     - Pizza klassen indeholder de relevante oplysnionger for hver pizza. Herunder pris, topping, navn og bestillings nr. 
