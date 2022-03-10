@@ -1,4 +1,4 @@
-from Pizza import MYpizza
+
 from TakeOrder import *
 import random
 
@@ -22,8 +22,9 @@ class MenuKort(object):
         ToppingList = StaticToppings
         for i in range(1,10):
             randInt = random.randint(0, len(ExtraToppings)-1)
-            ToppingList.append(ExtraToppings[randInt])
-            NewPizza = MYpizza(i, "NewPizza" + i, ToppingList, 50)
+            print(randInt)
+            #ToppingList.append(ExtraToppings[randInt])
+            NewPizza = MYpizza(i, "NewPizza" + str(i), ToppingList, 50)
             PizzaList.append(NewPizza)
         return PizzaList
 
