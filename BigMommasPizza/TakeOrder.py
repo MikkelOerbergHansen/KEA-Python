@@ -1,5 +1,3 @@
-from Pizza import MYpizza
-from MenuKort import MenuKort
 
 
 
@@ -10,7 +8,8 @@ class TakeOrder(object):
         self.name = name
         self.ToGo = toGo
         self.TotalPrice = self.CalculatePrice()
-        
+
+
     def CalculatePrice(self):
         totalPrice = 0
         for pizza in self.Pizzas:
@@ -21,11 +20,13 @@ class TakeOrder(object):
     def __str__(self):
         PizzaString = ""
         for pizza in self.Pizzas:
-            PizzaString = PizzaString + "\n" + " {0:20} kr: {1:10} ".format(pizza.getName() , pizza.getPrice()) 
+            PizzaString = PizzaString + "\n" + " {0:40} kr: {1:2} ".format(pizza.getName() , pizza.getPrice()) 
         PizzaString = PizzaString + "\n" + "========================================================"
 
-        return str("Order number: " + self.OrderId + "\n" +
+        return str("Order number: " + str(self.OrderId) + "\n" +
                     "for " + self.name + "\n" + 
-                    "takeAway: " + self.ToGo + "\n" + 
+                    "takeAway: " + str(self.ToGo) + "\n" + 
                     PizzaString + "\n" + 
-                    "Total Price: " + self.TotalPrice + "Kr." + "\n")
+                    "Total Price: " + "{0:33}{1:4}Kr".format("",str(self.TotalPrice)) + "\n")
+
+

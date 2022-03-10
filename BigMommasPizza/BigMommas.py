@@ -1,12 +1,21 @@
-from TakeOrder import TakeOrder
+
 from MenuKort import MenuKort
 
 
 
 Menu = MenuKort()
-#Menu.MakeMenuKort()
+Menu.MakeMenuKort()
 Menu.AddPizza("Meat Lovers Pizza",["skinke","pepperoni","kebab","cocktail-Pølser"], 80)
 Menu.ShowMenuKort()
+
+
+Menu.AddOrder([6], "mikkel", True)
+print(Menu.TakeOrderCatalog[0])
+
+Menu.AddOrder([3,6], "mikkel", True)
+
+for order in Menu.TakeOrderCatalog:
+    print(order)
 
 
 

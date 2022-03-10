@@ -1,5 +1,6 @@
 
 
+from TakeOrder import TakeOrder
 from Pizza import MYpizza
 import random
 
@@ -11,9 +12,6 @@ class MenuKort(object):
         
         self.PizzaCatalog = []
         self.TakeOrderCatalog=[]
-
-
-
 
 
     def MakeRandomPizzas(self):
@@ -39,6 +37,13 @@ class MenuKort(object):
         ToppingList.insert(1, "ost")
         newPizza = MYpizza(len(self.PizzaCatalog)+1, name, ToppingList ,pris )
         self.PizzaCatalog.append(newPizza)
+
+    def AddOrder(self, pizzanumber, name, togo):
+        PizzaList = []
+        for number in pizzanumber:
+            PizzaList.append(self.PizzaCatalog[number-1])
+        order = TakeOrder(len(self.TakeOrderCatalog)+1, PizzaList, name, togo)
+        self.TakeOrderCatalog.append(order)
 
 
     def ShowMenuKort(self):
