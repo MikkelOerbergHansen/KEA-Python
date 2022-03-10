@@ -16,7 +16,7 @@ class MYpizza(object):
         return self.Name
 
     def __str__(self):
-        PizzaString = str(self.Id) + "\n" + self.Name + "\n"
+        PizzaString = str(self.Id) + "\n" + self.Name + "\n" + " - "
         for topping in self.toppings:
-            PizzaString = PizzaString + " - " + topping
+            PizzaString = PizzaString + topping + ", "
         return PizzaString

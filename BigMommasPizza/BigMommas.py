@@ -1,5 +1,5 @@
-from TakeOrder import *
-from MenuKort import *
+from TakeOrder import TakeOrder
+from MenuKort import MenuKort
 
 
 print( "\nVelkommen Til Big Mommas Pizza !!! \n")

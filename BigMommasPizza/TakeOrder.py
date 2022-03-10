@@ -1,5 +1,5 @@
-from Pizza import *
-from MenuKort import *
+from Pizza import MYpizza
+from MenuKort import MenuKort
 
 
 
