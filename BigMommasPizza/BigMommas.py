@@ -1,4 +1,4 @@
-
+import sys
 from MenuKort import MenuKort
 
 
@@ -106,11 +106,11 @@ def run():
                 print("\nVi er Klar til at tage din ordre")
                 tempSvar = tagOrdre()
             elif BrugerSvar == "Q":
-                print("Tak For Besøget")
+                print("Tak For Besøget\n")
                 tempSvar = True
                 for order in Menu.TakeOrderCatalog:
                     print(order)
-                exit
+                sys.exit()
             else:
                 print("\nDet Forstår vi ikke")
                 BrugerSvar = input("y = yes eller n = no\n>>>> ")
@@ -128,4 +128,4 @@ if choice == str(1):
 elif choice == str(2):
     run()
 else:
-    exit
+    sys.exit()
