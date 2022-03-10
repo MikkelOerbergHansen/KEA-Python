@@ -31,10 +31,11 @@ class TakeOrder(object):
                     "{0:33} {1:22} {2:30} ".format("", "tlf: 40 12 40 03", "") + "\n" +
                     "{0:36} {1:22} {2:30} ".format("", datetime.today().strftime('%d-%m-%Y'), "") + "\n" + "\n" +
                     "Order number: " + str(self.OrderId) + "\n" +
-                    "for " + self.name + "\n" + 
+                    "navn: " + self.name + "\n" + 
                     "takeAway: " + str(self.ToGo) + "\n" + 
                     PizzaString + "\n" + 
-                    "Total Price: " + "{0:33}{1:4}Kr".format("",str(self.TotalPrice)) + "\n" + "\n" +
+                    "{0:44} {1:>6.2f} {2:3}".format("Total Price:", float(self.TotalPrice), "Kr.") + "\n" +
+                    "{0:44} {1:>6.2f} {2:3}".format("25% moms udgør", self.TotalPrice*0.25, "Kr.") + "\n" + "\n" +
                     "{0:35} {1:22} {2:30}".format("","CVR: 39405016 ", "")  + "\n" +
                     "{0:34} {1:22} {2:30}".format("","Tak For Besøget ", "")  + "\n" +
                     "****************************************************************************************************")
