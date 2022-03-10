@@ -1,4 +1,4 @@
-
+from datetime import datetime
 
 
 class TakeOrder(object):
@@ -22,17 +22,21 @@ class TakeOrder(object):
         for pizza in self.Pizzas:
             PizzaString = PizzaString + "\n" + " {0:40} kr: {1:2} ".format(pizza.getName() , pizza.getPrice()) 
         PizzaString = PizzaString + "\n" + "========================================================"
+        
 
         return str("****************************************************************************************************\n" +
                     "{0:30} {1:22} {2:30} ".format("", "BIG MOMMAS GASTRONOMIA", "") + "\n" +
                     "{0:32} {1:22} {2:30} ".format("", "Frederikværksgade 4", "") + "\n" +
                     "{0:35} {1:22} {2:30} ".format("", "3400 Hillerød", "") + "\n" +
                     "{0:33} {1:22} {2:30} ".format("", "tlf: 40 12 40 03", "") + "\n" +
+                    "{0:36} {1:22} {2:30} ".format("", datetime.today().strftime('%d-%m-%Y'), "") + "\n" + "\n" +
                     "Order number: " + str(self.OrderId) + "\n" +
                     "for " + self.name + "\n" + 
                     "takeAway: " + str(self.ToGo) + "\n" + 
                     PizzaString + "\n" + 
-                    "Total Price: " + "{0:33}{1:4}Kr".format("",str(self.TotalPrice)) + "\n" + 
+                    "Total Price: " + "{0:33}{1:4}Kr".format("",str(self.TotalPrice)) + "\n" + "\n" +
+                    "{0:35} {1:22} {2:30}".format("","CVR: 39405016 ", "")  + "\n" +
+                    "{0:34} {1:22} {2:30}".format("","Tak For Besøget ", "")  + "\n" +
                     "****************************************************************************************************")
 
 
