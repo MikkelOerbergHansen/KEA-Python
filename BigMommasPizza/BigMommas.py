@@ -41,8 +41,32 @@ def run():
     Menu.AddPizza("sole",["Tomat", "Ost","skinke", "bacon", "æg"], 78)
     Menu.AddPizza("Big Mamma",["Tomat", "Gorgonzola","rejer", "Asparges", "parma skinke"], 90)
 
+    def tagOrdre():
+        OrderList = []
+        print("- indtast nummer på den ønskede pizza og tryk enter")
+        print("- afslut din ordre ved at trykke F = finish ")
+        NyOrdre = ""
+        while NyOrdre == "":
+            NyOrdre = input(">>>> ")
+            if NyOrdre != "F":
+                try:
+                    NyOrdre = int(NyOrdre)
+                    if NyOrdre > 0 and NyOrdre < len(Menu.PizzaCatalog)+1:
+                        OrderList.append(NyOrdre)
+                    else:
+                        print("Den Ønskede Pizza findes ikke på menukortet")
+                        NyOrdre = ""
+                except ValueError:
+                    print("That's not an int!")
+                NyOrdre = ""
+            elif NyOrdre == "F":
+                break
+
+        ### instantier ordrene som objekter baseret på de gemte input OrderList
+            
 
 
+    print("Q = Quit")
     print("Vil du se MenuKortet ? \n")
     BrugerSvar = input("y = yes eller n = no\n>>>> " )
     tempSvar = False
@@ -50,15 +74,24 @@ def run():
         if BrugerSvar == "y":
             Menu.ShowMenuKort()
             tempSvar = True
+            print("\nVi er Klar til at tage din ordre")
+            tagOrdre()
         elif BrugerSvar == "n":
             print("\nVi er Klar til at tage din ordre")
             tempSvar = True
+            tagOrdre()
+        elif BrugerSvar == "Q":
+            print("Tak For Besøget")
+            tempSvar = True
+            exit
         else:
             print("\nDet Forstår vi ikke")
             BrugerSvar = input("y = yes eller n = no\n>>>> ")
             tempSvar = False
 
     ##### tag imod ordre
+    #NyOrdre = input(">>>> ")
+
 
 
 
@@ -67,7 +100,7 @@ def run():
 ######################
 ##### program start
 
-choice = input("ønsker du \n 1: test run \n 2: run \n >> ")
+choice = input("\nønsker du \n 1: test run \n 2: run \n >> ")
 if choice == str(1):
     testrun()
 elif choice == str(2):
