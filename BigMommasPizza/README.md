@@ -13,7 +13,7 @@ Systemet er baseret på object orienteret programmering, og indeholder 3 filer m
 - MenuKort 
     - En klasse der der indeholder en liste over Pizza'er samt en liste over modtagne ordrer.
     - KLassen har derudover metoderne til at tilføje pizza'er og order til de respektive lister samt at printe det fulde Menu kort.
-    - Til test forsøg indeholder klassen også en metoder til at autogenerere et Menu kort bestående af simple tilfældigt sammensatte pizzaer.
+    - Til test forsøg indeholder klassen også metoder til at autogenerere et Menu kort bestående af simple tilfældigt sammensatte pizzaer.
     - Funktionalitet: det er igennem denne klasse at vi opretter nye pizzaer i systemet og optager nye ordrer fra kunder  
 
 - TakeOrder 
