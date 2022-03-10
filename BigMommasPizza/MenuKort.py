@@ -18,9 +18,9 @@ class MenuKort(object):
 
     def MakeRandomPizzas(self):
         PizzaList = []
-        ExtraToppings = ["Annanas", "Skinke", "Pepperoni", "Champignon", "Løg", "Dressing", "Salat", "Bacon"]
+        ExtraToppings = ["Annanas", "Skinke", "Pepperoni", "Champignon", "Løg", "Dressing", "Salat", "Bacon", "kebab", "cocktail-pølser"]
         ToppingList = ["Tomat", "Ost"]
-        for i in range(1,len(ExtraToppings)+1):
+        for i in range(1,6):
             randInt = random.randint(0, len(ExtraToppings)-1)
             ToppingList.append(ExtraToppings[randInt])
             del ExtraToppings[randInt]
@@ -32,6 +32,13 @@ class MenuKort(object):
 
     def MakeMenuKort(self):
         self.PizzaCatalog = self.MakeRandomPizzas()
+
+    def AddPizza(self, name, topping, pris):
+        ToppingList = topping
+        ToppingList.insert(0, "tomat")
+        ToppingList.insert(1, "ost")
+        newPizza = MYpizza(len(self.PizzaCatalog)+1, name, ToppingList ,pris )
+        self.PizzaCatalog.append(newPizza)
 
 
     def ShowMenuKort(self):
