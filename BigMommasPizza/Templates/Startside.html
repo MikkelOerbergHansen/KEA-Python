@@ -30,26 +30,57 @@
       width:200px;
     }
 
-    </style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .picture {
+    border: 7px solid coral;
+    border-style: inset;
+    }
+
+
+
+  </style>
 
 
   <head>
     <title>Startside</title>
   </head>
   <body>
-    <div class="container" align = "center">
+    <div class="container" align="center">
       <h1> <br /> Big Mammas Pizza <br /><br /> </h1>
-      <img src="static/ItalianFlowers.jpg" alt="ItalianFlowers" width="300" height="500" align ="left">
-      <form align = "center">
-        <img src="static/logo.png" alt="BigMammaLogo" width="700" height="500">
-      </form>
-      
-      
-      <br>
-      <br>
-      <div class="container" align = "center">
-      <a href="/Bestilling"><button>Start Bestilling</button></a>
-      </div>
     </div>
+    <div class ="row">
+      <div class="column">
+        <img src="static/ItalianFlowers.jpg" alt="ItalianFlowers" align ="left" style="width:65%" style="height: 100%" >
+      </div>
+      <div class="column">
+        <img class = "picture" src="static/logo.png" alt="BigMammaLogo" align = "center" style="width:100%" >
+      </div>
+      <div class="column">
+        <img src="static/ItalianFlowers.jpg" alt="ItalianFlowers" align ="right" style="width:65%" style="height: 50%">
+      </div>
+    </div>  
+      
+    <div class="container" align = "center">
+      <br>
+      <br>
+      <a href="/Bestilling"><button>Start Bestilling</button></a>
+    </div>
+    
   </body>
 </html>
