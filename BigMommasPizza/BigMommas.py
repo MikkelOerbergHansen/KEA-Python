@@ -1,5 +1,6 @@
 import sys
 from MenuKort import MenuKort
+from BigMammaHjemmeside import *
 
 
 def testrun():
@@ -122,10 +123,12 @@ def run():
 ######################
 ##### program start
 
-choice = input("\nønsker du \n 1: test run \n 2: run \n >> ")
+choice = input("\nønsker du \n 1: test run \n 2: run \n 3: hjemmeside \n>> ")
 if choice == str(1):
     testrun()
 elif choice == str(2):
     run()
+elif choice == str(3):
+   app.run()
 else:
     sys.exit()
