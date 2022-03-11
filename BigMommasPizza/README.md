@@ -61,3 +61,12 @@ Da systemet er en prototype kan der i den grad stadig tilføres megen funktional
 ## Class-Diagram
 ------------------
  ![class diagram](ClassDiag.png)
+
+
+ ## Activity Diagram
+ --------------------
+![activity diagram](ActivityDiag.png)
+
+
+ ## Sequence Diagram
+ --------------------
