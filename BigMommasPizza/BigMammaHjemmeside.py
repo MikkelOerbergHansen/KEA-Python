@@ -13,9 +13,9 @@ def startside():
 
 
 @app.route('/Bestilling')
-# Definer en funktion for vores route der hedder hello_world()
-def hello_world():
-    return 'Hello, From Flask!' # funktionen returnerer en string med beskeden "Hello, from flask"
+
+def Bestilling():
+    return render_template('Bestilling.html')
 
 
 # til at køre koden direkte
