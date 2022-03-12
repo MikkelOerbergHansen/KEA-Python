@@ -2,25 +2,18 @@
   <style>
 
     h1{
-      width: 50%;
+      width: 600px;
       height: auto;
       border-style: inset;
       border-width: 7px;
-      border-color: rgb(35, 49, 172);
-    }
-
-    form{
-      width: 50%;
-      border-style: inset;
-      border-width: 7px;
-      border-color: coral;
+      border-color: rgb(35, 54, 219);
     }
     
     div {
-      width: 100%;
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
+      width: 93.5%;
+      border-radius: 0px;
+      background-color: #a07575;
+      padding: 50px;
     }
 
     button{
@@ -30,28 +23,29 @@
       width:200px;
     }
 
+   
     .flex-container {
-      flex-flow: row wrap;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-flow: row;
       justify-content: space-between;
     }
     
        
     .pictureRight {
-      align-self: flex-end;
       height: 514px;
       width: 200px;
     }
     
     .pictureLeft{
-      align-self: flex-start;
       height: 514px;
       width: 200px;
     }
 
     .pictureCenter {
-      align-self: center;
       height: 500px;
-      width: 450px;
+      width: 600px;
       border: 7px solid coral;
       border-style: inset;
     }
@@ -65,18 +59,16 @@
     <title>Startside</title>
   </head>
   <body>
-    <div class="container" align="center">
+    <div class="containerhead" align="center">
       <h1> <br /> Big Mammas Pizza <br /><br /> </h1>
     </div>
-    <div class="flex-container">
+    <div class="flex-container" align = "center">
         <img class = pictureLeft src="static/ItalianFlowers.jpg" alt="ItalianFlowers" >
         <img class = pictureCenter src="static/logo.png" alt="BigMammaLogo" >
         <img class = pictureRight src="static/ItalianFlowers.jpg" alt="ItalianFlowers" >
-    </div>  
+    </div> 
       
-    <div class="container" align = "center">
-      <br>
-      <br>
+    <div class="containerbutton" align = "center">
       <a href="/Bestilling"><button>Start Bestilling</button></a>
     </div>
     
