@@ -30,26 +30,30 @@
       width:200px;
     }
 
-    * {
-      box-sizing: border-box;
+    .flex-container {
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+    
+       
+    .pictureRight {
+      align-self: flex-end;
+      height: 514px;
+      width: 200px;
+    }
+    
+    .pictureLeft{
+      align-self: flex-start;
+      height: 514px;
+      width: 200px;
     }
 
-    .column {
-      float: left;
-      width: 33.33%;
-      padding: 5px;
-    }
-
-    /* Clearfix (clear floats) */
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-    .picture {
-    border: 7px solid coral;
-    border-style: inset;
+    .pictureCenter {
+      align-self: center;
+      height: 500px;
+      width: 450px;
+      border: 7px solid coral;
+      border-style: inset;
     }
 
 
@@ -64,16 +68,10 @@
     <div class="container" align="center">
       <h1> <br /> Big Mammas Pizza <br /><br /> </h1>
     </div>
-    <div class ="row">
-      <div class="column">
-        <img src="static/ItalianFlowers.jpg" alt="ItalianFlowers" align ="left" style="width:65%" style="height: 100%" >
-      </div>
-      <div class="column">
-        <img class = "picture" src="static/logo.png" alt="BigMammaLogo" align = "center" style="width:100%" >
-      </div>
-      <div class="column">
-        <img src="static/ItalianFlowers.jpg" alt="ItalianFlowers" align ="right" style="width:65%" style="height: 50%">
-      </div>
+    <div class="flex-container">
+        <img class = pictureLeft src="static/ItalianFlowers.jpg" alt="ItalianFlowers" >
+        <img class = pictureCenter src="static/logo.png" alt="BigMammaLogo" >
+        <img class = pictureRight src="static/ItalianFlowers.jpg" alt="ItalianFlowers" >
     </div>  
       
     <div class="container" align = "center">
