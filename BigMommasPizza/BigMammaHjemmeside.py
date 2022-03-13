@@ -58,10 +58,20 @@ def Bestilling():
 
     if request.method == 'POST':
         list = request.form.getlist('Pizzas')
-        takeaway = request.form.getlist('takeaway')
-        print(list)
-        print(takeaway)
-        return redirect('/kvittering')
+        navn = request.form['Navn']
+        takeaway = request.form['takeaway']
+        print(navn)
+        orderlist = []
+        for number in list:
+            orderlist.append(int(number))
+        if sum(orderlist) == 0:
+            return render_template('Bestilling.html', data = ListofStrings)
+        else:
+            if len(navn) == 0 or navn.isspace() == True:
+                return render_template('Bestilling.html', data = ListofStrings)
+            else:
+                return redirect('/kvittering')
+        
 
 
 
