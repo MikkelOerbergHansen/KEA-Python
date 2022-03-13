@@ -1,6 +1,6 @@
 
 # import af modulet Flask
-from flask import Flask, render_template
+from flask import Flask, request, render_template, redirect
 from MenuKort import MenuKort
 
 # konstruerer en variabel "app" som er af klassen Flask
@@ -13,7 +13,7 @@ def startside():
 
 
 
-@app.route('/Bestilling')
+@app.route('/Bestilling', methods=['GET', 'POST'])
 
 def Bestilling():
 
@@ -41,14 +41,36 @@ def Bestilling():
     Menu.AddPizza("Big Mamma",["Tomat", "Gorgonzola","rejer", "Asparges", "parma skinke"], 90)
 
 
+    ListofStrings =[]
+    for pizza in Menu.PizzaCatalog:
+        pizzainfo=[]
+        pizzainfo.append(pizza.Id)
+        pizzainfo.append(pizza.Name)
+
+        toppingstr = " "
+        for topping in pizza.toppings:
+            toppingstr = toppingstr + topping + ", "
+        
+        pizzainfo.append(toppingstr)
+        pizzainfo.append(pizza.Price)
+        ListofStrings.append(pizzainfo)
+
+
+    if request.method == 'POST':
+        orderlist=[]
+        orderlist.append(request.form['Pizza'])
+        return redirect('/kvittering')
 
 
 
 
 
+    return render_template('Bestilling.html', data = ListofStrings)
 
+@app.route('/kvittering')
+def kvittering():
 
-    return render_template('Bestilling.html')
+    return "hej"
 
 
 # til at køre koden direkte

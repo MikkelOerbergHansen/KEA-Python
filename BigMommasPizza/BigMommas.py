@@ -82,7 +82,6 @@ def run():
         
         Menu.AddOrder(OrderList, navn, takeaway)
         ordreID = len(Menu.TakeOrderCatalog)
-        print(ordreID)
         print(Menu.TakeOrderCatalog[ordreID-1])
 
         return True

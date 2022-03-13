@@ -10,7 +10,7 @@
     }
 
     form{
-      width: 50%;
+      width:70%;
       border-style: inset;
       border-width: 7px;
       border-color: coral;
@@ -31,6 +31,17 @@
       float: left;
     }
 
+    table{
+      background-color: #a07575;
+    }
+
+    input[type=submit]{
+      color: aqua;
+      background-color: black;
+      height:50px;
+      width:200px;
+    }
+
 
     </style>
 
@@ -42,14 +53,37 @@
    
     <div class="container" align = "center">
         <a href="/"><button>Gå til Start</button></a><h1> <br /> Big Mammas Pizza <br /><br /> </h1>
-
-      <form>
-        
-      </form>
-      <br>
-      <br>
-      
-      
     </div>
+
+
+    <div class="container" align = "center">
+      <form action="" method="post" style="text-align: center;" style="width:70%">
+        <table style="width:100%" align ="center">
+          <!-- For loop logic of jinja template -->
+      
+          {%for x in data%}
+          <tr>
+          <td style="width:5%">{{x[0]}}</td>
+          <td style="width:15%">{{x[1]}}</td>
+          <td style="width:70%">{{x[2]}}</td>
+          <td style="width:10%"><label>kr:     </label>{{x[3]}}</td>
+          <td>
+            <input id="Pizza"  type="number" name="Pizzas" step="1" min="0" max="100" value="0">
+          </td>
+   
+          </tr>
+    
+          {%endfor%}
+    
+    
+        </table>
+        <br>
+        <br>
+        <input type="submit" value="Bestil">
+      </form> 
+
+    </div>
+
+  
   </body>
 </html>
