@@ -60,6 +60,7 @@
       <form action="" method="post" style="text-align: center;" style="width:70%">
         <table style="width:100%" align ="center">
           <!-- For loop logic of jinja template -->
+        
       
           {%for x in data%}
           <tr>
@@ -68,10 +69,11 @@
           <td style="width:70%">{{x[2]}}</td>
           <td style="width:10%"><label>kr:     </label>{{x[3]}}</td>
           <td>
-            <input id='Pizza"+{{x[0]}}+"'  type="number" name="Pizza" step="1" min="0" max="100" value="0">
+            <input id='Pizza"+.${{x[0]}}.+"'  type="number" name='Pizza"+.${{x[0]}}.+"' step="1" min="0" max="100" value="0">
           </td>
-   
+
           </tr>
+          
     
           {%endfor%}
     
