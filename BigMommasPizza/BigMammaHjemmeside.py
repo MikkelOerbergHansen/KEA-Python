@@ -57,8 +57,11 @@ def Bestilling():
 
 
     if request.method == 'POST':
-        if request.form['Pizza.19.'] == "1":
-            return redirect('/kvittering')
+        list = request.form.getlist('Pizzas')
+        takeaway = request.form.getlist('takeaway')
+        print(list)
+        print(takeaway)
+        return redirect('/kvittering')
 
 
 
