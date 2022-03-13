@@ -57,9 +57,8 @@ def Bestilling():
 
 
     if request.method == 'POST':
-        orderlist=[]
-        orderlist.append(request.form['Pizza'])
-        return redirect('/kvittering')
+        if request.form['Pizza'] == "1":
+            return redirect('/kvittering')
 
 
 
