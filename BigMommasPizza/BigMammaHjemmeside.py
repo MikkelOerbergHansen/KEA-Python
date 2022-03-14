@@ -57,7 +57,7 @@ def Bestilling():
     if request.method == 'POST':
         liste = request.form.getlist('Pizzas')
         navn = request.form['Navn']
-        takeaway = request.form['takeaway'] ########## fejl hvis ikke checked
+        takeaway = request.form['takeaway']
         print(takeaway)
         if takeaway == "on":
             takeaway = "True"
