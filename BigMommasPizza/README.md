@@ -34,6 +34,7 @@ Til sidst indeholder systemet en fil (BigMommas.py) til at der kører hele syste
     - når systemet køres vælges der mellem et "test run" eller et "run"
         - et "test run" tjekker kun at metoder og klasser virker.  
         - et "run" er et fuldt run af hele systemet. 
+        - en  "hjemmeside" der kører en hjemmeside applikation
 
 ## FLOW
 ---------
@@ -51,7 +52,7 @@ Når systemet kører er "flowet" således:
 ## TO-DO
 ---------
 Da systemet er en prototype kan der i den grad stadig tilføres megen funktionalitet.
-- hjemmeside: så kunder selv kan benytte systemet ellers skulle de benytte en in-shop maskine til at foretage bestillingen
+
 - systemet sælger kun pizzaer, og der kunne tilføres andre madprodukter (desserter(tiramisu), dagens-ret) og drikkevarer
 - systemet tillader ikke nogen ændringer på pizzaens sammensætning hence ingen "ekstra ost"
 - systemet indeholder ikke noget klub medlemskab der giver rabat
