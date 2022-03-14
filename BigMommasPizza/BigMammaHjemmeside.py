@@ -37,6 +37,7 @@ def startside():
 @app.route('/Bestilling', methods=['GET', 'POST'])
 
 def Bestilling():
+    error = None
 
     ListofStrings =[]
     for pizza in Menu.PizzaCatalog:
@@ -56,7 +57,8 @@ def Bestilling():
     if request.method == 'POST':
         liste = request.form.getlist('Pizzas')
         navn = request.form['Navn']
-        takeaway = request.form['takeaway']
+        takeaway = request.form['takeaway'] ########## fejl hvis ikke checked
+        print(takeaway)
         if takeaway == "on":
             takeaway = "True"
         else:
@@ -66,10 +68,12 @@ def Bestilling():
         for number in liste:
             orderlist.append(int(number))
         if sum(orderlist) == 0:
-            return render_template('Bestilling.html', data = ListofStrings)
+            error = 'Du skal vælge en eller flere pizzaer!'
+            return render_template('Bestilling.html', data = ListofStrings, error = error)
         else:
             if len(navn) == 0 or navn.isspace() == True:
-                return render_template('Bestilling.html', data = ListofStrings)
+                error = "Du skal Skrive et navn!"
+                return render_template('Bestilling.html', data = ListofStrings, error= error)
             else:
                 pizzalist=[]
                 antallist=[]
@@ -90,7 +94,7 @@ def Bestilling():
 
 
 
-    return render_template('Bestilling.html', data = ListofStrings)
+    return render_template('Bestilling.html', data = ListofStrings,error = error)
 
 @app.route('/kvittering')
 def kvittering():

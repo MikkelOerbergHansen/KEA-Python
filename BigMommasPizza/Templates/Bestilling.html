@@ -57,6 +57,10 @@
 
 
     <div class="container" align = "center">
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+      
       <form action="" method="post" style="text-align: center;" style="width:70%">
         <table style="width:100%" align ="center">
           <!-- For loop logic of jinja template -->
