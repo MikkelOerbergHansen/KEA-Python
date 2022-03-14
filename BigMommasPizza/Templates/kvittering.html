@@ -1,0 +1,57 @@
+<html>
+  <style>
+
+    h1{
+      width: 600px;
+      height: auto;
+      border-style: inset;
+      border-width: 7px;
+      border-color: rgb(35, 54, 219);
+    }
+    
+    div {
+      width: 93.5%;
+      border-radius: 0px;
+      background-color: #a07575;
+      padding: 50px;
+    }
+
+    button{
+      color: aqua;
+      background-color: black;
+      height:50px;
+      width:200px;
+    }
+
+   
+    
+       
+
+
+
+
+
+  </style>
+
+
+  <head>
+    <title>kvittering</title>
+  </head>
+  <body>
+    <div class="containerhead" align="center">
+      <h1> <br /> Big Mammas Pizza <br /><br /> </h1>
+    </div>
+    
+    <div class="container" align="center"></div>
+    {% for line in Ordre %}
+        <p class="kvittering"> {{ line|safe }}
+      {% endif %}
+    </div>
+
+
+    <div class="containerbutton" align = "center">
+      <a href="/"><button>Startside</button></a>
+    </div>
+
+  </body>
+</html>

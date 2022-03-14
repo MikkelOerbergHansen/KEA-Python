@@ -1,10 +1,12 @@
 
 # import af modulet Flask
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, session
 from MenuKort import MenuKort
+import itertools
 
 # konstruerer en variabel "app" som er af klassen Flask
 app = Flask(__name__)
+Menu = MenuKort()
 
 # En Decorator for en route
 @app.route('/')
@@ -19,7 +21,7 @@ def Bestilling():
 
 
 
-    Menu = MenuKort()
+    #Menu = MenuKort()
     Menu.AddPizza("Margherita",["Tomat", "Ost"], 69)
     Menu.AddPizza("Vesuvio",["Tomat", "Ost","skinke"], 75)
     Menu.AddPizza("Capricciosa",["Tomat", "Ost","skinke", "champignon"], 80)
@@ -57,12 +59,12 @@ def Bestilling():
 
 
     if request.method == 'POST':
-        list = request.form.getlist('Pizzas')
+        liste = request.form.getlist('Pizzas')
         navn = request.form['Navn']
         takeaway = request.form['takeaway']
-        print(navn)
+        
         orderlist = []
-        for number in list:
+        for number in liste:
             orderlist.append(int(number))
         if sum(orderlist) == 0:
             return render_template('Bestilling.html', data = ListofStrings)
@@ -70,6 +72,18 @@ def Bestilling():
             if len(navn) == 0 or navn.isspace() == True:
                 return render_template('Bestilling.html', data = ListofStrings)
             else:
+                pizzalist=[]
+                antallist=[]
+                for i in range(1,len(orderlist)+1):
+                    if orderlist[i-1] != 0:
+                        pizzalist.append(i)
+                        antallist.append(orderlist[i-1])
+                
+                PizzaOrdre = list(itertools.chain(*(itertools.repeat(elem, n) for elem, n in zip(pizzalist, antallist))))
+
+                Menu.AddOrder(PizzaOrdre, navn, takeaway)
+                ordreID = len(Menu.TakeOrderCatalog)
+                Menu.TakeOrderCatalog[ordreID-1]
                 return redirect('/kvittering')
         
 
@@ -81,8 +95,9 @@ def Bestilling():
 
 @app.route('/kvittering')
 def kvittering():
+    Ordre = Menu.TakeOrderCatalog[-1]
 
-    return "hej"
+    return render_template('kvittering.html', Ordre=Ordre)
 
 
 # til at køre koden direkte
