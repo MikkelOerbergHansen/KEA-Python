@@ -58,6 +58,7 @@ def Bestilling():
         liste = request.form.getlist('Pizzas')
         navn = request.form['Navn']
         takeaway = request.form['takeaway']
+        print(takeaway)
         if takeaway == "on":
             takeaway = "True"
         else:
@@ -81,7 +82,19 @@ def Bestilling():
                         pizzalist.append(i)
                         antallist.append(orderlist[i-1])
                 
-                PizzaOrdre = list(itertools.chain(*(itertools.repeat(elem, n) for elem, n in zip(pizzalist, antallist))))
+                #PizzaOrdre = list(itertools.chain(*(itertools.repeat(elem, n) for elem, n in zip(pizzalist, antallist))))
+                
+
+                PizzaOrdre = []
+
+                for number in pizzalist:
+                    myindex = pizzalist.index(number)
+                    for i in range(antallist[myindex]):
+                        PizzaOrdre.append(pizzalist[myindex])
+
+
+
+
 
                 Menu.AddOrder(PizzaOrdre, navn, takeaway)
                 ordreID = len(Menu.TakeOrderCatalog)
