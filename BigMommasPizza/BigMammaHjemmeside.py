@@ -62,6 +62,10 @@ def Bestilling():
         liste = request.form.getlist('Pizzas')
         navn = request.form['Navn']
         takeaway = request.form['takeaway']
+        if takeaway == "on":
+            takeaway = "True"
+        else:
+            takeaway = "False"
         
         orderlist = []
         for number in liste:
