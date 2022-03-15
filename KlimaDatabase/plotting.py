@@ -49,10 +49,22 @@ print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
 # PLOTS 
 #####################
 
-averageTable.plot.bar(y="Total kg CO2-eq/kg", bottom=1.6) ### mangler en x-alse... how to access??
+averageTable.plot.bar(y="Total kg CO2-eq/kg") ### mangler en x-alse... how to access??
 #plt.tight_layout() ### stopper cut of i bunden men fucker selve grafen. nogle labels er meget lange
-plt.show()    ### plottet bliver cuttet i bunden
+plt.savefig('KlimaDatabase/static/barplot_AverageCO2.png')
+#plt.show()    ### plottet bliver cuttet i bunden
 
+plt.close()
 
 print(averageTable.keys())
 
+
+
+#######################
+# PLOTS MatplotLIb
+#######################
+
+AverageCO2 = list(averageTable["Total kg CO2-eq/kg"])
+print(AverageCO2)
+
+##### skab liste med de 12 kategorier
