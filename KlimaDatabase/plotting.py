@@ -44,11 +44,13 @@ averageTable=df.groupby("DSK Kategori").mean() ### brug indeks til at subsette t
 print(averageTable)
 
 
-'''
+
 print(averageTable.min())  # Grøntsager udler mindst CO2
 print(averageTable.max())  # Kød/fjerkræ udleder mest CO2
 
 print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
+
+
 
 #####################
 # PLOTS 
@@ -61,7 +63,7 @@ plt.savefig('KlimaDatabase/static/barplot_AverageCO2.png')
 
 plt.close()
 
-'''
+
 
 
 
@@ -70,10 +72,10 @@ plt.close()
 #######################
 
 AverageCO2 = list(averageTable["Total kg CO2-eq/kg"])
-print(len(AverageCO2))
+
 
 ##### skab liste med de 13 kategorier
-print(list(set(list(df['DSK Kategori'])))) #### en lang liste med kategorier konverteres til list
+KategoriListe = list(set(list(df['DSK Kategori']))) #### en lang liste med kategorier konverteres til list
                                             ### set() konverter til en mængde og finder dermed unique 
                                             ### indgange. settet konverteres tilbage til en liste
 
