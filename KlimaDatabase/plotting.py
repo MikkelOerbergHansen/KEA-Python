@@ -6,6 +6,7 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import figure
 
 
 '''
@@ -128,10 +129,25 @@ xlsx = pd.read_excel("KlimaDatabase/static/Results_FINAL_20210201v4.xlsx", engin
 
 
 df = pd.DataFrame(xlsx, columns= ['DSK Kategori', "Navn", "Total kg CO2-eq/kg"])[0:500]   #  tre enkelte søjler : make sure no empty cells
-print(df)
+#print(df)
 
-###
+### create subset så vi kun kigger på kød 
+køddf = df.loc[df["DSK Kategori"]=="Kød/fjerkræ"]
+print(køddf)
 
-averageTable=df.groupby(["DSK Kategori", "Navn"]).mean()
-with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-    print(averageTable)
+
+KødAverage = køddf.groupby("Navn").mean()   #### kiges der på antal rækker ser det ud som om at der kun er en enkelt observation for hvert navn
+print(KødAverage)                             ## det giver derfor ikke rigtig mening at tage average                   
+
+
+
+mitplot = KødAverage.plot.barh(y="Total kg CO2-eq/kg")
+plt.setp(mitplot.get_yticklabels(), horizontalalignment='right', fontsize=5)
+plt.tight_layout()
+plt.show() 
+
+#averageTable=df.groupby(["DSK Kategori", "Navn"]).mean()  # average b multiple groups
+#with pd.option_context('display.max_rows', None, 'display.max_columns', None): ####viser hele tabellen
+    #print(averageTable)
+
+
