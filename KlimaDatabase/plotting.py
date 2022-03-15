@@ -73,7 +73,7 @@ plt.savefig('KlimaDatabase/static/barplot_AverageCO2.png')
 
 plt.close()
 
-
+print(averageTable.index)
 
 #######################
 # PLOTS MatplotLIb
@@ -89,7 +89,7 @@ KategoriListe = list(set(list(df['DSK Kategori']))) #### en lang liste med kateg
 
 
 fig = plt.figure()
-plt.bar(KategoriListe, 10, y = AverageCO2)
+plt.bar(AverageCO2)
 plt.show() 
 
 
