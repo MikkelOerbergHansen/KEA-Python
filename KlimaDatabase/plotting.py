@@ -3,11 +3,12 @@
 ## https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html
 
 
-from turtle import width
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
+'''
 # open the file
 xlsx = pd.read_excel("KlimaDatabase/static/Results_FINAL_20210201v4.xlsx", engine = "openpyxl", sheet_name = "Ra_500food")
 
@@ -19,6 +20,11 @@ print(df)
 print(df["Total kg CO2-eq/kg"]) ### single coloumn
 #print(list(df["Total kg CO2-eq/kg"]))
 CO2 = list(df["Total kg CO2-eq/kg"])  # værdierne kan hives ud i en enkelt liste
+
+'''
+
+#############################################################################################################
+
 
 '''
 
@@ -35,7 +41,9 @@ print(max(CO2) == df["Total kg CO2-eq/kg"].max())  ## to forskellige måder at b
 print(df["Total kg CO2-eq/kg"].mean())  # mean
 
 '''
+##############################################################################################################
 
+'''
 print()
 print("Grouped averages")
 print("===============================")
@@ -43,6 +51,11 @@ print("===============================")
 
 
 averageTable=df.groupby("DSK Kategori").mean() ### brug indeks til at subsette tabellen 
+'''
+
+################################################################################################################
+
+
 
 '''
 
@@ -56,7 +69,7 @@ print(averageTable.max())  # Kød/fjerkræ udleder mest CO2
 
 '''
 
-print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
+#print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
 
 
 
@@ -64,33 +77,61 @@ print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
 # PLOTS 
 #####################
 
-
+'''
 
 averageTable.plot.bar(y="Total kg CO2-eq/kg")
 #plt.tight_layout() ### stopper cut of i bunden men fucker selve grafen. nogle labels er meget lange
 plt.savefig('KlimaDatabase/static/barplot_AverageCO2.png')
 #plt.show()    ### plottet bliver cuttet i bunden
 
-plt.close()
+#plt.close()
 
 # print(averageTable.index)  # måske kan man hive kategorier ud på denne måde
+
+'''
 
 #######################
 # PLOTS MatplotLIb
 #######################
 
+'''
+
 AverageCO2 = list(averageTable["Total kg CO2-eq/kg"])
 
 
 ##### skab liste med de 13 kategorier
-KategoriListe = list(set(list(df['DSK Kategori']))) #### en lang liste med kategorier konverteres til list
-                                            ### set() konverter til en mængde og finder dermed unique 
-                                            ### indgange. settet konverteres tilbage til en liste
+KategoriListe = list(averageTable.index)
+
+f, ax = plt.subplots(1)
+plt.bar(KategoriListe, AverageCO2)
+plt.xticks(rotation=90)
+plt.tight_layout()
 
 
 
-fig = plt.figure()
-plt.bar(AverageCO2)
+f, ax = plt.subplots(1)
+plt.barh(KategoriListe, AverageCO2) ## barh laver et vertical bar plot istedet for bar der laver et horizontalt
+plt.tight_layout()
 plt.show() 
+plt.close()
+
+'''
 
 
+####################################################################
+##
+## bar plot indenfor en enket kategori 
+##
+####################################################################
+
+xlsx = pd.read_excel("KlimaDatabase/static/Results_FINAL_20210201v4.xlsx", engine = "openpyxl", sheet_name = "Ra_500food")
+
+
+df = pd.DataFrame(xlsx, columns= ['DSK Kategori', "Navn", "Total kg CO2-eq/kg"])[0:500]   #  tre enkelte søjler : make sure no empty cells
+print(df)
+
+###
+
+averageTable=df.groupby(["DSK Kategori", "Navn"]).mean()
+with pd.option_context('display.max_rows', None, 'display.max_columns', None):
+    print(averageTable)
