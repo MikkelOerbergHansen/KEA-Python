@@ -66,14 +66,14 @@ print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
 
 
 
-averageTable.plot.bar(y="Total kg CO2-eq/kg") ### mangler en x-alse... how to access??
+averageTable.plot.bar(y="Total kg CO2-eq/kg")
 #plt.tight_layout() ### stopper cut of i bunden men fucker selve grafen. nogle labels er meget lange
 plt.savefig('KlimaDatabase/static/barplot_AverageCO2.png')
 #plt.show()    ### plottet bliver cuttet i bunden
 
 plt.close()
 
-print(averageTable.index)
+# print(averageTable.index)  # måske kan man hive kategorier ud på denne måde
 
 #######################
 # PLOTS MatplotLIb
@@ -86,6 +86,7 @@ AverageCO2 = list(averageTable["Total kg CO2-eq/kg"])
 KategoriListe = list(set(list(df['DSK Kategori']))) #### en lang liste med kategorier konverteres til list
                                             ### set() konverter til en mængde og finder dermed unique 
                                             ### indgange. settet konverteres tilbage til en liste
+
 
 
 fig = plt.figure()
