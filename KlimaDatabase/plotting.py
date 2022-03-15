@@ -1,7 +1,11 @@
 ## https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html
 
+## https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html
+
 
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 # open the file
 xlsx = pd.read_excel("KlimaDatabase/static/Results_FINAL_20210201v4.xlsx", engine = "openpyxl", sheet_name = "Ra_500food")
@@ -30,3 +34,11 @@ print(averageTable.min())  # Grøntsager udler mindst CO2
 print(averageTable.max())  # Kød/fjerkræ udleder mest CO2
 
 print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
+
+#####################
+# PLOTS 
+#####################
+
+averageTable.plot.bar(y="Total kg CO2-eq/kg", bottom=1.6) ### mangler en x-alse... how to access??
+plt.show()    ### plottet bliver cuttet i bunden
+
