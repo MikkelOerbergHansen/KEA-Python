@@ -12,12 +12,17 @@ xlsx = pd.read_excel("KlimaDatabase/static/Results_FINAL_20210201v4.xlsx", engin
 
 
 df = pd.DataFrame(xlsx, columns= ['DSK Kategori', "Total kg CO2-eq/kg"])[1:500]   #  to enkelte søjler : make sure no empty cells
-#print(df)
+print(df)
 
 
 print(df["Total kg CO2-eq/kg"]) ### single coloumn
 #print(list(df["Total kg CO2-eq/kg"]))
 CO2 = list(df["Total kg CO2-eq/kg"])  # værdierne kan hives ud i en enkelt liste
+
+print()
+print("Nogle min max mean beregninger")
+print("===============================")
+
 
 print(max(CO2)) # max value
 print(min(CO2)) # min  value
@@ -25,6 +30,11 @@ print(min(CO2)) # min  value
 print(max(CO2) == df["Total kg CO2-eq/kg"].max())  ## to forskellige måder at beregne max / min  ( et tjek af at de er ens)
 
 print(df["Total kg CO2-eq/kg"].mean())  # mean
+
+
+print()
+print("Grouped averages")
+print("===============================")
 
 averageTable=df.groupby("DSK Kategori").mean()[1:14] ### brug indeks til at subsette tabellen 
 
@@ -40,5 +50,9 @@ print(averageTable.sort_values("Total kg CO2-eq/kg")) ## sorteret liste
 #####################
 
 averageTable.plot.bar(y="Total kg CO2-eq/kg", bottom=1.6) ### mangler en x-alse... how to access??
+#plt.tight_layout() ### stopper cut of i bunden men fucker selve grafen. nogle labels er meget lange
 plt.show()    ### plottet bliver cuttet i bunden
+
+
+print(averageTable.keys())
 
