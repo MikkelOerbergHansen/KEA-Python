@@ -133,16 +133,17 @@ df = pd.DataFrame(xlsx, columns= ['DSK Kategori', "Navn", "Total kg CO2-eq/kg"])
 
 ### create subset så vi kun kigger på kød 
 køddf = df.loc[df["DSK Kategori"]=="Kød/fjerkræ"]
-print(køddf)
+køddf20= køddf.loc[køddf["Total kg CO2-eq/kg"] >= 20]
+print(køddf20)
 
 
 KødAverage = køddf.groupby("Navn").mean()   #### kiges der på antal rækker ser det ud som om at der kun er en enkelt observation for hvert navn
 print(KødAverage)                             ## det giver derfor ikke rigtig mening at tage average                   
 
+køddf20Average = køddf20.groupby("Navn").mean()
 
-
-mitplot = KødAverage.plot.barh(y="Total kg CO2-eq/kg")
-plt.setp(mitplot.get_yticklabels(), horizontalalignment='right', fontsize=5)
+mitplot = køddf20Average.sort_values("Total kg CO2-eq/kg").plot.barh(y="Total kg CO2-eq/kg")
+plt.setp(mitplot.get_yticklabels(), horizontalalignment='right', fontsize=8)
 plt.tight_layout()
 plt.show() 
 
