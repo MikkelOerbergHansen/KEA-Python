@@ -129,7 +129,7 @@ xlsx = pd.read_excel("KlimaDatabase/static/Results_FINAL_20210201v4.xlsx", engin
 
 
 df = pd.DataFrame(xlsx, columns= ['DSK Kategori', "Navn", "Total kg CO2-eq/kg"])[0:500]   #  tre enkelte søjler : make sure no empty cells
-#print(df)
+print(df)
 
 ### create subset så vi kun kigger på kød 
 køddf = df.loc[df["DSK Kategori"]=="Kød/fjerkræ"]
