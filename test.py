@@ -5,3 +5,5 @@
 mitinput = input("skriv dit navn: ")
 
 print("hej " +  mitinput)
+
+input("Press enter to exit :)")
