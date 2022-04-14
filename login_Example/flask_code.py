@@ -2,22 +2,29 @@ from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/')
+def startside():
+    return render_template('startside.html')
+
+
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
         error = None
         if request.method == 'POST':
             if request.form['username'] != 'admin' or request.form['password'] != 'admin':
                 error = 'Invalid Credentials. Please try again.'
             else:
-                return redirect('/startside')
-        return render_template('my-form.html', error=error)
+                return redirect('/profil')
+        return render_template('loginform.html', error=error)
 
 
 
 
-@app.route('/startside')
+@app.route('/profil')
 def Profile():
-    return ('dette er en startside efter succesfuldt log in')
+    return ('dette er en profilside efter succesfuldt log in')
 
 @app.route('/NyBruger')
 def NyBruger():
