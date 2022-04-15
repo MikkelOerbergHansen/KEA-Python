@@ -28,7 +28,7 @@ def Profile():
 
 @app.route('/NyBruger')
 def NyBruger():
-    return ('Ny Bruger')
+    return render_template('nybruger.html')
 
 
 
