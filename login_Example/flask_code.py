@@ -20,15 +20,19 @@ def login():
         return render_template('loginform.html', error=error)
 
 
-
-
 @app.route('/profil')
 def Profile():
     return ('dette er en profilside efter succesfuldt log in')
 
-@app.route('/NyBruger')
+@app.route('/NyBruger', methods=['GET', 'POST'])
 def NyBruger():
-    return render_template('nybruger.html')
+    error = None
+    if request.method == 'POST':
+            if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+                error = 'Invalid Credentials. Please try again.'
+            else:
+                return redirect('/profil')
+    return render_template('nybruger.html', error = error)
 
 
 

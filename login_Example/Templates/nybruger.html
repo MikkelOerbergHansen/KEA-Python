@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>startside</title>
+    <title>sign up</title>
 
 
 
@@ -16,6 +16,30 @@
 
 
     <style>
+      form{
+      width: 50%;
+      border-style: inset;
+      border-width: 7px;
+      border-color: coral;
+    }
+
+    input[type=submit] {
+      width: 33%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #317435;
+    }
+
+
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -54,8 +78,36 @@
     </header>
   </div>
 
-  <div class="container">
-  <p> en formular til at gemme ny bruger </p>
+  <br>
+  <br>
+  <br>
+
+  <div class="container" align="center">
+    {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <form action="" method="post" style="text-align: center; vertical-align: middle;">
+      <h2 style="color:rgb(28, 73, 99);"> udfyld nedenstående </h2>
+
+      <table style="width:100%">
+        <tr>
+          <th><label> dit brugernavn: </label> </th>
+          <th><input type="text" placeholder="Username" name="username" value="{{
+            request.form.username }}"></th>
+        </tr>
+        <tr>
+          <th><label> dit password: </label> </th>
+          <td><input type="password" placeholder="Password" name="password" value="{{
+            request.form.password }}"></td>
+        </tr>
+        <tr>
+          <th><label> gentag dit password: </label> </th>
+          <td><input type="password" placeholder="gentag Password" name="passwordrep" value="{{
+            request.form.passwordrep }}"></td>
+        </tr>
+      </table>
+      <input class="btn btn-default" type="submit" value="sign up">
+    </form>
   </div>
  
 
