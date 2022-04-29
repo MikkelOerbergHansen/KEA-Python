@@ -2,10 +2,9 @@
 
 
 class User:
-    def __init__(self, username, password, age):
+    def __init__(self, username, password):
         self.username = username                  # definer Attributter
         self.password = password
-        self.age = age
        
 
     def setUsername(self, username):

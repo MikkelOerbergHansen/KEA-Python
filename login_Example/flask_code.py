@@ -1,6 +1,10 @@
 from flask import Flask, request, render_template, redirect, url_for
+from user import User
+from database import Database
 
 app = Flask(__name__)
+
+MyDatabase = Database()
 
 
 @app.route('/')
@@ -39,7 +43,10 @@ def NyBruger():
         if password != passwordrep:
             error = 'Invalid input. Please try again.'
         else:
-                return redirect('/profil')
+            NewUser= User(brugernavn, password)
+            MyDatabase.addUser(NewUser)
+            print(MyDatabase.getDatabase())
+            return redirect('/profil')
     return render_template('nybruger.html', error = error)
 
 
