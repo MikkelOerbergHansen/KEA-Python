@@ -8,3 +8,7 @@ class Database:
 
     def getDatabase(self):
         return self.Users
+
+    
+    def addUser(self, user):
+        self.Users.append(user)
