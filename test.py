@@ -6,4 +6,8 @@ mitinput = input("skriv dit navn: ")
 
 print("hej " +  mitinput)
 
+mitTal = int(input("skriv et tal: "))
+
+print(mitTal + 5)
+
 input("Press enter to exit :)")
