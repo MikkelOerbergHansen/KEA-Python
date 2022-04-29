@@ -52,6 +52,8 @@ def NyBruger():
             MyDatabase.addUser(currentUser)
             loggedIN = True
 
+            MyDatabase.WriteToFile([brugernavn, password])
+
             print(MyDatabase.getDatabase()) ##### vi skal have databasen til at skrive til en fil
 
             return redirect('/profil')
