@@ -13,7 +13,7 @@ class Database:
         self.Users.append(user)
 
     def WriteToFile(self, listofInfo):
-        with open("static/database.csv", 'a') as f:
+        with open("login_Example/static/database.csv", 'a') as f:
             writer = csv.writer(f)
             writer.writerow(listofInfo)
         return None
