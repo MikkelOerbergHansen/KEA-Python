@@ -41,8 +41,10 @@ def NyBruger():
         brugernavn = request.form['username']
         password = request.form['password']
         passwordrep = request.form['passwordrep']
-        if password != passwordrep:
-            error = 'Invalid input. Please try again.'
+
+        error = MyDatabase.CheckPassword(password,passwordrep)
+        if error != None:
+            return render_template('nybruger.html', error = error)
         else:
             NewUser= User(brugernavn, password)
             currentUser = NewUser
