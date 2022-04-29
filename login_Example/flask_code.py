@@ -5,6 +5,7 @@ from database import Database
 app = Flask(__name__)
 
 MyDatabase = Database()
+currentUser = None
 
 
 @app.route('/')
@@ -44,8 +45,11 @@ def NyBruger():
             error = 'Invalid input. Please try again.'
         else:
             NewUser= User(brugernavn, password)
-            MyDatabase.addUser(NewUser)
+            currentUser = NewUser
+            MyDatabase.addUser(currentUser)
+
             print(MyDatabase.getDatabase())
+
             return redirect('/profil')
     return render_template('nybruger.html', error = error)
 
