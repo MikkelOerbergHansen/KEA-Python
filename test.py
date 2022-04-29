@@ -1,10 +1,9 @@
+
+
 #Step 1: Open up a terminal and run pip install pyinstaller
 #Step 2: Using the terminal, go to the directory where your script is located (use the cd command)
 #Step 3: Once you‘re in the right directory, write a command with the following syntax
 #        pyinstaller --onefile name_of_script.py in the terminal to make the script executable.
-
-
-
 
 
 
