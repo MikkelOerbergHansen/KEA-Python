@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 MyDatabase = Database()
 currentUser = None
+loggedIN = None
 
 
 @app.route('/')
@@ -49,6 +50,7 @@ def NyBruger():
             NewUser= User(brugernavn, password)
             currentUser = NewUser
             MyDatabase.addUser(currentUser)
+            loggedIN = True
 
             print(MyDatabase.getDatabase()) ##### vi skal have databasen til at skrive til en fil
 
