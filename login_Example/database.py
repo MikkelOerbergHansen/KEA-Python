@@ -13,8 +13,10 @@ class Database:
     def addUser(self, user):
         self.Users.append(user)
 
-    def CheckPassword(self, input1, input2):
-        if input1 != input2:
-            return 'Invalid input. Please try again.'
+    def Checkinput(self, username, password, passwordrep):
+        if password != passwordrep:
+            return 'password does not match. Please try again.'
+        elif username == " ":
+            return "username cannot be empty"
         else:
             return None

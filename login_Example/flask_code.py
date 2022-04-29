@@ -42,7 +42,7 @@ def NyBruger():
         password = request.form['password']
         passwordrep = request.form['passwordrep']
 
-        error = MyDatabase.CheckPassword(password,passwordrep)
+        error = MyDatabase.Checkinput(brugernavn, password, passwordrep)
         if error != None:
             return render_template('nybruger.html', error = error)
         else:
@@ -50,7 +50,7 @@ def NyBruger():
             currentUser = NewUser
             MyDatabase.addUser(currentUser)
 
-            print(MyDatabase.getDatabase())
+            print(MyDatabase.getDatabase()) ##### vi skal have databasen til at skrive til en fil
 
             return redirect('/profil')
     return render_template('nybruger.html', error = error)
