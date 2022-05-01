@@ -42,10 +42,17 @@ def login():
 
 
 #### PRofil siden skal laves
-@app.route('/profil')
+@app.route('/profil', methods=['GET', 'POST'])
 def Profile():
+    error = None
     
-    return render_template('profil.html')
+
+
+    if request.method == 'POST':
+        return render_template('profil.html')
+
+    
+    return render_template('profil.html', error = error)
 
 
 

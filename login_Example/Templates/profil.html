@@ -16,6 +16,29 @@
 
 
     <style>
+        form{
+      width: 50%;
+      border-style: inset;
+      border-width: 7px;
+      border-color: rgb(48, 63, 190);
+    }
+
+    input[type=submit] {
+      width: 33%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #317435;
+    }
+
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -55,7 +78,28 @@
     </header>
   </div>
 
-  <p>dette er profil siden</p>
+  <div class="container" align="center">
+    {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <form action="" method="post" style="text-align: center; vertical-align: middle;">
+        <h2 style="color:rgb(28, 73, 99);"> Dine Oplysninger </h2>
+        <table style="width:100%">
+            <tr>
+              <th><label> dit brugernavn: </label> </th>
+              <th><input type="text" placeholder="Username" name="username" value="{{
+                request.form.username }}"></th>
+            </tr>
+            <tr>
+              <th><label> dit password: </label> </th>
+              <td><input type="password" placeholder="Password" name="password" value="{{
+                request.form.password }}"></td>
+            </tr>
+        </table>
+          <input class="btn btn-default" type="submit" value="gem">
+      </form>
+  </div>
+  
 
 
 </main>
