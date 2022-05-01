@@ -7,14 +7,12 @@ app = Flask(__name__)
     
 MyDatabase = Database()
 currentUser = None
-loggedIN = False
 
 
 
 @app.route('/', methods=['GET', 'POST'])
 def startside():
-    print(loggedIN)
-    return render_template('startside.html', LoggedIn = loggedIN)
+    return render_template('startside.html', LoggedIn = MyDatabase.getStatus())
 
 
 
@@ -29,7 +27,7 @@ def login():
 
             if error == None:
                 currentUser = MyDatabase.findUser(inputUsername)
-                loggedIN = True
+                MyDatabase.setStatus("True")
                 return redirect('/profil')
             else:
                 return render_template('loginform.html', error=error)
@@ -41,7 +39,7 @@ def login():
 
 @app.route('/profil')
 def Profile():
-    print(loggedIN)
+    print(MyDatabase.getStatus())
     return render_template('profil.html')
 
 
@@ -62,7 +60,7 @@ def NyBruger():
             NewUser= User(brugernavn, password)
             currentUser = NewUser
             MyDatabase.addUser(currentUser)
-            loggedIN = True
+            MyDatabase.setStatus("True")
             MyDatabase.WriteToFile([brugernavn, password])
             return redirect('/profil')
     return render_template('nybruger.html', error = error)

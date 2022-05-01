@@ -6,10 +6,17 @@ from user import User
 class Database:
     def __init__(self):
         self.Users = self.ReadFromFile()        # definer user liste
+        self.status = "False"
        
 
     def getDatabase(self):
         return self.Users
+
+    def setStatus(self, status):
+        self.status = status
+    
+    def getStatus(self):
+        return self.status
     
     def addUser(self, user):
         self.Users.append(user)
