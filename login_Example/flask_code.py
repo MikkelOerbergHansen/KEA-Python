@@ -27,6 +27,8 @@ def login():
             error = MyDatabase.credentialCheck(inputUsername, inputPassword)
 
             if error == None:
+                currentUser = MyDatabase.findUser(inputUsername)
+                loggedIN = True
                 return redirect('/profil')
             else:
                 return render_template('loginform.html', error=error)

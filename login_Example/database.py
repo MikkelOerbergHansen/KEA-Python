@@ -56,6 +56,8 @@ class Database:
             return "password cannot be empty"
         elif len(username) == 0 or username.isspace() == True:
             return "username cannot be empty"
+        elif self.findUser(username) != None:
+            return "User already exist"
         else:
             return None
 
