@@ -6,7 +6,6 @@ app = Flask(__name__)
 
     
 MyDatabase = Database()
-currentUser = None
 
 
 
@@ -26,7 +25,7 @@ def login():
             error = MyDatabase.credentialCheck(inputUsername, inputPassword)
 
             if error == None:
-                currentUser = MyDatabase.findUser(inputUsername)
+                MyDatabase.setUser(MyDatabase.findUser(inputUsername))
                 MyDatabase.setStatus("True")
                 return redirect('/profil')
             else:
@@ -58,8 +57,8 @@ def NyBruger():
             return render_template('nybruger.html', error = error)
         else:
             NewUser= User(brugernavn, password)
-            currentUser = NewUser
-            MyDatabase.addUser(currentUser)
+            MyDatabase.setUser(NewUser)
+            MyDatabase.addUser(NewUser)
             MyDatabase.setStatus("True")
             MyDatabase.WriteToFile([brugernavn, password])
             return redirect('/profil')

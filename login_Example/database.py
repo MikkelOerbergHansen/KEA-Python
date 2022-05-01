@@ -7,10 +7,17 @@ class Database:
     def __init__(self):
         self.Users = self.ReadFromFile()        # definer user liste
         self.status = "False"
+        self.user = None
        
 
     def getDatabase(self):
         return self.Users
+
+    def getUser(self):
+        return self.user
+
+    def setUser(self, user):
+        self.user = user
 
     def setStatus(self, status):
         self.status = status
