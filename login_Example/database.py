@@ -21,7 +21,9 @@ class Database:
     def Checkinput(self, username, password, passwordrep):
         if password != passwordrep:
             return 'password does not match. Please try again.'
-        elif username == " ":
+        elif len(password) == 0 or password.isspace() == True:
+            return "password cannot be empty"
+        elif len(username) == 0 or username.isspace() == True:
             return "username cannot be empty"
         else:
             return None
