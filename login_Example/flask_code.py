@@ -58,7 +58,7 @@ def NyBruger():
 
 
 @app.route('/ekstraSide')
-def salesPage():
+def extraPage():
     return ('Dette er en ekstra side der ikke er i brug nu')
 
 
