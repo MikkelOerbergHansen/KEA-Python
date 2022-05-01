@@ -41,11 +41,10 @@ class Database:
 
     def credentialCheck(self, inputname, inputpassword):
         for user in self.Users:
-            if user.userName == inputname and user.password == inputpassword:
+            if user.username == inputname and user.password == inputpassword:
                 return None
             else:
                 return 'Invalid Credentials. Please try again.'
-
 
 
 ### funktionen checker input fra bruger
