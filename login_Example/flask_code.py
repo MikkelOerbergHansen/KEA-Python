@@ -50,7 +50,14 @@ def Profile():
     password = currentUser.getpassword()
     
     if request.method == 'POST':
-        return render_template('profil.html')
+        nytnavn = request.form['username']
+        nytpassword = request.form['password']
+        error = MyDatabase.Checkinput(nytnavn, nytpassword, nytpassword)
+        if error != None:
+            return render_template('profil.html', error = error, navn = navn, password = password)
+        else:
+            ### opret ny user info
+            return render_template('profil.html', error = error, navn = navn, password = password)
 
     
     return render_template('profil.html', error = error, navn = navn, password = password)
