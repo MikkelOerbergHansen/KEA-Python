@@ -6,19 +6,21 @@ app = Flask(__name__)
 
 MyDatabase = Database()
 currentUser = None
-loggedIN = None
+loggedIN = False
 
 
 print(MyDatabase.Users)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def startside():
-    return render_template('startside.html')
+    #loggedIN = loggedIN
+    return render_template('startside.html', LoggedIn = loggedIN)
 
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+        #loggedIN = loggedIN
         error = None
         if request.method == 'POST':
             inputUsername = request.form['username']
@@ -40,6 +42,7 @@ def login():
 
 @app.route('/profil')
 def Profile():
+    #loggedIN = loggedIN
     return render_template('profil.html')
 
 
@@ -47,6 +50,7 @@ def Profile():
 
 @app.route('/NyBruger', methods=['GET', 'POST'])
 def NyBruger():
+    #loggedIN = loggedIN
     error = None
     if request.method == 'POST':
         brugernavn = request.form['username']

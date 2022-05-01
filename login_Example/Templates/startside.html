@@ -48,10 +48,19 @@
     
         <h1>Overskrift</h1>
 
-      <div class="col-md-3 text-end">
-        <button onclick="location.href='/login'" type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button onclick="location.href='/NyBruger'" type="button" class="btn btn-primary">Sign-up</button>
-      </div>
+        {% if LoggedIn == True %}
+        <div class="col-md-3 text-end">
+          <button onclick="location.href='/profil'" type="button" class="btn btn-outline-primary me-2">Profil</button>
+          <button onclick="location.href='/startside'" type="button" class="btn btn-primary">Log-out</button>
+        </div>
+        {% endif %}
+
+        {% if LoggedIn == False %}
+        <div class="col-md-3 text-end">
+          <button onclick="location.href='/login'" type="button" class="btn btn-outline-primary me-2">Login</button>
+          <button onclick="location.href='/NyBruger'" type="button" class="btn btn-primary">Sign-up</button>
+        </div>
+        {% endif %}
     </header>
   </div>
 
