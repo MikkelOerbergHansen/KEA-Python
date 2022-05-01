@@ -45,14 +45,15 @@ def login():
 @app.route('/profil', methods=['GET', 'POST'])
 def Profile():
     error = None
+    currentUser = MyDatabase.user
+    navn = currentUser.getUsername()
+    password = currentUser.getpassword()
     
-
-
     if request.method == 'POST':
         return render_template('profil.html')
 
     
-    return render_template('profil.html', error = error)
+    return render_template('profil.html', error = error, navn = navn, password = password)
 
 
 

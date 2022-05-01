@@ -78,6 +78,10 @@
     </header>
   </div>
 
+  <br>
+  <br>
+  <br>
+
   <div class="container" align="center">
     {% if error %}
     <p class="error"><strong>Error:</strong> {{ error }}
@@ -87,13 +91,15 @@
         <table style="width:100%">
             <tr>
               <th><label> dit brugernavn: </label> </th>
-              <th><input type="text" placeholder="Username" name="username" value="{{
-                request.form.username }}"></th>
+              {% if navn %}
+              <th><input type="text" placeholder="Username" name="username" value= "{{ navn }}" ></th>
+                {% endif %}
             </tr>
             <tr>
               <th><label> dit password: </label> </th>
-              <td><input type="password" placeholder="Password" name="password" value="{{
-                request.form.password }}"></td>
+              {% if password %}
+              <td><input type="password" placeholder="Password" name="password" value="{{ password }}"></td>
+                {% endif %}
             </tr>
         </table>
           <input class="btn btn-default" type="submit" value="gem">
