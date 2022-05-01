@@ -8,6 +8,8 @@ MyDatabase = Database()
 currentUser = None
 loggedIN = None
 
+print(MyDatabase.Users)
+
 
 @app.route('/')
 def startside():

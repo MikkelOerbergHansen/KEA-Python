@@ -1,5 +1,7 @@
 import csv
 
+from user import User
+
 
 class Database:
     def __init__(self):
@@ -25,7 +27,11 @@ class Database:
             rows = []
             for row in reader:
                 rows.append(row)
-        return rows
+            users= []
+            for row in rows:
+                user= User(row[0], row[1])
+                users.append(user)
+        return users
 
     def WriteToFile(self, listofInfo):
         with open("login_Example/static/database.csv", 'a', newline='') as f:
