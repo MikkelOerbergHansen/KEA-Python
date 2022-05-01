@@ -21,10 +21,16 @@ def startside():
 def login():
         error = None
         if request.method == 'POST':
-            if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-                error = 'Invalid Credentials. Please try again.'
-            else:
+            inputUsername = request.form['username']
+            inputPassword = request.form['password']
+            
+            error = MyDatabase.credentialCheck(inputUsername, inputPassword)
+
+            if error == None:
                 return redirect('/profil')
+            else:
+                return render_template('loginform.html', error=error)
+
         return render_template('loginform.html', error=error)
 
 
