@@ -41,7 +41,7 @@ def login():
 
 
 
-
+#### PRofil siden skal laves
 @app.route('/profil')
 def Profile():
     
