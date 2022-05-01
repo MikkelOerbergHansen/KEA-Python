@@ -44,7 +44,7 @@ def login():
 
 @app.route('/profil')
 def Profile():
-    print(MyDatabase.getStatus())
+    
     return render_template('profil.html')
 
 
