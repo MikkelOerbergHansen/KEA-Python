@@ -4,6 +4,7 @@ from database import Database
 
 app = Flask(__name__)
 
+    
 MyDatabase = Database()
 currentUser = None
 loggedIN = False
