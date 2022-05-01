@@ -18,6 +18,10 @@ class Database:
             writer.writerow(listofInfo)
         return None
 
+
+
+### funktionen checker input fra bruger
+### hvis yderligere krav eller input kommer så kan det tilføres her
     def Checkinput(self, username, password, passwordrep):
         if password != passwordrep:
             return 'password does not match. Please try again.'
