@@ -40,10 +40,10 @@ class Database:
         return None
 
     def credentialCheck(self, inputname, inputpassword):
-        error = None
         for user in self.Users:
             if user.username == inputname and user.password == inputpassword:
                 error = None
+                return error
             else:
                 error = 'Invalid Credentials. Please try again.'
         return error
