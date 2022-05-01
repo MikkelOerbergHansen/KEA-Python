@@ -3,7 +3,7 @@ import csv
 
 class Database:
     def __init__(self):
-        self.Users = []        # definer user liste
+        self.Users = self.ReadFromFile()        # definer user liste
        
 
     def getDatabase(self):
@@ -11,6 +11,21 @@ class Database:
     
     def addUser(self, user):
         self.Users.append(user)
+
+    def findUser(self, inputname):
+        for user in self.Users:
+            if user.getUsername() == inputname:
+                return user
+            else:
+                return None
+
+    def ReadFromFile(self):
+        with open("login_Example/static/database.csv", "r") as f:
+            reader = csv.reader(f)
+            rows = []
+            for row in reader:
+                rows.append(row)
+        return rows
 
     def WriteToFile(self, listofInfo):
         with open("login_Example/static/database.csv", 'a', newline='') as f:
