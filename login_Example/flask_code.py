@@ -13,6 +13,12 @@ MyDatabase = Database()
 def startside():
     return render_template('startside.html', LoggedIn = MyDatabase.getStatus())
 
+@app.route('/logout')
+def logout():
+    MyDatabase.setStatus("False")
+    MyDatabase.setUser(None)
+    return render_template('logout.html', LoggedIn = MyDatabase.getStatus())
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
