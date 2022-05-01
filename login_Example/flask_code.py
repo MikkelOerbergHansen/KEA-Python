@@ -40,7 +40,7 @@ def login():
 
 @app.route('/profil')
 def Profile():
-    return ('dette er en profilside efter succesfuldt log in')
+    return render_template('profil.html')
 
 
 
