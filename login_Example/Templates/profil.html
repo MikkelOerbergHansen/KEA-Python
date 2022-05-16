@@ -108,7 +108,7 @@
                 {% endif %}
             </tr>
         </table>
-          <input class="btn btn-default" type="submit" value="rediger">
+          <input class="btn btn-default" type="submit" name= "action" value="rediger">
       </form>
   </div>
   {% endif %}
@@ -120,7 +120,7 @@
     {% endif %}
     <form action="" method="post" style="text-align: center; vertical-align: middle;">
         <h2 style="color:rgb(28, 73, 99);"> Dine Oplysninger </h2>
-        <table class ="center" style="width:50%" style="text-align: center; vertical-align: middle;" >
+        <table class ="center" style="width:80%" style="text-align: center; vertical-align: middle;" >
             <tr>
               <th><label> dit brugernavn: </label> </th>
               {% if navn %}
@@ -130,11 +130,15 @@
             <tr>
               <th><label> dit password: </label> </th>
               {% if password %}
-              <th><p> {{ password }} </p> </th>
+              <th><input type="text" placeholder="Password" name="password" value="{{password}}"></th>
                 {% endif %}
             </tr>
+            <tr>
+              <th><label> gentag password: </label> </th>
+              <th><input type="text" placeholder="Password" name="passwordrep" ></th>
+            </tr>
         </table>
-          <input class="btn btn-default" type="submit" value="rediger">
+          <input class="btn btn-default" type="submit" name= "action" value="gem">
       </form>
   </div>
   {% endif %}
