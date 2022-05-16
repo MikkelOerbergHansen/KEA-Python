@@ -31,9 +31,11 @@ class Database:
     def findUser(self, inputname):
         for user in self.Users:
             if user.getUsername() == inputname:
-                return user
+                myuser = user
+                return myuser
             else:
-                return None
+                myuser = None
+        return myuser
 
     def ReadFromFile(self):
         with open("login_Example/static/database.csv", "r") as f:

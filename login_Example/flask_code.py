@@ -32,6 +32,7 @@ def login():
 
             if error == None:
                 MyDatabase.setUser(MyDatabase.findUser(inputUsername))
+                print(MyDatabase.findUser(inputUsername))
                 MyDatabase.setStatus("True")
                 return redirect('/profil')
             else:
@@ -46,6 +47,7 @@ def login():
 def Profile():
     error = None
     currentUser = MyDatabase.user
+    print(currentUser)
     navn = currentUser.getUsername()
     password = currentUser.getpassword()
     
