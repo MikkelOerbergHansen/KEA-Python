@@ -52,6 +52,11 @@
           font-size: 3.5rem;
         }
       }
+
+      table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
     </style>
 
     
@@ -82,29 +87,57 @@
   <br>
   <br>
 
+  {% if edit == False %}
   <div class="container" align="center">
     {% if error %}
     <p class="error"><strong>Error:</strong> {{ error }}
     {% endif %}
     <form action="" method="post" style="text-align: center; vertical-align: middle;">
         <h2 style="color:rgb(28, 73, 99);"> Dine Oplysninger </h2>
-        <table style="width:100%">
+        <table class ="center" style="width:50%" style="text-align: center; vertical-align: middle;" >
             <tr>
               <th><label> dit brugernavn: </label> </th>
               {% if navn %}
-              <th><input type="text" placeholder="Username" name="username" value= "{{ navn }}" ></th>
+              <th><p> {{ navn }} </p></th>
                 {% endif %}
             </tr>
             <tr>
               <th><label> dit password: </label> </th>
               {% if password %}
-              <td><input type="text" placeholder="Password" name="password" value="{{ password }}"></td>
+              <th><p> {{ password }} </p> </th>
                 {% endif %}
             </tr>
         </table>
           <input class="btn btn-default" type="submit" value="rediger">
       </form>
   </div>
+  {% endif %}
+
+  {% if edit == True %}
+  <div class="container" align="center">
+    {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <form action="" method="post" style="text-align: center; vertical-align: middle;">
+        <h2 style="color:rgb(28, 73, 99);"> Dine Oplysninger </h2>
+        <table class ="center" style="width:50%" style="text-align: center; vertical-align: middle;" >
+            <tr>
+              <th><label> dit brugernavn: </label> </th>
+              {% if navn %}
+              <th><input type="text" placeholder="Username" name="username" value="{{navn}}"></th>
+                {% endif %}
+            </tr>
+            <tr>
+              <th><label> dit password: </label> </th>
+              {% if password %}
+              <th><p> {{ password }} </p> </th>
+                {% endif %}
+            </tr>
+        </table>
+          <input class="btn btn-default" type="submit" value="rediger">
+      </form>
+  </div>
+  {% endif %}
   
 
 
