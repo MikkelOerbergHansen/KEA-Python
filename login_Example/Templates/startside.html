@@ -64,6 +64,17 @@
     </header>
   </div>
 
+  {% if LoggedIn == "True" %}
+  <div class="container" align = "center">
+    <p> this is the good stuff</p>
+  </div>
+  {% endif %}
+
+  {% if LoggedIn == "False" %}
+  <div class="container" align = "center">
+    <p> GÅ til log in og se hvad vi gemmer på</p>
+  </div>
+  {% endif %}
 
 </main>
 

@@ -48,12 +48,14 @@ def Profile():
     currentUser = MyDatabase.user
     navn = currentUser.getUsername()
     password = currentUser.getpassword()
+    passwordlength = len(password)
+    cryptpassword = "*"*int(passwordlength)
     
     if request.method == 'POST':
         if request.form['action'] == 'rediger':
             return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
         if request.form['action'] == 'fortryd':
-            return render_template('profil.html', error = error, navn = navn, password = password, edit = False)
+            return render_template('profil.html', error = error, navn = navn, password = cryptpassword, edit = False)
         if request.form['action'] == 'gem':
             nytnavn = request.form['username']
             nytpassword = request.form['password']
@@ -63,10 +65,10 @@ def Profile():
                 return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
             else:
                 ### opret ny user info
-                return render_template('profil.html', error = error, navn = navn, password = password, edit=False)
+                return render_template('profil.html', error = error, navn = navn, password = cryptpassword, edit=False)
 
     
-    return render_template('profil.html', error = error, navn = navn, password = password, edit = False)
+    return render_template('profil.html', error = error, navn = navn, password = cryptpassword, edit = False)
 
 
 
