@@ -52,6 +52,8 @@ def Profile():
     if request.method == 'POST':
         if request.form['action'] == 'rediger':
             return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
+        if request.form['action'] == 'fortryd':
+            return render_template('profil.html', error = error, navn = navn, password = password, edit = False)
         if request.form['action'] == 'gem':
             nytnavn = request.form['username']
             nytpassword = request.form['password']
