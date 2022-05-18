@@ -20,6 +20,7 @@ Repo.AddCar(car4)
 tempCustomer = Customer(1, 'Hans', 'Hansen', 'kornvænget', '123456')
 Repo.AddCustomer(tempCustomer)
 tempContract = Contract(111, tempCustomer,car1, datetime.datetime.now().month, 12) 
+print(tempContract)
 Repo.AddContract(tempContract)
 
 print("*****Car List *******")

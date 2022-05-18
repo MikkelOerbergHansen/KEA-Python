@@ -48,7 +48,7 @@
 ## dvs. vi definerer klasser bestående af attributter og metoder. 
 ## 
 ## 
-## Til metode afsnittet er det godt at bruge teori fra bogen, og derefter skrive hvor og hvordan (til hvad) teorien er implementeret
+## Til analyse afsnittet er det godt at bruge teori fra bogen, og derefter skrive hvor og hvordan (til hvad) teorien er implementeret
 ## slut af med en figur / code-snippet. 
 
 ## diskussions afsnittet kan omhandle proces delen (er det waterfall eller iterativt)
