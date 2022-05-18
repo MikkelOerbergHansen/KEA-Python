@@ -1,7 +1,12 @@
+
+
+## Bogen er (C. Milliken, 2020)
 ##
 ## Vi definerer en klasse Car og instantierer objekter af klassen Car
 
+
 ## Defineringen skal indeholde attributter og metoder
+
 
 ## Attributter:
 # - beskrivelse af bilen
@@ -21,10 +26,13 @@
 
 
 ## fejlhåndtering:
-# - try / except blok
+# - try / except blok 
+# - undgå at programmet crasher. 
+
 
 ## filhåndtering:
 # - csv og pandas (indlæs moduler)
+
 
 ## graftegning til data
 # - matplotlib og pandas (indlæs moduler)
