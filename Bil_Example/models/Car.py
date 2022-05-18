@@ -12,3 +12,6 @@ class Car:
 
     def __str__(self):
         return f'Car ID: {self.CarId}, Brand:  {self.Brand}, Model: {self.Model}, Color: {self.Color}, On Sale: {self.OnSale}, Marker Price: {self.MarketPrice}, Selling Price: {self.SellingPrice}, KM per Liter: {self.KmPerLiter}, Reprationer: {self.Reperationer}'    
+
+
+

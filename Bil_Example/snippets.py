@@ -40,9 +40,17 @@
 
 
 
+### vores tilgang til programmering er altid object orienteret programmering
+### det hører med til metode afsnittet - se også OOP stages sektionen i kapitel 7 i bogen. 
+##
+##
+## eksempel: til projektet anvendes object orienteret programmering i python.
+## dvs. vi definerer klasser bestående af attributter og metoder. 
+## 
+## 
+## Til metode afsnittet er det godt at bruge teori fra bogen, og derefter skrive hvor og hvordan (til hvad) teorien er implementeret
+## slut af med en figur / code-snippet. 
 
-
-
-
+## diskussions afsnittet kan omhandle proces delen (er det waterfall eller iterativt)
 
 
