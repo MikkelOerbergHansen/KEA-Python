@@ -64,8 +64,13 @@ def Profile():
             if error != None:
                 return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
             else:
-                ### opret ny user info
-                return render_template('profil.html', error = error, navn = navn, password = cryptpassword, edit=False)
+                ### opret ny user info ##### husk slet gammel bruger
+                NewUser= User(nytnavn, nytpassword)
+                MyDatabase.setUser(NewUser)
+                MyDatabase.addUser(NewUser)
+                MyDatabase.setStatus("True")
+                MyDatabase.WriteToFile([nytnavn, nytpassword])
+                return render_template('profil.html', error = error, navn = nytnavn, password = "*"*int(len(nytpassword)), edit=False)
 
     
     return render_template('profil.html', error = error, navn = navn, password = cryptpassword, edit = False)
