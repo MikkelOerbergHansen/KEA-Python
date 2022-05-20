@@ -64,7 +64,7 @@ def Profile():
             if error != None:
                 return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
             else:
-                ### opret ny user info ##### husk slet gammel bruger
+                ### opret ny user info ##### husk slet gammel bruger både fra database liste og database fil
                 NewUser= User(nytnavn, nytpassword)
                 MyDatabase.setUser(NewUser)
                 MyDatabase.addUser(NewUser)
