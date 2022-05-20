@@ -70,6 +70,7 @@ def Profile():
                 MyDatabase.addUser(NewUser)
                 MyDatabase.setStatus("True")
                 MyDatabase.WriteToFile([nytnavn, nytpassword])
+                print(MyDatabase.Users)
                 return render_template('profil.html', error = error, navn = nytnavn, password = "*"*int(len(nytpassword)), edit=False)
 
     
