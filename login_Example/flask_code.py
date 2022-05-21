@@ -66,7 +66,6 @@ def Profile():
             else:
                 MyDatabase.user.setUsername(nytnavn)
                 MyDatabase.user.setpassword(nytpassword)
-                MyDatabase.setStatus("True")
                 MyDatabase.WriteToFile([nytnavn, nytpassword])
                 return render_template('profil.html', error = error, navn = MyDatabase.user.getUsername(), password = "*"*int(len(MyDatabase.user.getpassword())), edit=False)
 
