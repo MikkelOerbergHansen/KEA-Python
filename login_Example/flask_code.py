@@ -62,7 +62,7 @@ def Profile():
             nytpasswordrep = request.form['passwordrep']
             error = MyDatabase.Checkinput(nytnavn, nytpassword, nytpasswordrep)
             if error != None:
-                return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
+                return render_template('profil.html', error = error, navn = nytnavn, password = nytpassword, edit = True)
             else:
                 MyDatabase.user.setUsername(nytnavn)
                 MyDatabase.user.setpassword(nytpassword)
