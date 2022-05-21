@@ -64,16 +64,11 @@ def Profile():
             if error != None:
                 return render_template('profil.html', error = error, navn = navn, password = password, edit = True)
             else:
-                print(MyDatabase.Users)
-                MyDatabase.removeUser(navn)
-                print(MyDatabase.Users)
-                ### opret ny user info ##### husk slet gammel bruger både fra database liste og database fil
                 MyDatabase.user.setUsername(nytnavn)
                 MyDatabase.user.setpassword(nytpassword)
-                MyDatabase.addUser(MyDatabase.user)
                 MyDatabase.setStatus("True")
                 MyDatabase.WriteToFile([nytnavn, nytpassword])
-                return render_template('profil.html', error = error, navn = nytnavn, password = "*"*int(len(nytpassword)), edit=False)
+                return render_template('profil.html', error = error, navn = MyDatabase.user.getUsername(), password = "*"*int(len(MyDatabase.user.getpassword())), edit=False)
 
     
     return render_template('profil.html', error = error, navn = navn, password = cryptpassword, edit = False)
