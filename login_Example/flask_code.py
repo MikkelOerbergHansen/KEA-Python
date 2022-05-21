@@ -105,4 +105,4 @@ def extraPage():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    app.run() ## insert host='0.0.0.0', port=8000 in parentesen for at gøre den tilgængelig
