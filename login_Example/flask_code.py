@@ -67,6 +67,7 @@ def Profile():
                 MyDatabase.user.setUsername(nytnavn)
                 MyDatabase.user.setpassword(nytpassword)
                 MyDatabase.WriteToFile([nytnavn, nytpassword])
+                ### gammel brugernavn slettes fra database
                 return render_template('profil.html', error = error, navn = MyDatabase.user.getUsername(), password = "*"*int(len(MyDatabase.user.getpassword())), edit=False)
 
     
