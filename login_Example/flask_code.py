@@ -45,6 +45,7 @@ def login():
 @app.route('/profil', methods=['GET', 'POST'])
 def Profile():
     error = None
+    MyDatabase.Users = MyDatabase.ReadFromFile()
     currentUser = MyDatabase.user
     navn = currentUser.getUsername()
     password = currentUser.getpassword()
@@ -69,7 +70,6 @@ def Profile():
                 MyDatabase.DeleteFile()
                 userlist = MyDatabase.getDatabase()
                 MyDatabase.saveFile(userlist)
-                #MyDatabase.Users = MyDatabase.ReadFromFile()
                 return render_template('profil.html', error = error, navn = MyDatabase.user.getUsername(), password = "*"*int(len(MyDatabase.user.getpassword())), edit=False)
 
     
