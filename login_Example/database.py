@@ -28,6 +28,11 @@ class Database:
     def addUser(self, user):
         self.Users.append(user)
 
+    def removeUser(self, username):
+        for user in self.Users:
+            if user.getUsername() == username:
+                self.Users.remove(user)
+
     def findUser(self, inputname):
         for user in self.Users:
             if user.getUsername() == inputname:
