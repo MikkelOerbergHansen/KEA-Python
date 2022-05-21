@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect
 from user import User
 from database import Database
+import os
 
 app = Flask(__name__)
 
@@ -65,8 +66,9 @@ def Profile():
             else:
                 MyDatabase.user.setUsername(nytnavn)
                 MyDatabase.user.setpassword(nytpassword)
-                MyDatabase.WriteToFile([nytnavn, nytpassword])
-                ### gammel brugernavn skal slettes fra database
+                MyDatabase.DeleteFile()
+                userlist = MyDatabase.getDatabase()
+                MyDatabase.saveFile(userlist)
                 return render_template('profil.html', error = error, navn = MyDatabase.user.getUsername(), password = "*"*int(len(MyDatabase.user.getpassword())), edit=False)
 
     

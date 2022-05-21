@@ -1,7 +1,7 @@
 import csv
 
 from user import User
-
+import os
 
 class Database:
     def __init__(self):
@@ -53,6 +53,19 @@ class Database:
         with open("login_Example/static/database.csv", 'a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(listofInfo)
+        return None
+
+    def DeleteFile(self):
+        file = "login_Example/static/database.csv"
+        if(os.path.exists(file) and os.path.isfile(file)):
+            os.remove(file)
+        return None
+
+    def saveFile(self, userlist):
+        with open("login_Example/static/database.csv", 'w', newline='') as f:
+            writer = csv.writer(f)
+            for user in userlist:
+                writer.writerow([user.getUsername(), user.getpassword()])
         return None
 
     def credentialCheck(self, inputname, inputpassword):
