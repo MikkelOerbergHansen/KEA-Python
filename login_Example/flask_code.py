@@ -16,6 +16,8 @@ def startside():
 
 @app.route('/logout')
 def logout():
+    if MyDatabase.getStatus() == "False":
+            return redirect('/')
     MyDatabase.setStatus("False")
     MyDatabase.setUser(None)
     return render_template('logout.html', LoggedIn = MyDatabase.getStatus())
@@ -24,6 +26,8 @@ def logout():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+        if MyDatabase.getStatus() == "True":
+            return redirect('/profil')
         error = None
         if request.method == 'POST':
             inputUsername = request.form['username']
@@ -45,6 +49,8 @@ def login():
 @app.route('/profil', methods=['GET', 'POST'])
 def Profile():
     error = None
+    if MyDatabase.getStatus() == "False":
+            return redirect('/')
     currentUser = MyDatabase.user
     navn = currentUser.getUsername()
     password = currentUser.getpassword()
@@ -84,6 +90,8 @@ def Profile():
 
 @app.route('/NyBruger', methods=['GET', 'POST'])
 def NyBruger():
+    if MyDatabase.getStatus() == "True":
+            return redirect('/profil')
     error = None
     if request.method == 'POST':
         brugernavn = request.form['username']
