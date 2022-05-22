@@ -71,6 +71,7 @@ def Profile():
                 MyDatabase.saveFile(userlist)
                 #MyDatabase.Users = MyDatabase.ReadFromFile()
                 # spørgsmål hvad sker der når 2 brugere redigerer filen samtidig
+                # https://www.geeksforgeeks.org/how-to-use-flask-session-in-python-flask/
                 for user in MyDatabase.Users:
                     print(user.getUsername())
                 return render_template('profil.html', error = error, navn = MyDatabase.user.getUsername(), password = "*"*int(len(MyDatabase.user.getpassword())), edit=False)
@@ -111,4 +112,4 @@ def extraPage():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000, threaded=True ) ## insert host='0.0.0.0', port=8000 in parentesen for at gøre den tilgængelig
+    app.run(host='0.0.0.0', port=8000, threaded=True) ## insert host='0.0.0.0', port=8000 in parentesen for at gøre den tilgængelig
