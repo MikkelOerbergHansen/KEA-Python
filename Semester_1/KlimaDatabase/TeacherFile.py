@@ -4,7 +4,7 @@ pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
-df = pd.read_excel('KlimaDatabase/static/Results_FINAL_20210201v4.xlsx',engine = "openpyxl", sheet_name='Ra_500food', usecols="D,E,K,M")
+df = pd.read_excel('Semester_1/KlimaDatabase/static/Results_FINAL_20210201v4.xlsx',engine = "openpyxl", sheet_name='Ra_500food', usecols="D,E,K,M")
 
 print(df.groupby("DSK Category").describe())
 print(df.groupby(["DSK Category"]).groups)
