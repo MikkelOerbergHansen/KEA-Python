@@ -37,7 +37,7 @@ def index():
 
 def København():
         ExcelFilData = ExcelReader()
-        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
+        dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataKøbenhavn.csv")
         del dataframe[0]
       
         return( '<center><h1>København</h1></center> '
@@ -53,7 +53,7 @@ def København():
 @app.route('/Odense')
 def Odense():
         ExcelFilData = ExcelReader()
-        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataOdense.csv")
+        dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataOdense.csv")
         del dataframe[0]
 
       
@@ -70,7 +70,7 @@ def Odense():
 @app.route('/Aalborg')
 def Aalborg():
         ExcelFilData = ExcelReader()
-        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataAalborg.csv")
+        dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataAalborg.csv")
         del dataframe[0]
 
         return( '<center><h1>Aalborg</h1></center> '
