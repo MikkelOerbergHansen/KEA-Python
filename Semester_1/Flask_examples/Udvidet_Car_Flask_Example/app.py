@@ -50,7 +50,7 @@ car4 = Car('Tesla', '3', 'Rød', True, 70000, 40000, 16.5, ['Nyt batteri'])
 cars = [car1, car2, car3, car4]
 
 # Åbner en csv fil med fil mode "w" så vi kan skrive til filen
-with open('Flask_examples/Udvidet_Car_Flask_Example/static/cars.csv', mode="w", newline="") as f:
+with open('Semester_1/Flask_examples/Udvidet_Car_Flask_Example/static/cars.csv', mode="w", newline="") as f:
     writer = csv.writer(f, delimiter=",")
     # laver et for loop og skriver vores objekter i listen cars til filen
     for i in cars:
@@ -71,7 +71,7 @@ for car in cars:
 # Matplotlib bar og plot diagram
 plt.bar(car_category, car_price)
 plt.title("Pris på biler")
-plt.savefig('Flask_examples/Udvidet_Car_Flask_Example/static/cars_price')
+plt.savefig('Semester_1/Flask_examples/Udvidet_Car_Flask_Example/static/cars_price')
 plt.close()
 
 f, ax = plt.subplots(1)
