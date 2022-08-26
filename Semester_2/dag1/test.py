@@ -6,7 +6,7 @@ import pandas as pd
 ####
 
 xlsx = pd.read_excel("Semester_2/dag1/GUBI_EU_Pricelist_march_2022.xlsx", engine = "openpyxl", sheet_name = "Master data EU")
-print(xlsx)
+#print(xlsx)
 
 mylist = []  ## mylist indeholder alle rækker fra excel filen som en liste af lister
 
@@ -52,7 +52,7 @@ for x in data1['retailers']:
     row = (x['name'], x['country'], x['city'], x['websiteLink'], x['uUID'])
     retailerlist.append(tuple(row))
 
-#print(retailerlist)
+print(retailerlist)
 
 
 
