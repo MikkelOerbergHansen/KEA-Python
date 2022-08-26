@@ -11,7 +11,7 @@ class vejr(object):
     def runvejr(self):
 
         ExcelFilData = ExcelReader()
-        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
+        dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataKøbenhavn.csv")
 
         ###
         ### datasættet skal konverteres til en liste af målinger
@@ -23,13 +23,13 @@ class vejr(object):
             MålingerKBH.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
 
         # Vi gentager for datasættet for hhv. Aalborg og odense
-        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataAalborg.csv")
+        dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataAalborg.csv")
 
         MålingerAA =[]
         for i in range(1, len(dataframe)):
             MålingerAA.append(Måling(dataframe[i][0],dataframe[i][1],dataframe[i][2],dataframe[i][3],dataframe[i][4], dataframe[i][5]))
 
-        dataframe = ExcelFilData.prepareData("VejrCase/VejrDataOdense.csv")
+        dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataOdense.csv")
 
         MålingerOD = []
         for i in range(1, len(dataframe)):
