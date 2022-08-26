@@ -73,3 +73,7 @@ with sqlite3.connect('Semester_2/dag1/retailers.db') as connection:
 for r in retailerList:
     cur.execute("INSERT INTO retailers (name, country, city, websiteLink, uuid) VALUES (?,?,?,?,?);", 
                 (r[0], r[1], r[2], r[3], r[4]))
+
+
+cur.close()
+connection.close()
