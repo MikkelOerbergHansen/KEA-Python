@@ -15,7 +15,7 @@ from Målinger import Måling
 ################################################################################################################
 ################################################################################################################
 ExcelFilData = ExcelReader()
-dataframe = ExcelFilData.prepareData("VejrCase/VejrDataKøbenhavn.csv")
+dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataKøbenhavn.csv")
 del dataframe[0]
 
 MålingerKBH =[]
@@ -70,7 +70,7 @@ ax.set_yticklabels([min(GlobalStråling), 200 ,max(GlobalStråling)])
 ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])                                   
 plt.title("KBH Globalstråling")
-plt.savefig('VejrCase/static/KBH_Globalstråling')
+plt.savefig('Semester_1/VejrCase/static/KBH_Globalstråling')
 plt.close()
 
 
@@ -87,7 +87,7 @@ ax.set_yticklabels([min(Rel_Fugtighed) ,max(Rel_Fugtighed)])
 ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])   
 plt.title("KBH Rel_Fugtighed")
-plt.savefig('VejrCase/static/KBH_Rel_Fugtighed')
+plt.savefig('Semester_1/VejrCase/static/KBH_Rel_Fugtighed')
 plt.close()
 
 
@@ -103,7 +103,7 @@ ax.set_yticklabels([min(Temperatur) ,max(Temperatur)])
 ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])  
 plt.title("KBH Temperatur")
-plt.savefig('VejrCase/static/KBH_Temperatur')
+plt.savefig('Semester_1/VejrCase/static/KBH_Temperatur')
 plt.close()
 
 
@@ -119,7 +119,7 @@ ax.set_yticklabels([min(Vindretning) ,max(Vindretning)])
 ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"])  
 plt.title("KBH Vindretning")
-plt.savefig('VejrCase/static/KBH_Vindretning')
+plt.savefig('Semester_1/VejrCase/static/KBH_Vindretning')
 plt.close()
 
 
@@ -138,7 +138,7 @@ ax.set_yticklabels([min(Vindhastighed) ,max(Vindhastighed)])
 ax.set_xticks(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 07:30:00", "24-01-2022 00:00:00"]) 
 plt.title("KBH Vindhastighed")
-plt.savefig('VejrCase/static/KBH_Vindhastighed')
+plt.savefig('Semester_1/VejrCase/static/KBH_Vindhastighed')
 plt.close()
 
 
@@ -158,7 +158,7 @@ plt.close()
 
 
 ExcelFilData = ExcelReader()
-dataframe = ExcelFilData.prepareData("VejrCase/VejrDataOdense.csv")
+dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataOdense.csv")
 del dataframe[0]
 
 
@@ -218,7 +218,7 @@ ax.set_yticklabels([min(GlobalStråling), 200 ,max(GlobalStråling)])
 ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])                                   
 plt.title("Odense Globalstråling")
-plt.savefig('VejrCase/static/OD_Globalstråling')
+plt.savefig('Semester_1/VejrCase/static/OD_Globalstråling')
 plt.close()
 
 
@@ -235,7 +235,7 @@ ax.set_yticklabels([min(Rel_Fugtighed) ,max(Rel_Fugtighed)])
 ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])   
 plt.title("Odense Rel_Fugtighed")
-plt.savefig('VejrCase/static/OD_Rel_Fugtighed')
+plt.savefig('Semester_1/VejrCase/static/OD_Rel_Fugtighed')
 plt.close()
 
 
@@ -251,7 +251,7 @@ ax.set_yticklabels([min(Temperatur) ,max(Temperatur)])
 ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])  
 plt.title("Odense Temperatur")
-plt.savefig('VejrCase/static/OD_Temperatur')
+plt.savefig('Semester_1/VejrCase/static/OD_Temperatur')
 plt.close()
 
 
@@ -267,7 +267,7 @@ ax.set_yticklabels([min(Vindretning) ,max(Vindretning)])
 ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"])  
 plt.title("Odense Vindretning")
-plt.savefig('VejrCase/static/OD_Vindretning')
+plt.savefig('Semester_1/VejrCase/static/OD_Vindretning')
 plt.close()
 
 
@@ -283,7 +283,7 @@ ax.set_yticklabels([min(Vindhastighed) ,max(Vindhastighed)])
 ax.set_xticks(["22-02-2022 10:00", "24-01-2022 00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00", "24-01-2022 00:00"]) 
 plt.title("Odense Vindhastighed")
-plt.savefig('VejrCase/static/OD_Vindhastighed')
+plt.savefig('Semester_1/VejrCase/static/OD_Vindhastighed')
 plt.close()
 
 
@@ -300,7 +300,7 @@ plt.close()
 
 
 ExcelFilData = ExcelReader()
-dataframe = ExcelFilData.prepareData("VejrCase/VejrDataAalborg.csv")
+dataframe = ExcelFilData.prepareData("Semester_1/VejrCase/VejrDataAalborg.csv")
 del dataframe[0]
 
 
@@ -358,7 +358,7 @@ ax.set_yticklabels([min(GlobalStråling), 200 ,max(GlobalStråling)])
 ax.set_xticks(["22-02-2022 10:00:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00:00", "24-01-2022 00:00:00"])                                   
 plt.title("Aalborg Globalstråling")
-plt.savefig('VejrCase/static/AA_Globalstråling')
+plt.savefig('Semester_1/VejrCase/static/AA_Globalstråling')
 plt.close()
 
 
@@ -375,7 +375,7 @@ ax.set_yticklabels([min(Rel_Fugtighed) ,max(Rel_Fugtighed)])
 ax.set_xticks(["22-02-2022 10:00:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00:00", "24-01-2022 00:00:00"])   
 plt.title("Aalborg Rel_Fugtighed")
-plt.savefig('VejrCase/static/AA_Rel_Fugtighed')
+plt.savefig('Semester_1/VejrCase/static/AA_Rel_Fugtighed')
 plt.close()
 
 
@@ -391,7 +391,7 @@ ax.set_yticklabels([min(Temperatur) ,max(Temperatur)])
 ax.set_xticks(["22-02-2022 10:00:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00:00", "24-01-2022 00:00:00"])  
 plt.title("Aalborg Temperatur")
-plt.savefig('VejrCase/static/AA_Temperatur')
+plt.savefig('Semester_1/VejrCase/static/AA_Temperatur')
 plt.close()
 
 
@@ -407,7 +407,7 @@ ax.set_yticklabels([min(Vindretning) ,max(Vindretning)])
 ax.set_xticks(["22-02-2022 10:00:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00:00", "24-01-2022 00:00:00"])  
 plt.title("AalborgVindretning")
-plt.savefig('VejrCase/static/AA_Vindretning')
+plt.savefig('Semester_1/VejrCase/static/AA_Vindretning')
 plt.close()
 
 
@@ -423,7 +423,7 @@ ax.set_yticklabels([min(Vindhastighed) ,max(Vindhastighed)])
 ax.set_xticks(["22-02-2022 10:00:00", "24-01-2022 00:00:00"]) 
 ax.set_xticklabels(["22-02-2022 10:00:00", "24-01-2022 00:00:00"]) 
 plt.title("Aalborg Vindhastighed")
-plt.savefig('VejrCase/static/AA_Vindhastighed')
+plt.savefig('Semester_1/VejrCase/static/AA_Vindhastighed')
 plt.close()
 
 
