@@ -78,7 +78,7 @@ f, ax = plt.subplots(1)
 ax.plot(car_category, car_bonus)
 ax.set_ylim(ymin=0, ymax=5500)
 plt.title("Bonus på biler")
-plt.savefig('Flask_examples/Udvidet_Car_Flask_Example/static/cars_bonus')
+plt.savefig('Semester_1/Flask_examples/Udvidet_Car_Flask_Example/static/cars_bonus')
 plt.close()
 
 # laver en tom liste som jeg kan putte min Dictionaries ind i
@@ -127,13 +127,13 @@ for x in range(1000):
 
 
 
-    with open('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv', mode="w", newline="") as f:
+    with open('Semester_1/Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv', mode="w", newline="") as f:
         writer = csv.writer(f, delimiter=",")
         for i in carsListDict:
             writer.writerow([i['brand'], i['model'], i['color'], i['onSale'], i['marketPrice'], i['sellingPrice'], i['kmPerLiter'], i['reperationer']])
 
 # Laver en DataFrame med pandas som læser min csv fil
-df = csv.reader('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv', delimiter=";")
+df = csv.reader('Semester_1/Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv', delimiter=";")
 #df = pd.read_csv('Flask_examples/Udvidet_Car_Flask_Example/static/carsDict.csv')csv.reader(file, delimiter=";")
 
 print(df)
