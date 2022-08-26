@@ -30,8 +30,8 @@ for i in range(0,1):
 
 
 
-
-##### json fil
+#####
+##### json fil med python
 #####
 import json
 
@@ -52,7 +52,46 @@ for x in data1['retailers']:
     row = (x['name'], x['country'], x['city'], x['websiteLink'], x['uUID'])
     retailerlist.append(tuple(row))
 
-print(retailerlist)
+#print(retailerlist[0])
+
+
+
+
+
+##### database
+
+import sqlite3
+
+drop_table = """DROP TABLE IF EXISTS Retailers"""
+
+create_table = """CREATE TABLE Retailers (
+                        id INTEGER PRIMARY  KEY AUTOINCREMENT,
+                        name TEXT NOT NULL,
+                        country TEXT NOT NULL,
+                        city TEXT NOT NULL,
+                        websiteLink TEXT NOT NULL,
+                        uuid INTEGER NOT NULL
+                        );
+                        """
+
+
+
+with sqlite3.connect('Semester_2/dag1/retailers.db') as connection:
+    cur = connection.cursor()
+    cur.execute(drop_table)
+    cur.execute(create_table)
+
+
+
+for r in retailerlist:
+    cur.execute("INSERT INTO Retailers (name, country, city, websiteLink, uuid) VALUES (?,?,?,?,?);", 
+                (r[0], r[1], r[2], r[3], r[4]))
+
+
+
+
+
+
 
 
 
