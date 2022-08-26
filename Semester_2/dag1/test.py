@@ -5,12 +5,14 @@ import pandas as pd
 #### open csv file with python
 ####
 
-xlsx = pd.read_excel("Semester_2/dag1/GUBI_EU_Pricelist_march_2022.xlsx", engine = "openpyxl", sheet_name = "Master data EU")
+xlsx = pd.read_excel("Semester_2/dag1/GUBI_EU_Pricelist_march_2022.xlsx", engine = "openpyxl", sheet_name = "Master data EU", usecols = "A, B, E, G, H")
 #print(xlsx)
 
 mylist = []  ## mylist indeholder alle rækker fra excel filen som en liste af lister
 
 df = pd.DataFrame(xlsx)
+mylist = df.values.tolist()
+print(mylist)
 #print(df)
 
 df = df.reset_index()  # make sure indexes pair with number of rows
@@ -74,6 +76,12 @@ create_table = """CREATE TABLE Retailers (
                         );
                         """
 
+create_table2 = """CREATE TABLE products (
+
+
+                    );
+                    """
+
 
 
 with sqlite3.connect('Semester_2/dag1/retailers.db') as connection:
@@ -86,6 +94,9 @@ with sqlite3.connect('Semester_2/dag1/retailers.db') as connection:
     for r in retailerlist:
         cur.execute("INSERT INTO retailers (name, country, city, websiteLink, uuid) VALUES (?,?,?,?,?);", 
                     (r[0], r[1], r[2], r[3], r[4]))
+
+
+
 
 
 
