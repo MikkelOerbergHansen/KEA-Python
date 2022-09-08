@@ -36,13 +36,16 @@ df2 = pd.read_excel('Semester_2/dag1/GUBI_EU_Pricelist_march_2022.xlsx', sheet_n
 
 #print(df2)
 mytable = df2.values.tolist()
+for i in range(0,2):
+    print(mytable[i])
+
 productList= []
 
 for i in range(0, len(mytable)):
     row = (mytable[i][0], mytable[i][1], mytable[i][2], mytable[i][3], mytable[i][4] )
     productList.append(tuple(row))
 
-#print(productList)
+print(productList[1])
 
 
 
