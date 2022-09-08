@@ -12,7 +12,7 @@ mylist = []  ## mylist indeholder alle rækker fra excel filen som en liste af l
 
 df = pd.DataFrame(xlsx)
 mylist = df.values.tolist()
-print(mylist)
+#print(mylist)
 #print(df)
 
 df = df.reset_index()  # make sure indexes pair with number of rows
