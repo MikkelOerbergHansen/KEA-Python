@@ -111,10 +111,6 @@ for x in data1['retailers']:
 
 
 
-
-
-
-
 ##### database
 
 import sqlite3
