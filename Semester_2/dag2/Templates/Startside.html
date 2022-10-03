@@ -1,22 +1,54 @@
 <html>
   <style>
+table, th, td {
+  border:3px solid rgba(15, 110, 91, 0.77);
+  float: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-
-
+body {
+  background-color: lightblue;
+}
 
 
 
 
   </style>
 
-
+ 
   <head>
     <title>Startside</title>
   </head>
   <body>
     <div align="center">
-      <h1> <br /> Flask test <br /><br /> </h1>
+      <h1> <br /> Tværfaglig dag <br /><br /> </h1>
     </div>
+
+    <div>
+        <table class="w3-table-all w3-wihte">
+            <tr>
+                <td> <b> Uid </b></td>
+                <td> <b> ItemNo </b> </td>
+                <td> <b>Attributes </b></td>
+                <td> <b>Billede </b></td>
+                <td> <b>PrisPrivat </b></td>
+                <td> <b>PrisRetailer </b></td>
+            </tr>
+          {%for x in data%}
+          <tr>
+            <td>{{ x.uid }}</td>
+            <td>{{ x.ItemNo}}</td>
+            <td>{{ x.Attributes }}</td>
+            <td><img src="{{ x.Billede }}" width="100" height="60"> </img> </td>
+            <td>{{ x.PrisPrivat }} kr.</td>
+            <td>{{ x.PrisRetailer }} kr.</td>
+          </tr>
+          {%endfor%}
+        </table>
+    </div>
+      
 
   </body>
 </html>
