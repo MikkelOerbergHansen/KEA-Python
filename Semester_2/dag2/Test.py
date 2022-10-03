@@ -9,7 +9,7 @@ class Produkt:
         self.PrisRetailer = PrisRetailer
 
 
-with sqlite3.connect("Gubi.db") as connection:
+with sqlite3.connect("Semester_2/dag2/Gubi.db") as connection:
     cursor = connection.cursor()
     query = "SELECT * FROM Products WHERE PrisPrivat > 90000;"
     Products = cursor.execute(query)
@@ -24,7 +24,7 @@ for i in range(0,len(ProduktObjects)):
     print("{} {} {} {} {} {}".format(ProduktObjects[i].uid, ProduktObjects[i].ItemNo, ProduktObjects[i].Attributes, ProduktObjects[i].Billede,
                                     ProduktObjects[i].PrisPrivat, ProduktObjects[i].PrisRetailer))
 
-with sqlite3.connect("Gubi.db") as connection:
+with sqlite3.connect("Semester_2/dag2/Gubi.db") as connection:
     cursor = connection.cursor()
     delete_comment="DELETE FROM Products WHERE  PrisPrivat > 100000"          
     cursor.execute(delete_comment)
@@ -32,7 +32,7 @@ with sqlite3.connect("Gubi.db") as connection:
 print("=======================================================================================================================")
 
 
-with sqlite3.connect("Gubi.db") as connection:
+with sqlite3.connect("Semester_2/dag2/Gubi.db") as connection:
     cursor = connection.cursor()
     query = "SELECT * FROM Products WHERE PrisPrivat > 90000;"
     Products = cursor.execute(query)
