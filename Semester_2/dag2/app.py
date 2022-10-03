@@ -12,7 +12,7 @@ class Produkt:
 
 
 
-with sqlite3.connect("Gubi.db") as connection:
+with sqlite3.connect("Semester_2/dag2/Gubi.db") as connection:
     cursor = connection.cursor()
     query = "SELECT * FROM Products WHERE PrisPrivat < 2000 ORDER BY PrisPrivat;" #Skal laves om til userinput i stedet.
     Products = cursor.execute(query)
