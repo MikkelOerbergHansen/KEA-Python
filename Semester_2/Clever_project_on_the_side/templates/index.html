@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang=en class="js no-touch fonts-loaded">
   <head>
-  <meta charset=utf-8>
-  <title>Opladning hjemme og på farten </title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-  <link rel=canonical href=https://clever.dk/opladning-hjemme-og-paa-farten />
-  <meta property=og:type content=article>
-  <meta property=og:title content="Opladning hjemme og på farten ">
-  <meta property=og:description content>
-  <meta property=og:url content=https://clever.dk/opladning-hjemme-og-paa-farten />
-  <meta property=og:image content=https://clever.dk>
-  <meta property=article:published_time content="16-02-2019 07:47:32">
-  <meta property=article:modified_time content="27-09-2022 08:33:34">
-  <meta property=og:site_name content=Clever.dk>
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <meta name=twitter:card content=summary>
-  <meta name=keywords content=Clever>
-  <meta name=robots content=all>
-  <meta name=instance content=pd1ldwk0000RH>
-  <link rel="shortcut icon" type=image/png href=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACi0lEQVRYhe1WP0gbURj/vbtwl0i7GiJnsZDEyUCVeJSCUANdqyedBHGq6eKUQQuFohSXuhVCoCB0aocKCnWJLrdJaM3QQUmJBcMFBIc25s/ZJNchNV7ufxJIOvhbvse97/d9v/feve97BDyvoI+g+pn8VsCtgIYA5d8lsLNm6JJPgZDGyM6awM2yuOPxgKbpjvguy1k1FKURTFEQCgQQFQQ84Xnc83rhomkUSiV8PT7Gp/19fNjbQ1mWTflqS8DzSvOjEUE1djMM3i4vIyoIoCkKvy4v8T2bRblSAef1Ijg8DIqicCpJWFxbg5hO62M53gE1gRC4WRZfNjfxeGICP3I5vIzHsSOK+FOtNhOM+HyIzc8jOjuLuenpGwGahbSkMS3FGufEygqez8wgeXiIudVVFIpF01U9CAaRzmSgWP2ALUdgou4a46OjSG1tIStJGF9YME5uwbda3E0dUG+TBi8EAYQQvEokUCiVjBNZ8E19YVSIDIJHwmGUZRk7othWcCeCbCuhi6bBDQ7iVJL0V8sJbI7lPyjFNqjWasidn+P+0BA8LNt7AQBwkErBw7J4OjXVHwHx7W0oioL1pSXcHRjovYBvJyd4v7sLP8fh88aGrYhHoRDcDONIAA2Oe+3E8SCVwsOxMUTCYTyLRJC/uEDm7Az1er3pM+Lz4U00inexGEKBAD4mk7ZxCSYnFaMupbNASzOiCMHvYlHXjAgh+JnPY3F9HeLRkW2FNO8FFgj5/e23464FmOyMm2HgommUZRk11XE45btaJo0I2rHGVq6uuuKb3wLNe6AZyCkc8imd8zWMkqn91PNd8CntB8ugal+7rueQ7+g9oENP3wPtnHsHfPtS7PSZ1SH/L5gRMu9z1vd4AAAAAElFTkSuQmCC>
+    <meta charset=utf-8>
+    <title>Opladning hjemme og på farten </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel=canonical href=https://clever.dk/opladning-hjemme-og-paa-farten />
+    <meta property=og:type content=article>
+    <meta property=og:title content="Opladning hjemme og på farten ">
+    <meta property=og:description content>
+    <meta property=og:url content=https://clever.dk/opladning-hjemme-og-paa-farten />
+    <meta property=og:image content=https://clever.dk>
+    <meta property=article:published_time content="16-02-2019 07:47:32">
+    <meta property=article:modified_time content="27-09-2022 08:33:34">
+    <meta property=og:site_name content=Clever.dk>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=twitter:card content=summary>
+    <meta name=keywords content=Clever>
+    <meta name=robots content=all>
+    <meta name=instance content=pd1ldwk0000RH>
+    <link rel="shortcut icon" type=image/png href=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACi0lEQVRYhe1WP0gbURj/vbtwl0i7GiJnsZDEyUCVeJSCUANdqyedBHGq6eKUQQuFohSXuhVCoCB0aocKCnWJLrdJaM3QQUmJBcMFBIc25s/ZJNchNV7ufxJIOvhbvse97/d9v/feve97BDyvoI+g+pn8VsCtgIYA5d8lsLNm6JJPgZDGyM6awM2yuOPxgKbpjvguy1k1FKURTFEQCgQQFQQ84Xnc83rhomkUSiV8PT7Gp/19fNjbQ1mWTflqS8DzSvOjEUE1djMM3i4vIyoIoCkKvy4v8T2bRblSAef1Ijg8DIqicCpJWFxbg5hO62M53gE1gRC4WRZfNjfxeGICP3I5vIzHsSOK+FOtNhOM+HyIzc8jOjuLuenpGwGahbSkMS3FGufEygqez8wgeXiIudVVFIpF01U9CAaRzmSgWP2ALUdgou4a46OjSG1tIStJGF9YME5uwbda3E0dUG+TBi8EAYQQvEokUCiVjBNZ8E19YVSIDIJHwmGUZRk7othWcCeCbCuhi6bBDQ7iVJL0V8sJbI7lPyjFNqjWasidn+P+0BA8LNt7AQBwkErBw7J4OjXVHwHx7W0oioL1pSXcHRjovYBvJyd4v7sLP8fh88aGrYhHoRDcDONIAA2Oe+3E8SCVwsOxMUTCYTyLRJC/uEDm7Az1er3pM+Lz4U00inexGEKBAD4mk7ZxCSYnFaMupbNASzOiCMHvYlHXjAgh+JnPY3F9HeLRkW2FNO8FFgj5/e23464FmOyMm2HgommUZRk11XE45btaJo0I2rHGVq6uuuKb3wLNe6AZyCkc8imd8zWMkqn91PNd8CntB8ugal+7rueQ7+g9oENP3wPtnHsHfPtS7PSZ1SH/L5gRMu9z1vd4AAAAAElFTkSuQmCC>
   </head>
 
 
