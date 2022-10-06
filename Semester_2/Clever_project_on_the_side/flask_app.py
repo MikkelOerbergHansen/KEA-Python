@@ -30,7 +30,7 @@ def startside():
 
 @app.route('/Ladestander')
 def ladestander():
-    return render_template('ladestandere.html')
+    return render_template('ladestandere.html', data=myrep.ladestanderList)
 
 
 

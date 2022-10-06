@@ -65,6 +65,22 @@
       <main id=content class=content-main>
         <div class=banner>
 
+          <div>
+            <table class="w3-table-all w3-wihte">
+                <tr>
+                    <td> <b> id </b></td>
+                    <td> <b> adresse </b> </td>
+                </tr>
+              {%for x in data%}
+              <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.adresse}}</td>
+    
+              </tr>
+              {%endfor%}
+            </table>
+          </div>
+
         </div>
       </main>
 
