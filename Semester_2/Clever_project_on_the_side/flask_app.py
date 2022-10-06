@@ -15,7 +15,9 @@ def startside():
 
 
 
-
+@app.route('/Ladestander')
+def ladestander():
+    return render_template('ladestandere.html')
 
 
 
