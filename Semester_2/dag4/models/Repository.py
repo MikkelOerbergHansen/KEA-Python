@@ -1,7 +1,7 @@
 import pandas as pd
 from models.Kunde import *
 
-df = pd.read_excel('Tværfagligdag/static/Tværfaglig.xlsx', sheet_name='Kunder', usecols="A, B, C, D, E")
+df = pd.read_excel('Semester_2/dag4/static/Tværfaglig.xlsx', sheet_name='Kunder', usecols="A, B, C, D, E")
 
 #print(df)
 KundeListe = []
@@ -28,7 +28,7 @@ Kunde_table = """CREATE TABLE Kunder (
                 );
                 """
 
-with sqlite3.connect('Tværfagligdag/static/Clever.db') as connection:
+with sqlite3.connect('Semester_2/dag4/static/Clever.db') as connection:
     cur = connection.cursor()
     cur.execute(drop_Kunde_table)
     cur.execute(Kunde_table)
@@ -42,7 +42,7 @@ class Repository:
         self.KundeObjekter = self.setKundeObjekter()
 
     def setKundeObjekter(self):
-        with sqlite3.connect("Tværfagligdag/static/Clever.db") as connection:
+        with sqlite3.connect("Semester_2/dag4/static/Clever.db") as connection:
             cursor = connection.cursor()
             query = "SELECT * FROM Kunder;"
             kunder = cursor.execute(query)
