@@ -1,6 +1,6 @@
 
 import sqlite3
-import ladestander
+from models.ladestander import Ladestander
 
 class Repository:
     def __init__(self):
@@ -17,7 +17,7 @@ class Repository:
 
     
         for d in Lokationer:
-            nyladestander = ladestander(d[0], d[1])
+            nyladestander = Ladestander(d[0], d[1])
             self.ladestanderList.append(nyladestander)
         
         
@@ -29,9 +29,7 @@ class Repository:
 
 
 
-myrep = Repository()
-myrep.load_database()
+#myrep = Repository()
+#myrep.load_database()
 
-
-
-print(myrep.ladestanderList)
+#print(myrep.ladestanderList)
