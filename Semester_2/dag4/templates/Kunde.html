@@ -1,0 +1,52 @@
+<html>
+  <style>
+table, th, td {
+  border:3px solid rgba(15, 110, 91, 0.77);
+  float: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: lightblue;
+}
+
+
+
+
+  </style>
+
+ 
+  <head>
+    <title>Kunder</title>
+  </head>
+  <body>
+    <div align="center">
+      <h1> <br /> Kunder <br /><br /> </h1>
+    </div>
+
+    <div>
+        <table id="myTable">
+            <tr>
+                <td> <b> Navn </b></td>
+                <td> <b> Adresse </b> </td>
+                <td> <b> Postnummer </b></td>
+                <td> <b> Mobilnummer </b></td>
+                <td> <b> Driftsstatus </b></td>
+            </tr>
+          {%for x in data%}
+          <tr>
+            <td>{{ x.Navn }}</td>
+            <td>{{ x.Adresse}}</td>
+            <td>{{ x.Postnummer }}</td>
+            <td>{{ x.Mobilnummer }} </td>
+            <td>{{ x.Driftsstatus }} </td>
+          </tr>
+          {%endfor%}
+        </table>
+    </div>
+      
+
+  </body>
+</html>
