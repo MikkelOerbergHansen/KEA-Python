@@ -35,6 +35,13 @@ def ladestander():
 
 
 
+
+@app.route('/APIstuff')
+def APIstuff():
+    return render_template('apistuff.html')
+
+
+
 # til at køre koden direkte
 if __name__== '__main__':
     app.run()
