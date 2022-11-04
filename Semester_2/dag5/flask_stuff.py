@@ -11,7 +11,7 @@ def elspotpriser():
     headers = {"Content-Type": "application/json"}
     response = requests.get(url, headers=headers).json()
     #print(response)
-    with open('price_data.json', 'w') as f:
+    with open('Semester_2/dag5/price_data.json', 'w') as f:
         json.dump(response, f)
 
     return response
@@ -34,7 +34,7 @@ def getPriceData(data):
 
 
 
-
+'''
 elpriser = elspotpriser()
 
 timeslots = getTimedata(elpriser)
@@ -46,7 +46,7 @@ print(len(priser))
 
 print(timeslots[0].split("T")[1].split(":", 2)[0])
 print(timeslots[0].split("T")[1].split(":", 2)[0])
-
+'''
 
 app = Flask(__name__)
 
@@ -60,11 +60,8 @@ def startside():
         
         input1 = request.form['input1']
         input2 = request.form['input2']
-        #mitinput = request.form["inputselect1"]
-
-        #print(mitinput)
-        print(int(input1.split(":")[0]))
-        print(input2.split(":")[0])
+        
+       
         
         elpriser = elspotpriser()
                
