@@ -61,8 +61,6 @@ def startside():
         input1 = request.form['input1']
         input2 = request.form['input2']
         
-       
-        
         elpriser = elspotpriser()
                
         timeslots = getTimedata(elpriser)
