@@ -20,8 +20,6 @@ class Repository:
             nyladestander = Ladestander(d[0], d[1])
             self.ladestanderList.append(nyladestander)
         
-        
-
 
         pass
 

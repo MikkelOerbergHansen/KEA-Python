@@ -50,3 +50,9 @@ with sqlite3.connect('Semester_2/Clever_project_on_the_side/static/CleverLokatio
     for c in mycleverlokationer:
         cur.execute("INSERT INTO cleverLokationertest (Line1) VALUES (?);", 
                 (c))
+
+
+
+
+
+
