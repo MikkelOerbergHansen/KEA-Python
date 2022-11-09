@@ -4,10 +4,11 @@ from flask import Flask, request, render_template, redirect, session
 import requests
 import json
 
-
+# 
 
 def elspotpriser():
-    url = 'https://api.energidataservice.dk/dataset/Elspotprices?offset=0&sort=HourUTC%20DESC&timezone=dk'
+    #url = 'https://api.energidataservice.dk/dataset/Elspotprices?offset=0&sort=HourUTC%20DESC&timezone=dk'
+    url = 'https://api.energidataservice.dk/dataset/Elspotprices?offset=0&filter=%7B%22PriceArea%22:[%22DK1%22]%7D&sort=HourUTC%20DESC&timezone=dk'
     headers = {"Content-Type": "application/json"}
     response = requests.get(url, headers=headers).json()
     #print(response)
