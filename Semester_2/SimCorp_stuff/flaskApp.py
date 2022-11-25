@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def startside():
     HeadLine = "SimCorp"
-    return render_template('SimCorp.html', Headline = HeadLine)
+    return render_template('Startside.html', Headline = HeadLine)
 
 
 
