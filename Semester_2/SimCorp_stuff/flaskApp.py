@@ -12,8 +12,6 @@ def startside():
 
     if request.method == 'POST':
         SearchWord = request.form['searchbar']
-        print(SearchWord)
-        print("test")
         
         return render_template('Startside.html', Headline = HeadLine, Search = SearchWord)
 

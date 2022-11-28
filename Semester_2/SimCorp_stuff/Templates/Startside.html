@@ -80,9 +80,9 @@
       <main>
         <div class="container">
           <div align="center">
-            {{% if Headline == Search %}} <mark> {{% endif %}} 
-            <h1> {{ Headline }}  <br /><br /> </h1>
-            {{% if Headline == Search %}} </mark> {{% endif %}}
+            
+            <h1> {% if Headline == Search %} <mark> {% endif %} {{ Headline }} {% if Headline == Search %} </mark> {% endif %} <br /><br /> </h1>
+          
           </div>
 
           <div class="container-fluid pb-3">
@@ -95,6 +95,29 @@
               </div>
             </div>
           </div>
+
+
+
+
+          <div class="b-example-divider"></div>
+
+
+
+          
+          <div class="container-fluid pb-3">
+            <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
+              <div class="bg-light border rounded-3">
+                <br><br><br><br><br><br><br><br><br><br>
+              </div>
+              <div class="bg-light border rounded-3">
+                <br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
+          </div>
+
+
+
+
 
 
         </div>
