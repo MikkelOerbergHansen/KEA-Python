@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def startside():
-    HeadLine = "SimCorp"
+    HeadLine = "Welcome"
     return render_template('Startside.html', Headline = HeadLine)
 
 
