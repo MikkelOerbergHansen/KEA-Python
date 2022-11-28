@@ -52,8 +52,9 @@
           </div>
     
           <div class="d-flex align-items-center">
-            <form class="w-100 me-3" role="search">
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <form class="w-100 me-3" role="search"  method="post">
+              <input type="search" name="searchbar" class="form-control" placeholder="Search..." aria-label="Search">
+              
             </form>
     
             <div class="flex-shrink-0 dropdown">
@@ -79,7 +80,9 @@
       <main>
         <div class="container">
           <div align="center">
-            <h1> {{Headline}} <br /><br /> </h1>
+            {{% if Headline == Search %}} <mark> {{% endif %}} 
+            <h1> {{ Headline }}  <br /><br /> </h1>
+            {{% if Headline == Search %}} </mark> {{% endif %}}
           </div>
 
           <div class="container-fluid pb-3">
