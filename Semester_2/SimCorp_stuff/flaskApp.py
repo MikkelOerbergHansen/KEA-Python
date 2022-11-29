@@ -21,35 +21,35 @@ def startside():
 
 
 
-@app.route('/side1', methods=['GET', 'POST'])
-def Side1():
-    HeadLine = "Side1"
+@app.route('/LinRegExample', methods=['GET', 'POST'])
+def LinearRegEx():
+    HeadLine = "Linear Regression"
 
     if request.method == 'POST':
         SearchWord = request.form['searchbar']
         
-        return render_template('side1.html', Headline = HeadLine, Search = SearchWord)
+        return render_template('LinReg.html', Headline = HeadLine, Search = SearchWord)
 
 
     
-    return render_template('side1.html', Headline = HeadLine)
+    return render_template('LinReg.html', Headline = HeadLine)
 
 
 
 
 
-@app.route('/side2', methods=['GET', 'POST'])
-def Side2():
-    HeadLine = "Side2"
+@app.route('/DecTreeExample', methods=['GET', 'POST'])
+def DecTreesEx():
+    HeadLine = "Decision Tree"
 
     if request.method == 'POST':
         SearchWord = request.form['searchbar']
         
-        return render_template('side2.html', Headline = HeadLine, Search = SearchWord)
+        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord)
 
 
     
-    return render_template('side2.html', Headline = HeadLine)
+    return render_template('DecTree.html', Headline = HeadLine)
 
 
 
