@@ -1,6 +1,16 @@
 
 # import af modulet Flask
 from flask import Flask, request, render_template, redirect, session
+import pandas
+from sklearn import tree
+from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
+
+
+
+
+
+
 
 
 app = Flask(__name__)
