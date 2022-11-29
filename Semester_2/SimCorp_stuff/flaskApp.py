@@ -106,7 +106,6 @@ def DecTreesEx():
         Experience = int(request.form['Experience'])
         Rank = int(request.form['Rank'])
         Nationality = int(request.form['Nationality'])
-        print("test")
         Resultat = dtree.predict([[Age, Experience, Rank, Nationality]])
         
         return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem, result = Resultat)
