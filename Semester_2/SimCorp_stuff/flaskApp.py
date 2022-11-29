@@ -99,16 +99,21 @@ def DecTreesEx():
     
 
     if request.method == 'POST':
-        print("test")
-        SearchWord = ""#request.form['searchbar']
-        print("test")
-        Age = int(request.form['Age'])
-        Experience = int(request.form['Experience'])
-        Rank = int(request.form['Rank'])
-        Nationality = int(request.form['Nationality'])
-        Resultat = dtree.predict([[Age, Experience, Rank, Nationality]])
         
-        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem, result = Resultat)
+        if 'form1' in request.form:
+            
+            SearchWord = request.form['searchbar']
+            return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem)
+        
+        elif 'form2' in request.form:
+            
+            Age = int(request.form['Age'])
+            Experience = int(request.form['Experience'])
+            Rank = int(request.form['Rank'])
+            Nationality = int(request.form['Nationality'])
+            Resultat = dtree.predict([[Age, Experience, Rank, Nationality]])
+            
+            return render_template('DecTree.html', Headline = HeadLine, rule1=rule1, rule2=rule2, Data = data, problem = Problem, result = Resultat)
 
 
     
