@@ -70,6 +70,8 @@ def startside():
 
 
 
+
+
 @app.route('/LinRegExample', methods=['GET', 'POST'])
 def LinearRegEx():
     HeadLine = "Linear Regression"
