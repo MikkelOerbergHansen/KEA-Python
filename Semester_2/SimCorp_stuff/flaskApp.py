@@ -38,7 +38,11 @@ def TreeExample():
         templist.append(list(df["Go"])[i])
         data.append(templist)
 
-    return data
+    resultater = []
+    resultater.append(data)
+    resultater.append(dtree)
+
+    return resultater
 
 
 
@@ -84,15 +88,25 @@ def LinearRegEx():
 @app.route('/DecTreeExample', methods=['GET', 'POST'])
 def DecTreesEx():
     HeadLine = "Decision Tree"
-    data = TreeExample()
+    datastuff = TreeExample()
+    data = datastuff[0]
+    dtree = datastuff[1]
     rule1 = "convert the values 'UK' to 0, 'USA' to 1, and 'N' to 2"
     rule2 = "convert the values 'YES' to 1, 'NO' to 0"
     Problem = "Beslut om der skal ses komedie show baseret på skuepillers karakteristik"
+    
 
     if request.method == 'POST':
+        print("test")
         SearchWord = request.form['searchbar']
+        Age = int(request.form['Age'])
+        Experience = int(request.form['Experience'])
+        Rank = int(request.form['Rank'])
+        Nationality = int(request.form['Nationality'])
+        print("test")
+        Resultat = dtree.predict([[Age, Experience, Rank, Nationality]])
         
-        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem)
+        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem, result = Resultat)
 
 
     

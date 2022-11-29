@@ -95,7 +95,23 @@
                 <p> {{ rule1 }} </p>
                 <br>
                 <p> {{ rule2 }} </p>
-                <br><br><br><br><br><br><br><br>
+                <br>
+                <label> Lav prediction: </label>
+                <br>
+                <form class="w-100 me-3"  method="post">
+                  <label> Age: </label> <input type="number" name="Age" max="100" min="0" required> 
+                  <br>
+                  <label> Experience: </label> <input type="number" name="Experience" max="100" min="0" required> 
+                  <br>
+                  <label> Rank: </label> <input type="number" name="Rank" max="100" min="0" required> 
+                  <br>
+                  <label> Nationality: </label> <input type="number" name="Nationality" max="100" min="0" required> 
+                  <br>
+                  <button type = "submit"> predict </button>
+                </form>
+                <br>
+                <label> Result: </label> <p> {{ result }}</p>
+                <br><br><br><br><br>
               </div>
               <div align = "center" class="bg-light border rounded-3">
                 <table class ="table2" id="myTable">
