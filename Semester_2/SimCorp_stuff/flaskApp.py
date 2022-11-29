@@ -6,6 +6,8 @@ from sklearn import tree
 from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
 
+plt.switch_backend('agg')
+
 
 
 def TreeExample():
@@ -98,15 +100,16 @@ def DecTreesEx():
 
     if request.method == 'POST':
         print("test")
-        SearchWord = request.form['searchbar']
+        SearchWord = ""#request.form['searchbar']
+        print("test")
         Age = int(request.form['Age'])
         Experience = int(request.form['Experience'])
         Rank = int(request.form['Rank'])
         Nationality = int(request.form['Nationality'])
         print("test")
-        #Resultat = dtree.predict([[Age, Experience, Rank, Nationality]])
+        Resultat = dtree.predict([[Age, Experience, Rank, Nationality]])
         
-        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem)
+        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem, result = Resultat)
 
 
     
