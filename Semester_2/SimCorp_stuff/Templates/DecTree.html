@@ -98,7 +98,7 @@
                 <br>
                 <label> Lav prediction: </label>
                 <br>
-                <form class="w-100 me-3"  method="post">
+                <form action="" class="w-100 me-3"  method="post">
                   <label> Age: </label> <input type="number" name="Age" max="100" min="0" required> 
                   <br>
                   <label> Experience: </label> <input type="number" name="Experience" max="100" min="0" required> 
@@ -107,7 +107,7 @@
                   <br>
                   <label> Nationality: </label> <input type="number" name="Nationality" max="100" min="0" required> 
                   <br>
-                  <button type = "submit"> predict </button>
+                  <input type="submit" value="Predict">
                 </form>
                 <br>
                 <label> Result: </label> <p> {{ result }}</p>
