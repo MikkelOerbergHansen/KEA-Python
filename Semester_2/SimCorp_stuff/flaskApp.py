@@ -26,7 +26,19 @@ def TreeExample():
 
     tree.plot_tree(dtree, feature_names=features)
     plt.savefig('Semester_2/SimCorp_stuff/Static//Treeplot.png')
-    return df
+
+    data = []
+    for i in range(0, len(list(df["Age"]))):
+        templist = []
+    
+        templist.append(list(df["Age"])[i])
+        templist.append(list(df["Experience"])[i])
+        templist.append(list(df["Rank"])[i])
+        templist.append(list(df["Nationality"])[i])
+        templist.append(list(df["Go"])[i])
+        data.append(templist)
+
+    return data
 
 
 
@@ -72,19 +84,19 @@ def LinearRegEx():
 @app.route('/DecTreeExample', methods=['GET', 'POST'])
 def DecTreesEx():
     HeadLine = "Decision Tree"
-    TreeExample()
+    data = TreeExample()
     rule1 = "convert the values 'UK' to 0, 'USA' to 1, and 'N' to 2"
     rule2 = "convert the values 'YES' to 1, 'NO' to 0"
+    Problem = "Beslut om der skal ses komedie show baseret på skuepillers karakteristik"
 
     if request.method == 'POST':
         SearchWord = request.form['searchbar']
         
-        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2)
+        return render_template('DecTree.html', Headline = HeadLine, Search = SearchWord, rule1=rule1, rule2=rule2, Data = data, problem = Problem)
 
 
     
-    return render_template('DecTree.html', Headline = HeadLine, rule1=rule1, rule2=rule2)
-
+    return render_template('DecTree.html', Headline = HeadLine, rule1=rule1, rule2=rule2, Data = data, problem = Problem)
 
 
 

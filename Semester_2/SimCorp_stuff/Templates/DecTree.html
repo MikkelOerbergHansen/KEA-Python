@@ -90,12 +90,42 @@
               <div class="bg-light border rounded-3">
                 <a href="https://www.w3schools.com/python/python_ml_decision_tree.asp"> <p>Decision Trees</p></a>
                 <br>
+                <p> {{ problem }}</p>
+                <br>
                 <p> {{ rule1 }} </p>
                 <br>
                 <p> {{ rule2 }} </p>
                 <br><br><br><br><br><br><br><br>
               </div>
               <div align = "center" class="bg-light border rounded-3">
+                <table class ="table2" id="myTable">
+                  <tr>
+                    <td>
+                      <label>Age </label>
+                    </td>
+                    <td>
+                      <label>Experience </label>
+                    </td>
+                    <td>
+                      <label>Rank </label>
+                    </td>
+                    <td>
+                      <label>Nationality </label>
+                    </td>
+                    <td>
+                      <label>GO </label>
+                    </td>
+                  </tr>
+                  {% for row in Data %}
+                  <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                  </tr>
+                  {%endfor%}
+                </table>
                 <br>
                 <img class = logo src="static/Treeplot.png" alt="Tree">
                 <br><br><br><br><br><br><br><br><br><br>
