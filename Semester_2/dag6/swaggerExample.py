@@ -34,6 +34,8 @@ app.run()
 
 # Now point your browser to localhost:5000/api/docs/
 
+# http://127.0.0.1:5000/api/docs/
+
 
 
 
