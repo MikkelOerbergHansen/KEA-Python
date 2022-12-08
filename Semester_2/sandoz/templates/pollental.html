@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+    <style>
+        
+        .hiddenbutton{
+            border: none;
+            background: none;
+            width:100%;
+        }
+  
+  
+  
+    </style>
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>pollen</title>
+    </head>
+
+
+
+  <body>
+
+    <header>
+      <div align="center">
+          <h1> <br /> {{headline}} <br /><br /> </h1>
+      </div>
+
+
+    </header>
+
+
+
+    <main>
+
+        
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Vælg by
+            </button>
+            <ul class="dropdown-menu" name="byvalg">
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form1" method="post" action="">
+                        <input type="text" name = "byvalg" value = "København" hidden> 
+                        
+                        <button type ="submit" name="form1" class = "hiddenbutton">
+                            København
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form1" method="post" action="">
+                        <input type="text" name = "byvalg" value = "Århus" hidden> 
+                        
+                        <button type ="submit" name="form1" class = "hiddenbutton">
+                            Århus
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form1" method="post" action="">
+                        <input type="text" name = "byvalg" value = "Odense" hidden> 
+                        
+                        <button type ="submit" name="form1" class = "hiddenbutton">
+                            Odense
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form1" method="post" action="">
+                        <input type="text" name = "byvalg" value = "Aalborg" hidden> 
+                        
+                        <button type ="submit" name="form1" class = "hiddenbutton">
+                            Aalborg
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <label>{{ byvalg }}</label>
+        </div>
+
+
+
+
+        {% if byvalg != " " %}
+        <div align="center">
+            <input type ="image" class="ikon" src="/static/dagens_pollental_kbh.jpg" alt="KBH">
+        </div>
+        {% endif %}
+    
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Vælg pollental
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form5" method="post" action="">
+                        <input type="text" name = "pollenvalg" value = "Græs" hidden> 
+                        
+                        <button type ="submit" name="form5" class = "hiddenbutton">
+                            Græs
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form5" method="post" action="">
+                        <input type="text" name = "pollenvalg" value = "Birk" hidden> 
+                        
+                        <button type ="submit" name="form5" class = "hiddenbutton">
+                            Birk
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form5" method="post" action="">
+                        <input type="text" name = "pollenvalg" value = "Elm" hidden> 
+                        
+                        <button type ="submit" name="form5" class = "hiddenbutton">
+                            Elm
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form5" method="post" action="">
+                        <input type="text" name = "pollenvalg" value = "Hassel" hidden> 
+                        
+                        <button type ="submit" name="form5" class = "hiddenbutton">
+                            Hassel
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form5" method="post" action="">
+                        <input type="text" name = "pollenvalg" value = "Bynke" hidden> 
+                        
+                        <button type ="submit" name="form5" class = "hiddenbutton">
+                            Bynke
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="#">
+                    <form name = "form5" method="post" action="">
+                        <input type="text" name = "pollenvalg" value = "El" hidden> 
+                        
+                        <button type ="submit" name="form5" class = "hiddenbutton">
+                            El
+                        </button>
+    
+                    </form>
+                    </a>
+                </li>
+        </div>
+
+
+        <div>
+            <label>{{ pollenvalg }}</label>
+        </div>
+
+        {% if pollenvalg != " " %}
+    
+        <div align = "center">
+            <img src="/static/dagens_pollental.png" alt="Dagens pollental">    
+        </div>
+
+        {% endif %}
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </main>
+
+    
+
+    
+   
+
+    <footer>
+      <nav class="navbar fixed-bottom bg-light">
+          <table align ="center">
+              <tr>
+                  <th>
+                      <form method="post" name="form2" action="">
+                          <input type="text" name="forsideknap" value="forsideknap" hidden>
+                          <button type="submit" name="form2">Forside</button>                            
+                      </form>
+                  </th>
+                  <th>
+                      <form method="post" name="form3" action="">
+                          <input type="text" name="alarmknap" value="alarmknap" hidden>
+                          <button type="submit" name="form3">Sæt Alarmtidspunkt</button>                            
+                      </form>
+                  </th>
+                  <th>
+                      <form method="post" name="form4" action="">
+                          <input type="text" name="pollenknap" value="pollenknap" hidden>
+                          <button type="submit" name="form4">Pollen oversigt</button>                            
+                      </form>
+                  </th>
+              </tr>
+          </table>
+      </nav>
+      
+
+
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+  
+
+</html>

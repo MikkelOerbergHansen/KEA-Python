@@ -1,0 +1,194 @@
+
+
+
+
+
+
+<html>
+    <style>
+  
+       
+  
+  
+  
+  
+  
+    </style>
+  
+  
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Alarm</title>
+</head>
+    <body>
+        <header>
+            <div align="center">
+                <h1> <br /> {{headline}} <br /><br /> </h1>
+            </div>
+
+
+        </header>
+
+        <main>
+
+
+            <div align="center">
+                <form name = "form1" method="post" action="">
+                    <div>
+                        <label for="appt">Vælg alarmtidspunkt: </label>
+                        <input type="time" id="appt" name="alarmtid" required value="{{alarmtid}}">
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Mandag" {%if weekdays[0]== "Mandag" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault" >
+                        Mandag
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Tirsdag" {%if weekdays[1]== "Tirsdag" %} checked {%endif%} >
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Tirsdag
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Onsdag" {%if weekdays[2]== "Onsdag" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Onsdag
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Torsdag" {%if weekdays[3]== "Torsdag" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Torsdag
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Fredag" {%if weekdays[4]== "Fredag" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Fredag
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Lørdag" {%if weekdays[5]== "Lørdag" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Lørdag
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="flexCheckDefault" name="weekdays" value = "Søndag" {%if weekdays[6]== "Søndag" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Søndag
+                        </label>
+                    </div>
+                    <br>
+
+                    <div>
+                        <select class="myform-select" aria-label="Default select example" name = sang required>
+                            <option value=" " {% if sang == " " %}selected {% endif %} disabled>Vælg sang</option>
+                            <option value="lydløs" {% if sang == "lydløs" %}selected {% endif %}>lydløs</option>
+                            <option value="Der er et yndigt land" {% if sang == "Der er et yndigt land" %}selected {% endif %}>Der er et yndigt land</option>
+                            <option value="Jens Hansen havde en bondegård" {% if sang == "Jens Hansen havde en bondegård" %}selected {% endif %}>Jens Hansen havde en bondegård</option>
+                            <option value="Istedgade" {% if sang == "Istedgade" %}selected {% endif %}>Istedgade</option>
+                          </select>
+                    </div>
+
+                    <br>
+                    <div class="form-check">
+                        <input type="checkbox" value="True" id="flexCheckDefault" name="vibration" {%if vibration == "True" %} checked {%endif%}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Vibration
+                        </label>
+                    </div>
+                    <br>
+                    <div>
+                        <select class="myform-select" aria-label="Default select example" name = snooze required>
+                            <option value=" " {% if snooze == " " %}selected {% endif %} disabled>Vælg snooze tid</option>
+                            <option value="5 min" {% if snooze == "5 min" %}selected {% endif %}>5 min</option>
+                            <option value="10 min" {% if snooze == "10 min" %}selected {% endif %}>10 min</option>
+                            <option value="15 min" {% if snooze == "15 min" %}selected {% endif %}>15 min</option>
+                          </select>
+                    </div>
+                    <br>
+
+
+                    
+                    <div>
+                        <input type="submit" value="Gem" name="gem">
+                    </div>
+                </form>
+                        
+
+                <form name = "form1" method="post" action="">
+                    <div>
+                        <input type="submit" value="Annuller" name="anuller">
+                    </div>   
+                </form>
+            </div>
+
+            
+
+        </main>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+        <footer>
+            <nav class="navbar fixed-bottom bg-light">
+                <table align ="center">
+                    <tr>
+                        <th>
+                            <form method="post" name="form2" action="">
+                                <input type="text" name="forsideknap" value="forsideknap" hidden>
+                                <button type="submit" name="form2">Forside</button>                            
+                            </form>
+                        </th>
+                        <th>
+                            <form method="post" name="form3" action="">
+                                <input type="text" name="alarmknap" value="alarmknap" hidden>
+                                <button type="submit" name="form3">Sæt Alarmtidspunkt</button>                            
+                            </form>
+                        </th>
+                        <th>
+                            <form method="post" name="form4" action="">
+                                <input type="text" name="pollenknap" value="pollenknap" hidden>
+                                <button type="submit" name="form4">Pollen oversigt</button>                            
+                            </form>
+                        </th>
+                    </tr>
+                </table>
+            </nav>
+            
+
+
+        </footer>
+
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+
+    
+
+
+
+
+  </html>
+
+
+
+
+
+
+
