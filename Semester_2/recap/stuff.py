@@ -17,7 +17,7 @@ print(msft.splits)
 
 print(msft.shares)
 
-#print(msft.income_stmt)
+print(msft.income_stmt)
 
 #print(msft.quarterly_income_stmt)
 
