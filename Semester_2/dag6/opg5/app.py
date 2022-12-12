@@ -126,7 +126,7 @@ def scikit_fig():
     plt.xticks(())
     plt.yticks(())
 
-    plt.savefig('static/k-means')
+    plt.savefig('k-means')
     plt.close()
 
 
