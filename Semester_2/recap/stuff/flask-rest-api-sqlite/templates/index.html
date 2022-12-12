@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>Countries App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        .rating {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<div class="container">
+    <h1>Countries</h1>
+    <hr>
+    <h2>Add to country list</h2>
+    <form method="POST" action="/countries" enctype="multipart/form-data">
+        <p>Name: <input type="text" class="form-control" name="name"></p>
+        <p>Capital: <input type="text" class="form-control" name="capital"></p>
+        <p>Area: <input type="number" class="form-control" name="area"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <hr>
+    <h2>List of countries</h2>
+    <div class="row">
+        {% for c in countries %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm p-3">
+                <h5 class="card-title">{{ c['name'] }}</h5>
+                <hr>
+                <p class="card-text">Capital: {{ c['capital'] }}</p>
+                <p class="card-text">Area: {{ c['area'] }}</p>
+                <p class="card-text">Date created: {{ c['created'] }}</p>
+                <p class="card-text">
+                    <a href="/countries/{{ c['id'] }}/">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Go to movie</button>
+                </a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
