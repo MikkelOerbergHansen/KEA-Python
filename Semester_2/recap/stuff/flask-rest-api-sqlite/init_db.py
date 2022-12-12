@@ -14,7 +14,7 @@ CREATE TABLE countries (
 );
 """
 
-with sqlite3.connect('/Semester_2/recap/stuff/flask-rest-api-sqlite/database.db') as connection:
+with sqlite3.connect('Semester_2/recap/stuff/flask-rest-api-sqlite/database.db') as connection:
     cur = connection.cursor()
     cur.execute(drop_table)
     cur.execute(create_table)
