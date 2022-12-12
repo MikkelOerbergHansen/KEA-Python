@@ -68,6 +68,9 @@ def add_data():
     title = request.form['title']
     category = request.form['category']
     data = request.form['data']
+    print(title)
+    print(category)
+    print(data)
     with open('Semester_2/recap/stuff/flask-file-upload-2/static/temp.csv', 'a+', encoding="utf-8") as file:
         writer = csv.writer(file, delimiter=',')
         writer.writerow([title, category, data])
