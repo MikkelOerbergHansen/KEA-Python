@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, abort, jso
 from werkzeug.utils import secure_filename
 import csv
 
-UPLOADS_PATH = Path.cwd() / "Semester_2" / "recap" / "stuff" / "file-upload-2" / "static" / "uploads"
+UPLOADS_PATH = Path.cwd() / "Semester_2" / "recap" / "stuff" / "flask-file-upload-2" / "static" / "uploads"
 print(UPLOADS_PATH)
 app = Flask(__name__)
 
