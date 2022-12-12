@@ -32,6 +32,19 @@ def index():
 @app.route('/api/data')
 def get_data():
     with open('Semester_2/recap/stuff/flask-file-upload-2/static/temp.csv', mode='r') as file:
+        csv_reader = csv.DictReader(file)
+        datalist = list(csv_reader)
+        header = csv_reader.fieldnames
+        list1 = []
+
+        for name in header:
+            tomlist = []
+            for mydict in datalist:
+                tomlist.append(mydict[name])
+            list1.append(tomlist)
+        dict1 = dict(zip(header, list1))
+    '''
+    with open('Semester_2/recap/stuff/flask-file-upload-2/static/temp.csv', mode='r') as file:
         csv_reader = csv.reader(file)
         header = next(csv_reader)
         print(header)
@@ -40,6 +53,7 @@ def get_data():
             list1.append(row)
             print(list1)
         dict1 = dict(zip(header, list1))
+    '''
     return jsonify(dict1)
 
 
