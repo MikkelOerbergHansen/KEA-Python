@@ -80,7 +80,7 @@ def add_data():
     print(category)
     print(data)
     '''
-    with open('Semester_2/recap/stuff/flask-file-upload-2/static/temp.csv', 'a', encoding="utf-8", newline='') as file:
+    with open('Semester_2/recap/stuff/flask-file-upload-2/static/temp.csv', 'a', encoding="utf-8") as file:
         writer = csv.writer(file, delimiter=',')
         writer.writerow(data)
     return redirect(url_for('index'))
