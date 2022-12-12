@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def _connect_fetch():
-    with sqlite3.connect('database.db') as connector:
+    with sqlite3.connect('Semester_2/recap/stuff/flask-rest-api-sqlite/database.db') as connector:
         connector.row_factory = sqlite3.Row
         cursor = connector.cursor()
         countries = cursor.execute('SELECT * FROM countries').fetchall()
@@ -72,7 +72,7 @@ def add_country():
         capital1 = country["capital"]
         area1 = country["area"]
 
-        with sqlite3.connect('database.db') as connector:
+        with sqlite3.connect('Semester_2/recap/stuff/flask-rest-api-sqlite/database.db') as connector:
             cursor = connector.cursor()
             cursor.execute('INSERT INTO countries (name, capital, area) VALUES(?, ?, ?);', (name1, capital1, area1))
 
@@ -83,7 +83,7 @@ def add_country():
         capital1 = request.form['capital']
         area1 = request.form['area']
 
-        with sqlite3.connect('database.db') as connector:
+        with sqlite3.connect('Semester_2/recap/stuff/flask-rest-api-sqlite/database.db') as connector:
             cursor = connector.cursor()
             cursor.execute('INSERT INTO countries (name, capital, area) VALUES(?, ?, ?);', (name1, capital1, area1))
 
