@@ -14,7 +14,7 @@ import json
 matplotlib.use('Agg')
 
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='/Semester_2/opg5/static')
 
 
 # Source: https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#a-demo-of-k-means-clustering-on-the-handwritten-digits-data
@@ -126,7 +126,7 @@ def scikit_fig():
     plt.xticks(())
     plt.yticks(())
 
-    plt.savefig('static/k-means')
+    plt.savefig('Semester_2/opg5/static/k-means')
     plt.close()
 
 
