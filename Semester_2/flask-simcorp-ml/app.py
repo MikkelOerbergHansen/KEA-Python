@@ -35,6 +35,7 @@ warnings.filterwarnings(action='ignore', category=LinAlgWarning, module='sklearn
 app = Flask(__name__)
 
 my_dir = os.path.dirname(__file__)
+print(my_dir)
 
 def generatePlot(ma1, ma2, ticker):
     def calcDate(interval):
