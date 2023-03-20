@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Files</title>
+    <style>
+      table {
+        width: 500px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid;
+      }
+
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>File Upload</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <hr>
+
+    <h1>Write to CSV</h1>
+    <form method="POST" action="/add" enctype="multipart/form-data">
+        {% for i in header %}
+        <p>{{ i }}: <input type="text" class="form-control" name="{{ i }}"></p>
+        {% endfor %}
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <hr>
+
+    <h1>Read from CSV</h1>
+    <table>
+      <thead>
+        <tr>
+            {% for h in header %}
+            <th>
+                {{ h }}
+            </th>
+            {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+      {% for d in list1 %}
+      <tr>
+          {% for x in d %}
+          <td>
+              {{ x }}
+          </td>
+          {% endfor %}
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h1>Variable Rules Example</h1>
+    <a href="/files/0"><button>Click to see example success route</button></a>
+    <a href="/files/9"><button>Click to see example broken route</button></a>
+
+  </body>
+
+</html>
